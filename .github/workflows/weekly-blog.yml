@@ -154,3 +154,4 @@ jobs:
           GITHUB_OWNER: VictorAsooye
           GITHUB_REPO: sola-website
           GITHUB_BRANCH: main
+          N8N_WEBHOOK_URL: ${{ secrets.N8N_WEBHOOK_URL }}

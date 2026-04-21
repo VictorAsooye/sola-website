@@ -18,6 +18,7 @@ import { Octokit } from "@octokit/rest";
 import { readFileSync } from "fs";
 import { fileURLToPath } from "url";
 import { dirname, join } from "path";
+import { postToLinkedIn } from "./post-to-linkedin.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "..");
@@ -256,8 +257,18 @@ async function main() {
     indexSha
   );
 
-  console.log(`\n✅ Done! Post live at: /blog/posts/${slug}.html`);
-  console.log("   Vercel will deploy in ~30 seconds.\n");
+  const liveUrl = `https://solasupport.com/blog/posts/${slug}.html`;
+  console.log(`\n✅ Done! Post live at: ${liveUrl}`);
+  console.log("   Vercel will deploy in ~30 seconds.");
+
+  // Fire LinkedIn post (non-blocking — failure won't break the build)
+  try {
+    await postToLinkedIn({ title, excerpt: meta, url: liveUrl });
+  } catch (err) {
+    console.warn(`   ⚠️  LinkedIn post failed (blog publish succeeded): ${err.message}`);
+  }
+
+  console.log();
 }
 
 main().catch((err) => {
