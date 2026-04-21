@@ -2,7 +2,9 @@ name: Weekly Blog Post
 
 on:
   schedule:
-    - cron: "0 8 * * 1"   # Every Monday 08:00 UTC (4:00 AM Eastern)
+    - cron: "0 13 * * 1"   # Monday    08:00 EST
+    - cron: "0 13 * * 3"   # Wednesday 08:00 EST
+    - cron: "0 13 * * 5"   # Friday    08:00 EST
   workflow_dispatch:        # Manual trigger button in GitHub UI
 
 permissions:
@@ -27,7 +29,7 @@ jobs:
         run: npm install
         working-directory: scripts
 
-      - name: Pick keyword for this week
+      - name: Pick keyword for this run
         id: keyword
         run: |
           KEYWORDS=(
@@ -41,13 +43,16 @@ jobs:
             "automated onboarding system for home health"
             "SharePoint vs custom portal for small business"
             "internal hub for growing business"
+            "intranet ROI for small business"
+            "best internal portal for 10 person company"
+            "how to centralize business operations"
           )
-          WEEK=$(( $(date +%s) / 604800 ))
-          INDEX=$(( WEEK % ${#KEYWORDS[@]} ))
+          # Use number of days since epoch so each M/W/F gets a different keyword
+          DAY=$(( $(date +%s) / 86400 ))
+          INDEX=$(( DAY % ${#KEYWORDS[@]} ))
           KEYWORD="${KEYWORDS[$INDEX]}"
           echo "keyword=$KEYWORD" >> $GITHUB_OUTPUT
-          echo "index=$INDEX" >> $GITHUB_OUTPUT
-          echo "✅ Week $WEEK → keyword $INDEX: $KEYWORD"
+          echo "✅ Day $DAY → keyword $INDEX: $KEYWORD"
 
       - name: Generate and publish post
         run: node generate-post.js "${{ steps.keyword.outputs.keyword }}"
