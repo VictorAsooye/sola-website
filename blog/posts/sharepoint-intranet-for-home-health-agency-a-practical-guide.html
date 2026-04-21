@@ -1,0 +1,412 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>SharePoint Intranet for Home Health Agency: A Practical Guide — Sola AI Consulting</title>
+<meta name="description" content="Learn how a SharePoint intranet for home health agency operations cuts chaos, keeps staff aligned, and stays HIPAA-aware. Real-world advice inside." />
+<meta property="og:title" content="SharePoint Intranet for Home Health Agency: A Practical Guide" />
+<meta property="og:description" content="Learn how a SharePoint intranet for home health agency operations cuts chaos, keeps staff aligned, and stays HIPAA-aware. Real-world advice inside." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://solasupport.com/blog/posts/sharepoint-intranet-for-home-health-agency-a-practical-guide.html" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="canonical" href="https://solasupport.com/blog/posts/sharepoint-intranet-for-home-health-agency-a-practical-guide.html" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap">
+<style>
+  :root {
+    --accent: #4A5A7A;
+    --accent-ink: #2E3A52;
+    --accent-wash: #EEF0F5;
+    --paper: #FAF8F4;
+    --paper-2: #F3EFE7;
+    --line: #E4DFD5;
+    --line-2: #D4CEC0;
+    --muted: #8C8576;
+    --ink-3: #6B6557;
+    --ink-2: #3A362E;
+    --ink: #1C1A16;
+    --radius: 14px;
+    --container: 1200px;
+    --serif: "Instrument Serif", "Cormorant Garamond", Georgia, serif;
+    --sans: "Geist", ui-sans-serif, system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+    --mono: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--sans);
+    color: var(--ink);
+    background: var(--paper);
+    -webkit-font-smoothing: antialiased;
+    font-size: 17px;
+    line-height: 1.55;
+    letter-spacing: -0.003em;
+  }
+
+  .container { max-width: var(--container); margin: 0 auto; padding: 0 32px; }
+
+  /* Nav */
+  .nav {
+    position: sticky; top: 0; z-index: 50;
+    backdrop-filter: saturate(160%) blur(14px);
+    -webkit-backdrop-filter: saturate(160%) blur(14px);
+    background: color-mix(in srgb, var(--paper) 72%, transparent);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner {
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 18px 32px;
+    display: flex; align-items: center; gap: 48px;
+  }
+  .brand {
+    display: inline-flex; align-items: center; gap: 10px;
+    text-decoration: none; color: var(--ink); font-weight: 500;
+  }
+  .brand-mark {
+    width: 30px; height: 30px;
+    background-image: url('/sola-logo-mark.png');
+    background-size: contain; background-repeat: no-repeat; background-position: center;
+  }
+  .brand-name {
+    font-size: 14px; font-weight: 600; letter-spacing: 0.02em;
+    text-transform: uppercase; font-family: var(--sans);
+  }
+  .brand-name .sub {
+    display: block; font-size: 9.5px; letter-spacing: 0.22em;
+    color: var(--muted); font-weight: 500; margin-top: 1px;
+  }
+  .nav-links { display: flex; gap: 28px; margin-left: auto; font-size: 14.5px; }
+  .nav-links a { color: var(--ink-2); text-decoration: none; transition: color .2s; }
+  .nav-links a:hover, .nav-links a.active { color: var(--accent); }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 11px 18px; border-radius: 999px; font-size: 14.5px;
+    font-weight: 500; border: 1px solid transparent; text-decoration: none;
+    transition: all .2s ease; white-space: nowrap; cursor: pointer;
+  }
+  .btn-primary { background: var(--ink); color: var(--paper); }
+  .btn-primary:hover { background: var(--accent-ink); transform: translateY(-1px); }
+  .btn-arrow { transition: transform .2s; }
+  .btn:hover .btn-arrow { transform: translateX(3px); }
+
+  /* Article */
+  .article-header {
+    padding: 72px 0 56px;
+    border-bottom: 1px solid var(--line);
+    max-width: 760px;
+    margin: 0 auto;
+  }
+  .article-eyebrow {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    display: flex; align-items: center; gap: 16px;
+    margin-bottom: 24px;
+  }
+  .article-eyebrow a { color: var(--accent); text-decoration: none; }
+  .article-eyebrow a:hover { text-decoration: underline; }
+  .article-eyebrow span { color: var(--line-2); }
+  .article-title {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(36px, 5vw, 64px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin: 0 0 24px;
+  }
+  .article-title em { font-style: italic; color: var(--accent); }
+  .article-meta {
+    font-family: var(--mono);
+    font-size: 11.5px;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+    display: flex; gap: 20px;
+  }
+
+  .article-body {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 56px 0;
+  }
+  .article-body h2 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(28px, 3vw, 40px);
+    line-height: 1.1;
+    letter-spacing: -0.018em;
+    margin: 56px 0 20px;
+    color: var(--ink);
+  }
+  .article-body h2:first-child { margin-top: 0; }
+  .article-body h3 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(22px, 2vw, 28px);
+    letter-spacing: -0.012em;
+    margin: 40px 0 16px;
+    color: var(--ink);
+  }
+  .article-body p {
+    color: var(--ink-2);
+    font-size: 17px;
+    line-height: 1.7;
+    margin: 0 0 24px;
+  }
+  .article-body ul, .article-body ol {
+    color: var(--ink-2);
+    font-size: 17px;
+    line-height: 1.7;
+    margin: 0 0 24px;
+    padding-left: 0;
+    list-style: none;
+  }
+  .article-body ul li, .article-body ol li {
+    padding: 6px 0 6px 24px;
+    position: relative;
+    border-bottom: 1px solid var(--line);
+  }
+  .article-body ul li:last-child, .article-body ol li:last-child { border-bottom: 0; }
+  .article-body ul li::before {
+    content: "→";
+    position: absolute; left: 0;
+    color: var(--accent);
+    font-family: var(--mono);
+  }
+  .article-body ol { counter-reset: ol; }
+  .article-body ol li::before {
+    content: counter(ol);
+    counter-increment: ol;
+    position: absolute; left: 0;
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--muted);
+    font-weight: 500;
+    top: 8px;
+  }
+  .article-body blockquote {
+    border-left: 3px solid var(--accent);
+    margin: 32px 0;
+    padding: 16px 24px;
+    background: var(--paper-2);
+    border-radius: 0 8px 8px 0;
+    font-family: var(--serif);
+    font-size: 22px;
+    line-height: 1.4;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+  }
+  .article-body strong { color: var(--ink); font-weight: 600; }
+  .article-body a { color: var(--accent-ink); text-decoration: underline; text-underline-offset: 3px; }
+  .article-body a:hover { color: var(--accent); }
+  .callout {
+    background: var(--accent-wash);
+    border: 1px solid color-mix(in srgb, var(--accent) 20%, transparent);
+    border-radius: var(--radius);
+    padding: 24px 28px;
+    margin: 32px 0;
+  }
+  .callout .callout-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent-ink);
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+  .callout p { color: var(--ink-2); margin: 0; font-size: 16px; }
+
+  /* CTA */
+  .article-cta {
+    background: var(--ink);
+    border-radius: 20px;
+    padding: 56px 64px;
+    margin: 64px auto;
+    max-width: 760px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+  }
+  .article-cta h3 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(24px, 2.5vw, 36px);
+    letter-spacing: -0.015em;
+    color: var(--paper);
+    margin: 0 0 8px;
+  }
+  .article-cta p { color: color-mix(in srgb, var(--paper) 65%, transparent); margin: 0; font-size: 15px; }
+  .article-cta .btn-primary { background: var(--paper); color: var(--ink); flex-shrink: 0; }
+  .article-cta .btn-primary:hover { background: #fff; }
+
+  /* Back link */
+  .back-link {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: var(--mono); font-size: 12px;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    color: var(--muted); text-decoration: none;
+    margin: 40px 0 0;
+    transition: color .2s;
+  }
+  .back-link:hover { color: var(--accent); }
+
+  /* Footer */
+  footer {
+    padding: 64px 0 40px;
+    border-top: 1px solid var(--line);
+    background: var(--paper);
+  }
+  .foot-bar {
+    display: flex; justify-content: space-between;
+    font-family: var(--mono); font-size: 11.5px;
+    color: var(--muted); letter-spacing: 0.04em;
+  }
+
+  @media (max-width: 960px) {
+    .nav-links { display: none; }
+    .article-header, .article-body { padding-left: 0; padding-right: 0; }
+    .article-cta { flex-direction: column; padding: 40px 32px; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="brand" aria-label="Sola AI Consulting">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-name">Sola AI<span class="sub">Consulting</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="/#services">Services</a>
+      <a href="/#how">How it works</a>
+      <a href="/#case">Case study</a>
+      <a href="/blog/" class="active">Blog</a>
+      <a href="/#contact">Contact</a>
+    </div>
+    <a href="/#contact" class="btn btn-primary">Book a call <span class="btn-arrow">→</span></a>
+  </div>
+</nav>
+
+<div class="container">
+  <a href="/blog/" class="back-link">← All posts</a>
+</div>
+
+<div class="container">
+  <header class="article-header">
+    <div class="article-eyebrow">
+      <a href="/blog/">Blog</a>
+      <span>·</span>
+      <span>Guide</span>
+      <span>·</span>
+      <span>5 min read</span>
+    </div>
+    <h1 class="article-title">SharePoint Intranet for Home Health Agency: A Practical Guide</h1>
+    <div class="article-meta">
+      <span>APR 21, 2026</span>
+      <span>·</span>
+      <span>Sola AI Consulting</span>
+    </div>
+  </header>
+
+  <article class="article-body">
+    <h2>Why Home Health Agencies Struggle Without a Central Hub</h2>
+
+<p>Most home health agencies run on a patchwork of tools — group texts, emailed PDFs, binders in the break room, and a scheduling system that doesn't talk to anything else. Coordinators field the same questions ten times a day. Field staff miss updated care protocols because the right person forgot to forward an email. New hires get handed a paper handbook and left to figure it out.</p>
+
+<p>This isn't a people problem. It's an information architecture problem. And a SharePoint intranet for home health agency operations is one of the most direct ways to fix it.</p>
+
+<p>SharePoint is already included in Microsoft 365, which most agencies are paying for anyway. The platform isn't glamorous. But configured correctly, it becomes the single place where your team finds what they need — policies, forms, schedules, training, announcements — without having to ask anyone.</p>
+
+<blockquote>
+  <p>"Before the intranet, I was the human search engine. Staff called me for everything. Now the portal handles the first line of questions, and I can actually focus on operations." — Office Manager at a mid-size home health agency in the Mid-Atlantic region</p>
+</blockquote>
+
+<h2>What a Home Health Intranet Actually Contains</h2>
+
+<p>A SharePoint intranet isn't a dumping ground for files. Every section needs a purpose and an owner. Here's what tends to matter most for home health operations specifically.</p>
+
+<h3>Policy and Compliance Library</h3>
+
+<p>Regulations change. CMS updates come out. State licensing requirements shift. Most agencies keep their policy documents scattered across shared drives with no version control. Staff end up following outdated procedures because no one told them the document changed.</p>
+
+<p>A well-built SharePoint intranet centralizes every policy into a searchable, versioned library. You can require staff to acknowledge when a document is updated. You can set alerts so supervisors know when key policies are due for review. This matters for audits. Surveyors want evidence that staff received and understood updated policies — SharePoint gives you that paper trail automatically.</p>
+
+<h3>Onboarding Hub for New Caregivers</h3>
+
+<p>Caregiver turnover in home health is brutal. Getting new hires productive fast is a direct financial priority. A dedicated onboarding section in your intranet — with orientation videos, required reading, form submissions, and a checklist — means coordinators aren't rebuilding the onboarding experience from scratch every time someone new starts.</p>
+
+<p>New employees can work through the hub on their phone before their first shift. By the time they walk in the door, they've already completed the paperwork and watched the safety training. That's time back for your supervisors and a better first impression for new staff.</p>
+
+<h3>Operations and Scheduling Resources</h3>
+
+<p>Field staff need quick access to practical things: mileage forms, incident report templates, care plan documentation reminders, emergency contact lists. These shouldn't require a phone call to the office. A SharePoint intranet surfaces these resources where staff can find them — even from a mobile browser at a client's home.</p>
+
+<p>You can also embed real-time announcements. If there's a weather closure, a protocol update, or a scheduling change affecting multiple clients, one post reaches everyone instantly rather than relying on a phone tree that always misses someone.</p>
+
+<h2>HIPAA Considerations You Can't Ignore</h2>
+
+<p>Let's be direct about something: SharePoint is not automatically HIPAA-compliant just because Microsoft says it supports compliance. How you configure it matters enormously.</p>
+
+<p>An intranet for a home health agency should never store protected health information (PHI) in general document libraries accessible to all staff. Your SharePoint environment needs role-based permissions. A caregiver serving clients in Baltimore County shouldn't have access to care plans for clients in another region. Coordinators shouldn't be able to view HR files. These aren't optional configurations — they're baseline requirements.</p>
+
+<p>Microsoft 365 does support the technical safeguards HIPAA requires — audit logs, access controls, data loss prevention policies — but someone has to turn them on and set them up correctly. This is where agencies often get into trouble. They spin up a SharePoint site, dump files into it, and assume the compliance box is checked.</p>
+
+<div class="callout">
+  <div class="callout-label">Key takeaway</div>
+  <p>Before going live with a SharePoint intranet, conduct a permissions audit. Map every user role to exactly what they should and shouldn't see. Build the site around those boundaries — not as an afterthought after launch.</p>
+</div>
+
+<h2>Building It Right the First Time</h2>
+
+<p>The agencies that get the most out of SharePoint are the ones that plan before they build. Here's what that planning looks like in practice.</p>
+
+<h3>Start With Staff Behavior, Not Features</h3>
+
+<p>Don't begin by exploring SharePoint's feature list. Begin by asking: what are staff looking for right now that they can't find easily? What questions hit your office phone most often? What documents get emailed around repeatedly? The answers to those questions define your intranet's first three sections. Build for actual behavior, not theoretical use cases.</p>
+
+<h3>Keep the Navigation Ruthlessly Simple</h3>
+
+<p>Home health staff are often in the field, on mobile, and moving fast. If your intranet has eight levels of nested navigation, it fails immediately. A well-configured SharePoint intranet for a home health agency typically has no more than five or six top-level sections. Everything lives within two clicks of the homepage. Complexity is a design failure, not a feature.</p>
+
+<h3>Assign Ownership to Each Section</h3>
+
+<p>An intranet dies when no one maintains it. Stale content is worse than no content — it erodes trust. Before launch, every major section needs a designated owner who's responsible for keeping it current. That doesn't mean an IT person. It means whoever owns that function operationally. HR owns the policy library. The clinical director owns the training section. Assign it, document it, and revisit it quarterly.</p>
+
+<h3>Measure Whether It's Actually Being Used</h3>
+
+<p>SharePoint has built-in analytics. Use them. Look at which pages are getting traffic and which ones aren't. If your incident report form page has zero visits after two months, either staff don't know it exists or they've found a workaround. Both are problems worth solving. Usage data tells you where to improve without guessing.</p>
+
+<p>Home health is a coordination-heavy business. Every minute a caregiver spends hunting for a form or waiting on a callback from the office is a minute not spent on care. A thoughtfully built SharePoint intranet removes that friction — and does it using tools you're already paying for.</p>
+
+<p>At <a href="https://solasupport.com">Sola AI Consulting</a>, we've built SharePoint intranets specifically for home health and other care-based organizations, and we know how to get from scattered files to a working system without months of back-and-forth. If your team is ready to stop managing information by text message, we'd like to show you what's possible.</p>
+  </article>
+</div>
+
+<div class="article-cta">
+  <div>
+    <h3>Ready to put this into practice?</h3>
+    <p>We build portals, intranets, and automations for small teams — usually in 4–8 weeks.</p>
+  </div>
+  <a href="https://solasupport.com/#contact" class="btn btn-primary">Book a discovery call <span class="btn-arrow">→</span></a>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="foot-bar">
+      <span>© 2026 SOLA AI CONSULTING, LLC · BALTIMORE, MD</span>
+      <a href="/" style="color: var(--muted); text-decoration: none; letter-spacing: 0.04em; font-size: 11.5px;">← Back to solasupport.com</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
