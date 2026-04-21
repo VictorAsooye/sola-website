@@ -1,0 +1,15 @@
+{
+  "name": "sola-blog-scripts",
+  "version": "1.0.0",
+  "description": "Automated SEO blog generation for Sola AI Consulting",
+  "type": "module",
+  "scripts": {
+    "generate": "node generate-post.js",
+    "schedule": "node scheduler.js"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.39.0",
+    "@octokit/rest": "^21.0.0",
+    "node-cron": "^3.0.3"
+  }
+}
