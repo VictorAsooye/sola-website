@@ -1,0 +1,1592 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Sola AI Consulting — Your business, all in one place.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap">
+<style>
+  :root {
+    /* Tweakable tokens (rewritten by host) */
+    --accent: #4A5A7A;        /* slate blue */
+    --accent-ink: #2E3A52;
+    --accent-wash: #EEF0F5;
+
+    /* Warm neutral scale */
+    --paper: #FAF8F4;         /* warm off-white */
+    --paper-2: #F3EFE7;       /* warm cream */
+    --line: #E4DFD5;
+    --line-2: #D4CEC0;
+    --muted: #8C8576;
+    --ink-3: #6B6557;
+    --ink-2: #3A362E;
+    --ink: #1C1A16;
+
+    --radius: 14px;
+    --radius-sm: 8px;
+    --container: 1200px;
+    --pad-section: 128px;
+
+    --serif: "Instrument Serif", "Cormorant Garamond", Georgia, serif;
+    --sans: "Geist", ui-sans-serif, system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+    --mono: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+
+  [data-density="compact"] { --pad-section: 88px; }
+  [data-density="airy"]    { --pad-section: 160px; }
+
+  [data-accent="indigo"]  { --accent: #5A4FA3; --accent-ink: #3F3780; --accent-wash: #F0EEF7; }
+  [data-accent="plum"]    { --accent: #6B4558; --accent-ink: #4A2E3D; --accent-wash: #F4EEF0; }
+  [data-accent="forest"]  { --accent: #3E5B48; --accent-ink: #2A3F31; --accent-wash: #ECF0ED; }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--sans);
+    font-feature-settings: "ss01", "ss02", "cv11";
+    color: var(--ink);
+    background: var(--paper);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    font-size: 17px;
+    line-height: 1.55;
+    letter-spacing: -0.003em;
+  }
+
+  .container {
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  /* Type */
+  .display {
+    font-family: var(--serif);
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    line-height: 1.0;
+    color: var(--ink);
+  }
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .eyebrow::before {
+    content: "";
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+    display: inline-block;
+  }
+  .h2 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(36px, 4.4vw, 64px);
+    line-height: 1.02;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+  }
+  .h3 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(24px, 2.2vw, 32px);
+    line-height: 1.15;
+    letter-spacing: -0.015em;
+  }
+  .italic { font-style: italic; }
+  .lead {
+    font-size: clamp(17px, 1.3vw, 20px);
+    line-height: 1.5;
+    color: var(--ink-3);
+    max-width: 56ch;
+  }
+
+  /* Nav */
+  .nav {
+    position: sticky; top: 0; z-index: 50;
+    backdrop-filter: saturate(160%) blur(14px);
+    -webkit-backdrop-filter: saturate(160%) blur(14px);
+    background: color-mix(in srgb, var(--paper) 72%, transparent);
+    border-bottom: 1px solid transparent;
+    transition: border-color .25s ease, background .25s ease;
+  }
+  .nav.scrolled { border-bottom-color: var(--line); }
+  .nav-inner {
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 18px 32px;
+    display: flex;
+    align-items: center;
+    gap: 48px;
+  }
+  .brand {
+    display: inline-flex; align-items: center; gap: 10px;
+    text-decoration: none; color: var(--ink);
+    font-weight: 500;
+    letter-spacing: -0.01em;
+  }
+  .brand-mark {
+    width: 30px; height: 30px; position: relative;
+    display: inline-block;
+    background-image: url('/sola-logo-mark.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .brand-name {
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    font-family: var(--sans);
+  }
+  .brand-name b { font-weight: 600; }
+  .brand-name .sub {
+    display: block;
+    font-size: 9.5px;
+    letter-spacing: 0.22em;
+    color: var(--muted);
+    font-weight: 500;
+    margin-top: 1px;
+  }
+
+  .nav-links {
+    display: flex; gap: 28px; margin-left: auto;
+    font-size: 14.5px;
+  }
+  .nav-links a {
+    color: var(--ink-2); text-decoration: none;
+    letter-spacing: -0.005em;
+    transition: color .2s;
+  }
+  .nav-links a:hover { color: var(--accent); }
+
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 11px 18px;
+    border-radius: 999px;
+    font-size: 14.5px;
+    font-weight: 500;
+    letter-spacing: -0.005em;
+    cursor: pointer;
+    border: 1px solid transparent;
+    text-decoration: none;
+    transition: all .2s ease;
+    white-space: nowrap;
+  }
+  .btn-primary {
+    background: var(--ink);
+    color: var(--paper);
+  }
+  .btn-primary:hover {
+    background: var(--accent-ink);
+    transform: translateY(-1px);
+  }
+  .btn-ghost {
+    background: transparent;
+    color: var(--ink);
+    border-color: var(--line-2);
+  }
+  .btn-ghost:hover { border-color: var(--ink); }
+  .btn-arrow { transition: transform .2s; }
+  .btn:hover .btn-arrow { transform: translateX(3px); }
+
+  /* Hero */
+  .hero {
+    padding: 96px 0 var(--pad-section);
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 72px;
+    align-items: end;
+  }
+  .hero h1.display {
+    font-size: clamp(52px, 7vw, 104px);
+    margin: 24px 0 0;
+  }
+  .hero h1 .accent {
+    color: var(--accent);
+    font-style: italic;
+  }
+  .hero-sub {
+    margin-top: 28px;
+    font-size: clamp(17px, 1.25vw, 19px);
+    color: var(--ink-3);
+    line-height: 1.5;
+    max-width: 50ch;
+  }
+  .hero-ctas {
+    margin-top: 40px;
+    display: flex; gap: 12px; flex-wrap: wrap;
+  }
+  .hero-meta {
+    margin-top: 56px;
+    display: flex; gap: 40px;
+    color: var(--muted);
+    font-size: 13px;
+    font-family: var(--mono);
+    letter-spacing: 0.02em;
+  }
+  .hero-meta b { color: var(--ink-2); font-weight: 500; }
+
+  /* Portal mockup */
+  .portal {
+    position: relative;
+    aspect-ratio: 4 / 3.2;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    box-shadow:
+      0 1px 0 rgba(0,0,0,0.02),
+      0 30px 60px -30px rgba(30, 28, 22, 0.18),
+      0 10px 20px -15px rgba(30, 28, 22, 0.12);
+    overflow: hidden;
+    transform: perspective(1600px) rotateY(-4deg) rotateX(2deg);
+    transform-origin: center;
+  }
+  .portal-top {
+    height: 36px;
+    background: var(--paper-2);
+    border-bottom: 1px solid var(--line);
+    display: flex; align-items: center;
+    padding: 0 14px; gap: 6px;
+  }
+  .portal-top i {
+    width: 9px; height: 9px; border-radius: 50%;
+    background: var(--line-2); display: inline-block;
+  }
+  .portal-top .url {
+    margin-left: auto; margin-right: auto;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 4px 14px;
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--ink-3);
+    letter-spacing: 0.01em;
+  }
+  .portal-body {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    height: calc(100% - 36px);
+  }
+  .portal-side {
+    background: var(--paper);
+    border-right: 1px solid var(--line);
+    padding: 20px 14px;
+    display: flex; flex-direction: column; gap: 4px;
+  }
+  .side-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin: 12px 8px 6px;
+  }
+  .side-label:first-child { margin-top: 0; }
+  .side-item {
+    font-size: 13px;
+    color: var(--ink-2);
+    padding: 7px 10px;
+    border-radius: 6px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .side-item .dot {
+    width: 5px; height: 5px; border-radius: 50%;
+    background: var(--line-2);
+  }
+  .side-item.active {
+    background: var(--accent-wash);
+    color: var(--accent-ink);
+    font-weight: 500;
+  }
+  .side-item.active .dot { background: var(--accent); }
+
+  .portal-main {
+    padding: 22px 24px;
+    display: flex; flex-direction: column; gap: 16px;
+    background: #fff;
+  }
+  .portal-h {
+    display: flex; align-items: baseline; justify-content: space-between;
+  }
+  .portal-h .title {
+    font-family: var(--serif);
+    font-size: 22px;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+  }
+  .portal-h .date {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--muted);
+  }
+  .portal-stats {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;
+  }
+  .stat {
+    padding: 12px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: var(--paper);
+  }
+  .stat .k {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .stat .v {
+    font-family: var(--serif);
+    font-size: 24px;
+    color: var(--ink);
+    margin-top: 4px;
+    line-height: 1;
+  }
+  .stat.accent .v { color: var(--accent); }
+  .portal-list {
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    overflow: hidden;
+    flex: 1;
+  }
+  .portal-list .row {
+    display: grid;
+    grid-template-columns: 18px 1fr auto;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    font-size: 12px;
+    border-bottom: 1px solid var(--line);
+    color: var(--ink-2);
+  }
+  .portal-list .row:last-child { border-bottom: 0; }
+  .portal-list .row .chk {
+    width: 14px; height: 14px; border-radius: 4px;
+    border: 1.5px solid var(--line-2);
+    justify-self: center;
+  }
+  .portal-list .row.done .chk {
+    background: var(--accent);
+    border-color: var(--accent);
+    position: relative;
+  }
+  .portal-list .row.done .chk::after {
+    content: "";
+    position: absolute;
+    left: 3px; top: 5px;
+    width: 6px; height: 3px;
+    border-left: 1.5px solid #fff;
+    border-bottom: 1.5px solid #fff;
+    transform: rotate(-45deg);
+  }
+  .portal-list .row.done span { color: var(--muted); text-decoration: line-through; }
+  .portal-list .row .tag {
+    font-family: var(--mono);
+    font-size: 10px;
+    padding: 2px 8px;
+    border-radius: 999px;
+    background: var(--paper-2);
+    color: var(--ink-3);
+    letter-spacing: 0.04em;
+  }
+  .portal-list .row .tag.a {
+    background: var(--accent-wash); color: var(--accent-ink);
+  }
+
+  /* Floating callouts */
+  .float {
+    position: absolute;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 12px 14px;
+    box-shadow: 0 18px 30px -20px rgba(30,28,22,.25);
+    font-size: 12.5px;
+    line-height: 1.35;
+    z-index: 2;
+  }
+  .float .k {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 4px;
+  }
+  .float-1 { top: 10%; left: -8%; }
+  .float-2 { bottom: 8%; right: -6%; }
+  .float b { color: var(--accent-ink); }
+
+  /* Sections */
+  section { padding: var(--pad-section) 0; position: relative; }
+  .section-head {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 72px;
+    align-items: end;
+    margin-bottom: 72px;
+  }
+  .section-head .right .lead { max-width: 46ch; }
+
+  /* Services */
+  .services {
+    background: linear-gradient(180deg, var(--paper) 0%, var(--paper-2) 100%);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .service-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .service {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 28px 28px 32px;
+    display: flex; flex-direction: column;
+    min-height: 420px;
+    transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  .service:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 30px 50px -30px rgba(30,28,22,.2);
+    border-color: var(--line-2);
+  }
+  .service .num {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+  }
+  .service h3 {
+    margin: 28px 0 12px;
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 1.1;
+    letter-spacing: -0.015em;
+  }
+  .service p {
+    color: var(--ink-3);
+    margin: 0 0 20px;
+    font-size: 15.5px;
+    line-height: 1.5;
+  }
+  .service ul {
+    margin: auto 0 0;
+    padding: 16px 0 0;
+    list-style: none;
+    border-top: 1px dashed var(--line);
+  }
+  .service li {
+    display: flex;
+    gap: 10px;
+    padding: 7px 0;
+    font-size: 14px;
+    color: var(--ink-2);
+  }
+  .service li::before {
+    content: "→";
+    color: var(--accent);
+    font-family: var(--mono);
+    flex-shrink: 0;
+  }
+  .service-visual {
+    height: 120px;
+    margin: 0 -28px;
+    border-bottom: 1px solid var(--line);
+    background: var(--paper);
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Visual 1 — Portal/nodes */
+  .v-portal {
+    padding: 16px 28px;
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px;
+  }
+  .v-portal .tile {
+    aspect-ratio: 1.2/1;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    background: #fff;
+    position: relative;
+  }
+  .v-portal .tile::before {
+    content: ""; position: absolute;
+    left: 8px; top: 8px; right: 8px; height: 3px;
+    background: var(--line-2); border-radius: 2px;
+  }
+  .v-portal .tile::after {
+    content: ""; position: absolute;
+    left: 8px; top: 16px; width: 50%; height: 3px;
+    background: var(--line); border-radius: 2px;
+  }
+  .v-portal .tile:nth-child(2)::before { background: var(--accent); }
+
+  /* Visual 2 — automation flow */
+  .v-flow {
+    height: 100%;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 28px;
+    gap: 8px;
+  }
+  .v-flow .node {
+    width: 46px; height: 46px;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    background: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--ink-3);
+    position: relative;
+    flex-shrink: 0;
+  }
+  .v-flow .node.pulse {
+    background: var(--accent);
+    color: #fff;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent) 50%, transparent);
+    animation: pulse 2.4s ease-out infinite;
+  }
+  @keyframes pulse {
+    0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent) 50%, transparent); }
+    100% { box-shadow: 0 0 0 14px color-mix(in srgb, var(--accent) 0%, transparent); }
+  }
+  .v-flow .line {
+    flex: 1;
+    height: 1px;
+    background: repeating-linear-gradient(90deg, var(--line-2) 0 4px, transparent 4px 8px);
+  }
+
+  /* Visual 3 — healthcare roster */
+  .v-roster {
+    padding: 16px 28px;
+    display: flex; flex-direction: column; gap: 6px;
+    font-family: var(--mono);
+  }
+  .v-roster .row {
+    display: grid; grid-template-columns: 14px 1fr 42px 52px;
+    gap: 8px; align-items: center;
+    font-size: 10px;
+    color: var(--ink-3);
+  }
+  .v-roster .row .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+  .v-roster .row.off .dot { background: var(--line-2); }
+  .v-roster .row .bar {
+    height: 6px; border-radius: 3px; background: var(--paper-2);
+    position: relative; overflow: hidden;
+  }
+  .v-roster .row .bar::after {
+    content: ""; position: absolute; left: 0; top: 0; bottom: 0;
+    background: var(--accent); border-radius: 3px;
+  }
+  .v-roster .row:nth-child(1) .bar::after { width: 82%; }
+  .v-roster .row:nth-child(2) .bar::after { width: 60%; background: var(--line-2); }
+  .v-roster .row:nth-child(3) .bar::after { width: 95%; }
+  .v-roster .row:nth-child(4) .bar::after { width: 44%; background: var(--line-2); }
+
+  /* How It Works */
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 48px;
+    position: relative;
+  }
+  .steps::before {
+    content: "";
+    position: absolute;
+    top: 32px; left: 8%; right: 8%;
+    height: 1px;
+    background: repeating-linear-gradient(90deg, var(--line-2) 0 6px, transparent 6px 12px);
+  }
+  .step {
+    position: relative;
+    background: var(--paper);
+    padding-top: 0;
+  }
+  .step .marker {
+    width: 64px; height: 64px;
+    border-radius: 50%;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--serif);
+    font-size: 28px;
+    color: var(--accent);
+    font-style: italic;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 32px;
+  }
+  .step h3 {
+    font-family: var(--serif);
+    font-size: 28px;
+    font-weight: 400;
+    letter-spacing: -0.015em;
+    margin: 0 0 12px;
+    line-height: 1.1;
+  }
+  .step p { color: var(--ink-3); font-size: 15.5px; line-height: 1.55; margin: 0 0 16px; }
+  .step .detail {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+    border-top: 1px solid var(--line);
+    padding-top: 14px;
+    margin-top: 20px;
+  }
+  .step .detail b { color: var(--ink-2); font-weight: 500; }
+
+  /* Case study */
+  .case {
+    background: var(--ink);
+    color: var(--paper);
+    border-radius: 20px;
+    padding: 72px 72px 64px;
+    position: relative;
+    overflow: hidden;
+  }
+  .case-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: start;
+  }
+  .case .eyebrow { color: color-mix(in srgb, var(--paper) 60%, transparent); }
+  .case .eyebrow::before { background: color-mix(in srgb, var(--accent) 100%, transparent); }
+  .case h2 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(36px, 3.8vw, 52px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin: 20px 0 24px;
+    color: var(--paper);
+  }
+  .case h2 .italic-accent {
+    color: color-mix(in srgb, var(--accent) 70%, white 30%);
+    font-style: italic;
+  }
+  .case-sub {
+    color: color-mix(in srgb, var(--paper) 70%, transparent);
+    font-size: 17px;
+    line-height: 1.55;
+    max-width: 48ch;
+  }
+  .case-quote {
+    font-family: var(--serif);
+    font-size: 22px;
+    line-height: 1.35;
+    letter-spacing: -0.01em;
+    margin: 36px 0 20px;
+    color: var(--paper);
+  }
+  .case-attr {
+    font-family: var(--mono);
+    font-size: 11.5px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: color-mix(in srgb, var(--paper) 55%, transparent);
+  }
+  .case-metrics {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border: 1px solid color-mix(in srgb, var(--paper) 12%, transparent);
+    border-radius: 14px;
+    overflow: hidden;
+  }
+  .case-metric {
+    padding: 28px 28px 24px;
+    border-right: 1px solid color-mix(in srgb, var(--paper) 12%, transparent);
+    border-bottom: 1px solid color-mix(in srgb, var(--paper) 12%, transparent);
+  }
+  .case-metric:nth-child(2n) { border-right: 0; }
+  .case-metric:nth-last-child(-n+2) { border-bottom: 0; }
+  .case-metric .k {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: color-mix(in srgb, var(--paper) 55%, transparent);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .case-metric .v {
+    font-family: var(--serif);
+    font-size: 44px;
+    line-height: 1;
+    margin: 10px 0 6px;
+    letter-spacing: -0.02em;
+  }
+  .case-metric .v .unit {
+    font-size: 18px;
+    color: color-mix(in srgb, var(--paper) 60%, transparent);
+    margin-left: 4px;
+  }
+  .case-metric .d {
+    color: color-mix(in srgb, var(--paper) 60%, transparent);
+    font-size: 13px;
+    line-height: 1.4;
+  }
+  .case-metric.accent .v {
+    color: color-mix(in srgb, var(--accent) 80%, white 20%);
+  }
+  .case-cta { margin-top: 32px; }
+  .case-cta .btn-primary {
+    background: var(--paper);
+    color: var(--ink);
+  }
+  .case-cta .btn-primary:hover {
+    background: #fff;
+  }
+
+  /* Writing */
+  .writing {
+    border-top: 1px solid var(--line);
+  }
+  .posts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+  .post {
+    text-decoration: none;
+    color: inherit;
+    display: flex; flex-direction: column;
+    transition: transform .3s ease;
+  }
+  .post:hover { transform: translateY(-3px); }
+  .post-cover {
+    aspect-ratio: 4 / 3;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border: 1px solid var(--line);
+    background-size: 12px 12px;
+    background-image: linear-gradient(45deg, var(--paper-2) 25%, transparent 25%, transparent 50%, var(--paper-2) 50%, var(--paper-2) 75%, transparent 75%);
+    position: relative;
+    overflow: hidden;
+  }
+  .post-cover.tone-a { background-color: var(--paper); }
+  .post-cover.tone-b {
+    background-image: linear-gradient(45deg, var(--accent-wash) 25%, transparent 25%, transparent 50%, var(--accent-wash) 50%, var(--accent-wash) 75%, transparent 75%);
+  }
+  .post-cover.tone-c { background-image: none; background: linear-gradient(135deg, var(--paper-2), #fff); }
+  .post-cover::after {
+    content: attr(data-label);
+    position: absolute;
+    inset: auto 14px 14px auto;
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    background: var(--paper);
+    padding: 4px 8px;
+    border-radius: 4px;
+    border: 1px solid var(--line);
+  }
+  .post-meta {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+    display: flex; gap: 12px;
+    margin-bottom: 8px;
+  }
+  .post-title {
+    font-family: var(--serif);
+    font-size: 24px;
+    line-height: 1.15;
+    letter-spacing: -0.015em;
+    margin: 0 0 10px;
+  }
+  .post p {
+    color: var(--ink-3);
+    font-size: 14.5px;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  /* Contact */
+  .contact {
+    background: var(--paper-2);
+    border-top: 1px solid var(--line);
+  }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 72px;
+    align-items: start;
+  }
+  .contact h2 { max-width: 12ch; }
+  .contact-detail {
+    border-top: 1px solid var(--line);
+    padding: 18px 0;
+    display: flex; justify-content: space-between; gap: 24px;
+  }
+  .contact-detail .k {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .contact-detail .v { font-size: 15px; color: var(--ink-2); }
+
+  .form {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 32px;
+  }
+  .field {
+    display: block;
+    margin-bottom: 18px;
+  }
+  .field label {
+    display: block;
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .field input, .field textarea, .field select {
+    width: 100%;
+    padding: 12px 14px;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    font-family: var(--sans);
+    font-size: 15px;
+    color: var(--ink);
+    transition: border-color .2s, background .2s;
+  }
+  .field input:focus, .field textarea:focus, .field select:focus {
+    outline: none;
+    border-color: var(--accent);
+    background: #fff;
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 18%, transparent);
+  }
+  .field textarea { resize: vertical; min-height: 100px; }
+  .field.err input, .field.err textarea, .field.err select { border-color: #B85B55; }
+  .field .err-msg {
+    display: none;
+    color: #B85B55;
+    font-size: 12.5px;
+    margin-top: 6px;
+    font-family: var(--mono);
+  }
+  .field.err .err-msg { display: block; }
+  .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .form-submit {
+    margin-top: 8px;
+    width: 100%;
+    justify-content: center;
+    padding: 14px;
+    font-size: 15px;
+  }
+  .form-success {
+    display: none;
+    padding: 48px 24px;
+    text-align: center;
+  }
+  .form.success .form-body { display: none; }
+  .form.success .form-success { display: block; }
+  .form-success h3 {
+    font-family: var(--serif);
+    font-size: 28px;
+    margin: 16px 0 8px;
+    letter-spacing: -0.015em;
+  }
+  .form-success p { color: var(--ink-3); margin: 0; }
+  .form-success .checkmark {
+    width: 56px; height: 56px;
+    border-radius: 50%;
+    background: var(--accent);
+    margin: 0 auto;
+    position: relative;
+  }
+  .form-success .checkmark::after {
+    content: "";
+    position: absolute;
+    left: 18px; top: 28px;
+    width: 20px; height: 10px;
+    border-left: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    transform: rotate(-45deg);
+  }
+
+  /* Footer */
+  footer {
+    padding: 80px 0 40px;
+    border-top: 1px solid var(--line);
+    background: var(--paper);
+  }
+  .foot-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1fr;
+    gap: 48px;
+    margin-bottom: 64px;
+  }
+  .foot-grid h4 {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin: 0 0 18px;
+    font-weight: 500;
+  }
+  .foot-grid a {
+    display: block;
+    color: var(--ink-2);
+    text-decoration: none;
+    font-size: 14.5px;
+    padding: 5px 0;
+    transition: color .2s;
+  }
+  .foot-grid a:hover { color: var(--accent); }
+  .foot-brand p {
+    color: var(--ink-3); font-size: 14.5px; line-height: 1.55;
+    max-width: 40ch; margin: 16px 0 0;
+  }
+  .foot-bar {
+    border-top: 1px solid var(--line);
+    padding-top: 28px;
+    display: flex; justify-content: space-between;
+    font-family: var(--mono);
+    font-size: 11.5px;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+  }
+
+  /* Reveal */
+  .reveal { opacity: 0; transform: translateY(20px); transition: opacity .9s ease, transform .9s ease; }
+  .reveal.in { opacity: 1; transform: none; }
+  .reveal.d1 { transition-delay: .08s; }
+  .reveal.d2 { transition-delay: .16s; }
+  .reveal.d3 { transition-delay: .24s; }
+
+  /* Tweaks panel */
+  .tweaks {
+    position: fixed;
+    bottom: 20px; right: 20px;
+    width: 280px;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 18px;
+    box-shadow: 0 20px 40px -20px rgba(30,28,22,0.25);
+    z-index: 100;
+    font-size: 13px;
+    display: none;
+  }
+  .tweaks.open { display: block; }
+  .tweaks h5 {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin: 0 0 14px;
+    color: var(--muted);
+    font-weight: 500;
+  }
+  .tweak-row { margin-bottom: 14px; }
+  .tweak-row:last-child { margin-bottom: 0; }
+  .tweak-label {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    letter-spacing: 0.05em;
+    color: var(--ink-3);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .tweak-seg {
+    display: flex;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .tweak-seg button {
+    flex: 1;
+    padding: 7px 4px;
+    font-family: var(--sans);
+    font-size: 12px;
+    background: transparent;
+    border: 0;
+    border-right: 1px solid var(--line);
+    cursor: pointer;
+    color: var(--ink-2);
+    transition: background .15s;
+  }
+  .tweak-seg button:last-child { border-right: 0; }
+  .tweak-seg button:hover { background: var(--paper); }
+  .tweak-seg button.on { background: var(--ink); color: var(--paper); }
+
+  @media (max-width: 960px) {
+    .hero-grid, .section-head, .service-grid, .steps, .case-grid, .posts, .contact-grid, .foot-grid {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+    .nav-links { display: none; }
+    .case { padding: 48px 32px; }
+    .hero { padding: 64px 0 80px; }
+    :root { --pad-section: 80px; }
+  }
+</style>
+</head>
+<body data-accent="slate" data-density="default">
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#top" class="brand" aria-label="Sola AI Consulting">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-name">Sola AI<span class="sub">Consulting</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#how">How it works</a>
+      <a href="#case">Case study</a>
+      <a href="#writing">Writing</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a href="#contact" class="btn btn-primary">Book a call <span class="btn-arrow">→</span></a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero" id="top">
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow reveal">AI consulting · Built for small teams</span>
+        <h1 class="display reveal d1">
+          Your business,<br />
+          all in <span class="accent">one place.</span>
+        </h1>
+        <p class="hero-sub reveal d2">
+          We build internal portals, SharePoint intranets, and AI automations for small-to-mid sized businesses — so your team stops switching tabs and starts shipping work.
+        </p>
+        <div class="hero-ctas reveal d3">
+          <a href="#contact" class="btn btn-primary">Book a call <span class="btn-arrow">→</span></a>
+          <a href="#services" class="btn btn-ghost">See what we build</a>
+        </div>
+        <div class="hero-meta reveal d3">
+          <div><b>5+ years</b><br/>in the weeds</div>
+          <div><b>4–8 weeks</b><br/>portals, intranets, bots</div>
+          <div><b>Home health</b><br/>our specialty</div>
+        </div>
+      </div>
+
+      <!-- Portal mockup -->
+      <div class="reveal d2" style="position:relative;">
+        <div class="portal">
+          <div class="portal-top">
+            <i></i><i></i><i></i>
+            <div class="url">betheldivine.com/admin</div>
+          </div>
+          <div class="portal-body">
+            <aside class="portal-side">
+              <div class="side-label">Workspace</div>
+              <div class="side-item active"><span class="dot"></span>Dashboard</div>
+              <div class="side-item"><span class="dot"></span>Scheduling</div>
+              <div class="side-item"><span class="dot"></span>Documents</div>
+              <div class="side-item"><span class="dot"></span>Billing</div>
+              <div class="side-label">Care</div>
+              <div class="side-item"><span class="dot"></span>Clients</div>
+              <div class="side-item"><span class="dot"></span>Caregivers</div>
+              <div class="side-item"><span class="dot"></span>Reports</div>
+            </aside>
+            <div class="portal-main">
+              <div class="portal-h">
+                <div class="title">Today, at a glance</div>
+                <div class="date">TUE · APR 21</div>
+              </div>
+              <div class="portal-stats">
+                <div class="stat"><div class="k">Active visits</div><div class="v">47</div></div>
+                <div class="stat accent"><div class="k">On-time rate</div><div class="v">98%</div></div>
+                <div class="stat"><div class="k">Open notes</div><div class="v">3</div></div>
+              </div>
+              <div class="portal-list">
+                <div class="row done"><div class="chk"></div><span>Morning roster sent to caregivers</span><span class="tag">07:00</span></div>
+                <div class="row done"><div class="chk"></div><span>Payroll file exported</span><span class="tag">09:12</span></div>
+                <div class="row"><div class="chk"></div><span>Approve new hire paperwork — M. Oduya</span><span class="tag a">Action</span></div>
+                <div class="row"><div class="chk"></div><span>Weekly compliance digest</span><span class="tag">AUTO</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="float float-1">
+          <span class="k">Saved this week</span>
+          <b>11.4 hrs</b> of admin
+        </div>
+        <div class="float float-2">
+          <span class="k">Replaces</span>
+          Excel · Email · 3 shared drives
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="section-head">
+      <div class="reveal">
+        <span class="eyebrow">What we do</span>
+        <h2 class="h2 italic" style="margin-top:20px; font-style: italic;">Three things,<br/>done properly.</h2>
+      </div>
+      <div class="right reveal d1">
+        <p class="lead">
+          We don't chase every request. We focus on the systems that take the most repetitive work off your team's plate — portals, intranets, and automation — and we build them to last.
+        </p>
+      </div>
+    </div>
+
+    <div class="service-grid">
+      <article class="service reveal">
+        <div class="service-visual v-portal">
+          <div class="tile"></div><div class="tile"></div><div class="tile"></div><div class="tile"></div>
+          <div class="tile"></div><div class="tile"></div><div class="tile"></div><div class="tile"></div>
+        </div>
+        <div class="num">01 — Portals & Intranets</div>
+        <h3>Internal portals and SharePoint intranets</h3>
+        <p>
+          One home for your team. Documents, tasks, SOPs, and dashboards — all searchable, all in one login.
+        </p>
+        <ul>
+          <li>SharePoint & Microsoft 365 builds</li>
+          <li>Custom web portals on your domain</li>
+          <li>Role-based access + SSO</li>
+          <li>Migration from shared drives</li>
+        </ul>
+      </article>
+
+      <article class="service reveal d1">
+        <div class="service-visual v-flow">
+          <div class="node">IN</div>
+          <div class="line"></div>
+          <div class="node pulse">AI</div>
+          <div class="line"></div>
+          <div class="node">OUT</div>
+        </div>
+        <div class="num">02 — Automation</div>
+        <h3>AI automation for the boring parts</h3>
+        <p>
+          Invoice parsing, intake forms, scheduling nudges, compliance summaries. We build the plumbing your team doesn't want to see.
+        </p>
+        <ul>
+          <li>Document intake & classification</li>
+          <li>Email & form triage</li>
+          <li>Power Automate & n8n workflows</li>
+          <li>Custom GPT assistants on your data</li>
+        </ul>
+      </article>
+
+      <article class="service reveal d2">
+        <div class="service-visual v-roster">
+          <div class="row"><span class="dot"></span><span>A. Okafor</span><span>6h</span><div class="bar"></div></div>
+          <div class="row off"><span class="dot"></span><span>J. Mensah</span><span>4h</span><div class="bar"></div></div>
+          <div class="row"><span class="dot"></span><span>R. Delgado</span><span>8h</span><div class="bar"></div></div>
+          <div class="row off"><span class="dot"></span><span>S. Park</span><span>3h</span><div class="bar"></div></div>
+        </div>
+        <div class="num">03 — Healthcare admin</div>
+        <h3>Purpose-built for home health</h3>
+        <p>
+          Rosters, caregiver compliance, client files, billing exports. We speak the language — EVV, HIPAA, DODD, Medicaid billing.
+        </p>
+        <ul>
+          <li>Caregiver & client management</li>
+          <li>EVV-ready scheduling</li>
+          <li>HIPAA-aware document handling</li>
+          <li>Payroll & billing exports</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how">
+  <div class="container">
+    <div class="section-head">
+      <div class="reveal">
+        <span class="eyebrow">How it works</span>
+        <h2 class="h2" style="margin-top:20px;">Three steps.<br/><span class="italic" style="font-style:italic; color: var(--accent);">No drawn-out discovery.</span></h2>
+      </div>
+      <div class="right reveal d1">
+        <p class="lead">
+          Most consultancies take six weeks to tell you what you already know. We move in days — because you didn't hire us to redraw your org chart.
+        </p>
+      </div>
+    </div>
+
+    <div class="steps">
+      <div class="step reveal">
+        <div class="marker">i</div>
+        <h3>We sit with you for 90 minutes</h3>
+        <p>
+          One call, one whiteboard. Show us the spreadsheets, the tabs, the email chain that should've been a button. We leave with a concrete plan.
+        </p>
+        <div class="detail"><b>Deliverable:</b> written scope + fixed quote, in 48 hours</div>
+      </div>
+      <div class="step reveal d1">
+        <div class="marker">ii</div>
+        <h3>We build. You test it on Fridays.</h3>
+        <p>
+          Two-week sprints. Every Friday you get a working link, not a slide deck. Feedback goes straight into Monday's build.
+        </p>
+        <div class="detail"><b>Deliverable:</b> working system in 4–8 weeks</div>
+      </div>
+      <div class="step reveal d2">
+        <div class="marker">iii</div>
+        <h3>We train your team and stay on call</h3>
+        <p>
+          Your people use it confidently by week one. We stay on a monthly retainer for tweaks, new automations, and the inevitable "can it also…"
+        </p>
+        <div class="detail"><b>Deliverable:</b> handoff + ongoing care</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CASE STUDY -->
+<section id="case" style="background: var(--paper-2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);">
+  <div class="container">
+    <div class="case reveal">
+      <div class="case-grid">
+        <div>
+          <span class="eyebrow">Case study · Home health</span>
+          <h2>Bethel Divine<br/>Healthcare <span class="italic-accent">cut admin in half.</span></h2>
+          <p class="case-sub">
+            A 40-caregiver home health agency in Ohio was running on five spreadsheets, two shared drives, and a lot of willpower. We replaced it with a single portal their office manager actually likes opening in the morning.
+          </p>
+          <p class="case-quote">
+            "The weekly payroll used to take two full days. Now it's ready by lunch on Monday. I honestly forgot what running a business without this felt like."
+          </p>
+          <p class="case-attr">— Akinsola Asooye · Director of Operations · Reisterstown, MD</p>
+          <div class="case-cta">
+            <a href="#contact" class="btn btn-primary">Read the full write-up <span class="btn-arrow">→</span></a>
+          </div>
+        </div>
+
+        <div class="case-metrics">
+          <div class="case-metric accent">
+            <div class="k">Admin hours saved</div>
+            <div class="v">11.4<span class="unit">hrs / wk</span></div>
+            <div class="d">Across scheduling, payroll, and compliance reporting.</div>
+          </div>
+          <div class="case-metric">
+            <div class="k">Payroll cycle</div>
+            <div class="v">2d → 3h</div>
+            <div class="d">Same inputs, same approvals — 85% faster turnaround.</div>
+          </div>
+          <div class="case-metric accent">
+            <div class="k">Caregiver compliance</div>
+            <div class="v">98<span class="unit">%</span></div>
+            <div class="d">Credentials, training, and EVV — tracked in one place.</div>
+          </div>
+          <div class="case-metric">
+            <div class="k">Tools replaced</div>
+            <div class="v">7 → 1</div>
+            <div class="d">Spreadsheets, shared drives, and email threads collapsed into one portal.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WRITING -->
+<section class="writing" id="writing">
+  <div class="container">
+    <div class="section-head">
+      <div class="reveal">
+        <span class="eyebrow">Recent writing</span>
+        <h2 class="h2" style="margin-top:20px;">Notes from<br/>the build.</h2>
+      </div>
+      <div class="right reveal d1">
+        <p class="lead">
+          Practical essays on portals, automation, and running small service businesses without burning out. No listicles.
+        </p>
+      </div>
+    </div>
+
+    <div class="posts">
+      <a href="#" class="post reveal">
+        <div class="post-cover tone-a" data-label="ESSAY"></div>
+        <div class="post-meta"><span>APR 12, 2026</span><span>·</span><span>8 min</span></div>
+        <h3 class="post-title">Why your team still lives in email (and how to get them out)</h3>
+        <p>The unsexy truth about adoption: a portal is only as good as the third Tuesday nobody wants to use it.</p>
+      </a>
+      <a href="#" class="post reveal d1">
+        <div class="post-cover tone-b" data-label="FIELD NOTE"></div>
+        <div class="post-meta"><span>MAR 28, 2026</span><span>·</span><span>6 min</span></div>
+        <h3 class="post-title">Five SharePoint habits that quietly wreck your intranet</h3>
+        <p>Everyone blames the tool. Usually it's three folder-naming decisions made by three different people in 2019.</p>
+      </a>
+      <a href="#" class="post reveal d2">
+        <div class="post-cover tone-c" data-label="GUIDE"></div>
+        <div class="post-meta"><span>MAR 14, 2026</span><span>·</span><span>11 min</span></div>
+        <h3 class="post-title">A home health agency's first automation: the Monday morning roster</h3>
+        <p>If you do one thing this quarter, send the roster by text instead of typing it out four times. Here's how we do it.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="reveal">
+        <span class="eyebrow">Let's talk</span>
+        <h2 class="h2" style="margin-top:20px;">Book a 30-minute call. <span class="italic" style="font-style:italic; color: var(--accent);">No pitch deck.</span></h2>
+        <p class="lead" style="margin-top: 24px;">
+          Tell us where the time is going. We'll tell you — honestly — whether we're the right fit and what we'd build first.
+        </p>
+        <div style="margin-top: 40px;">
+          <div class="contact-detail"><span class="k">Email</span><span class="v">team@solaconsulting.io</span></div>
+          <div class="contact-detail"><span class="k">Phone</span><span class="v">443-983-6889</span></div>
+          <div class="contact-detail"><span class="k">Hours</span><span class="v">Mon – Fri · 9a–5p ET</span></div>
+          <div class="contact-detail" style="border-bottom: 1px solid var(--line);"><span class="k">Based in</span><span class="v">Baltimore, MD</span></div>
+        </div>
+      </div>
+
+      <form class="form reveal d1" id="contact-form" novalidate>
+        <div class="form-body">
+          <div class="field-row">
+            <div class="field">
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" placeholder="Your name" required />
+              <div class="err-msg">Please enter your name.</div>
+            </div>
+            <div class="field">
+              <label for="company">Company</label>
+              <input id="company" name="company" type="text" placeholder="Company or agency" />
+            </div>
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="you@company.com" required />
+            <div class="err-msg">Please enter a valid email.</div>
+          </div>
+          <div class="field">
+            <label for="help">What's taking your time?</label>
+            <select id="help" name="help" required>
+              <option value="">Choose one…</option>
+              <option>Internal portal / intranet</option>
+              <option>AI automation</option>
+              <option>Home health admin system</option>
+              <option>Not sure yet</option>
+            </select>
+            <div class="err-msg">Pick one — we'll figure out the details on the call.</div>
+          </div>
+          <div class="field">
+            <label for="msg">A few words of context</label>
+            <textarea id="msg" name="msg" placeholder="What are you using today? Where does it hurt?"></textarea>
+          </div>
+          <a href="https://calendar.app.google/E8J6Gm7WGzZrPt3V7" target="_blank" rel="noopener" class="btn btn-primary form-submit" id="book-link" style="text-decoration:none;">
+            Send &amp; pick a time <span class="btn-arrow">→</span>
+          </a>
+          <p style="font-family: var(--mono); font-size: 11px; color: var(--muted); letter-spacing: 0.04em; text-align: center; margin: 12px 0 0;">Opens Google Calendar · 30-minute slot</p>
+        </div>
+        <div class="form-success">
+          <div class="checkmark"></div>
+          <h3>Message received.</h3>
+          <p>We'll reply within one business day with a calendar link.</p>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="#top" class="brand">
+          <span class="brand-mark"></span>
+          <span class="brand-name">Sola AI<span class="sub">Consulting</span></span>
+        </a>
+        <p>AI consulting for small-to-mid businesses. Portals, intranets, and automation — built to stay out of your team's way.</p>
+      </div>
+      <div>
+        <h4>Work</h4>
+        <a href="#services">Services</a>
+        <a href="#how">How it works</a>
+        <a href="#case">Case studies</a>
+      </div>
+      <div>
+        <h4>Writing</h4>
+        <a href="#writing">Recent essays</a>
+        <a href="#writing">Field notes</a>
+        <a href="#writing">Guides</a>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <a href="#contact">Contact</a>
+        <a href="#contact">Book a call</a>
+        <a href="#">Privacy</a>
+      </div>
+    </div>
+    <div class="foot-bar">
+      <span>© 2026 SOLA AI CONSULTING, LLC · BALTIMORE, MD</span>
+      <span>YOUR BUSINESS, ALL IN ONE PLACE.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- TWEAKS -->
+<div class="tweaks" id="tweaks">
+  <h5>Tweaks</h5>
+  <div class="tweak-row">
+    <div class="tweak-label">Accent</div>
+    <div class="tweak-seg" data-tweak="accent">
+      <button data-v="slate">Slate</button>
+      <button data-v="indigo">Indigo</button>
+      <button data-v="plum">Plum</button>
+      <button data-v="forest">Forest</button>
+    </div>
+  </div>
+  <div class="tweak-row">
+    <div class="tweak-label">Density</div>
+    <div class="tweak-seg" data-tweak="density">
+      <button data-v="compact">Compact</button>
+      <button data-v="default">Default</button>
+      <button data-v="airy">Airy</button>
+    </div>
+  </div>
+  <div class="tweak-row">
+    <div class="tweak-label">Hero layout</div>
+    <div class="tweak-seg" data-tweak="hero">
+      <button data-v="split">Split</button>
+      <button data-v="centered">Centered</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  // ---------- Tweakable defaults ----------
+  const TWEAKS = /*EDITMODE-BEGIN*/{
+    "accent": "slate",
+    "density": "default",
+    "hero": "split"
+  }/*EDITMODE-END*/;
+
+  // ---------- Nav shadow on scroll ----------
+  const nav = document.getElementById('nav');
+  const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 8);
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // ---------- Reveal on scroll ----------
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // ---------- Contact form ----------
+  const form = document.getElementById('contact-form');
+  const bookLink = document.getElementById('book-link');
+  bookLink.addEventListener('click', (ev) => {
+    let ok = true;
+    const name = form.querySelector('#name');
+    const email = form.querySelector('#email');
+    const help = form.querySelector('#help');
+    [name, email, help].forEach(f => f.closest('.field').classList.remove('err'));
+    if (!name.value.trim()) { name.closest('.field').classList.add('err'); ok = false; }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())) { email.closest('.field').classList.add('err'); ok = false; }
+    if (!help.value) { help.closest('.field').classList.add('err'); ok = false; }
+    if (!ok) {
+      ev.preventDefault();
+      return;
+    }
+    // stash context for your records (in prod, POST to Formspree/CRM here)
+    try {
+      const payload = {
+        name: name.value, email: email.value,
+        company: form.querySelector('#company').value,
+        help: help.value, msg: form.querySelector('#msg').value,
+        at: new Date().toISOString()
+      };
+      console.log('[sola] booking intent', payload);
+    } catch(e) {}
+  });
+
+  // ---------- Tweaks ----------
+  const body = document.body;
+  function applyTweaks(t) {
+    body.setAttribute('data-accent', t.accent);
+    body.setAttribute('data-density', t.density);
+    // Hero layout
+    const heroGrid = document.querySelector('.hero-grid');
+    if (t.hero === 'centered') {
+      heroGrid.style.gridTemplateColumns = '1fr';
+      heroGrid.style.textAlign = 'center';
+      heroGrid.querySelector(':scope > div:last-child').style.display = 'none';
+    } else {
+      heroGrid.style.gridTemplateColumns = '';
+      heroGrid.style.textAlign = '';
+      heroGrid.querySelector(':scope > div:last-child').style.display = '';
+    }
+    // Mark buttons
+    document.querySelectorAll('.tweak-seg').forEach(seg => {
+      const key = seg.dataset.tweak;
+      seg.querySelectorAll('button').forEach(b => {
+        b.classList.toggle('on', b.dataset.v === t[key]);
+      });
+    });
+  }
+  applyTweaks(TWEAKS);
+
+  document.querySelectorAll('.tweak-seg').forEach(seg => {
+    seg.addEventListener('click', (ev) => {
+      const btn = ev.target.closest('button'); if (!btn) return;
+      const key = seg.dataset.tweak;
+      TWEAKS[key] = btn.dataset.v;
+      applyTweaks(TWEAKS);
+      window.parent.postMessage({ type: '__edit_mode_set_keys', edits: { [key]: btn.dataset.v } }, '*');
+    });
+  });
+
+  // ---------- Edit mode protocol ----------
+  const panel = document.getElementById('tweaks');
+  window.addEventListener('message', (ev) => {
+    const d = ev.data;
+    if (!d || !d.type) return;
+    if (d.type === '__activate_edit_mode') panel.classList.add('open');
+    if (d.type === '__deactivate_edit_mode') panel.classList.remove('open');
+  });
+  window.parent.postMessage({ type: '__edit_mode_available' }, '*');
+</script>
+</body>
+</html>
