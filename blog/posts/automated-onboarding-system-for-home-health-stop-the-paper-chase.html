@@ -1,0 +1,415 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Automated Onboarding System for Home Health: Stop the Paper Chase — Sola AI Consulting</title>
+<meta name="description" content="An automated onboarding system for home health saves hours and reduces errors. Learn how to build one that actually works for your agency." />
+<meta property="og:title" content="Automated Onboarding System for Home Health: Stop the Paper Chase" />
+<meta property="og:description" content="An automated onboarding system for home health saves hours and reduces errors. Learn how to build one that actually works for your agency." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://solasupport.com/blog/posts/automated-onboarding-system-for-home-health-stop-the-paper-chase.html" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="canonical" href="https://solasupport.com/blog/posts/automated-onboarding-system-for-home-health-stop-the-paper-chase.html" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap">
+<style>
+  :root {
+    --accent: #4A5A7A;
+    --accent-ink: #2E3A52;
+    --accent-wash: #EEF0F5;
+    --paper: #FAF8F4;
+    --paper-2: #F3EFE7;
+    --line: #E4DFD5;
+    --line-2: #D4CEC0;
+    --muted: #8C8576;
+    --ink-3: #6B6557;
+    --ink-2: #3A362E;
+    --ink: #1C1A16;
+    --radius: 14px;
+    --container: 1200px;
+    --serif: "Instrument Serif", "Cormorant Garamond", Georgia, serif;
+    --sans: "Geist", ui-sans-serif, system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+    --mono: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--sans);
+    color: var(--ink);
+    background: var(--paper);
+    -webkit-font-smoothing: antialiased;
+    font-size: 17px;
+    line-height: 1.55;
+    letter-spacing: -0.003em;
+  }
+
+  .container { max-width: var(--container); margin: 0 auto; padding: 0 32px; }
+
+  /* Nav */
+  .nav {
+    position: sticky; top: 0; z-index: 50;
+    backdrop-filter: saturate(160%) blur(14px);
+    -webkit-backdrop-filter: saturate(160%) blur(14px);
+    background: color-mix(in srgb, var(--paper) 72%, transparent);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner {
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 18px 32px;
+    display: flex; align-items: center; gap: 48px;
+  }
+  .brand {
+    display: inline-flex; align-items: center; gap: 10px;
+    text-decoration: none; color: var(--ink); font-weight: 500;
+  }
+  .brand-mark {
+    width: 30px; height: 30px;
+    background-image: url('/sola-logo-mark.png');
+    background-size: contain; background-repeat: no-repeat; background-position: center;
+  }
+  .brand-name {
+    font-size: 14px; font-weight: 600; letter-spacing: 0.02em;
+    text-transform: uppercase; font-family: var(--sans);
+  }
+  .brand-name .sub {
+    display: block; font-size: 9.5px; letter-spacing: 0.22em;
+    color: var(--muted); font-weight: 500; margin-top: 1px;
+  }
+  .nav-links { display: flex; gap: 28px; margin-left: auto; font-size: 14.5px; }
+  .nav-links a { color: var(--ink-2); text-decoration: none; transition: color .2s; }
+  .nav-links a:hover, .nav-links a.active { color: var(--accent); }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 11px 18px; border-radius: 999px; font-size: 14.5px;
+    font-weight: 500; border: 1px solid transparent; text-decoration: none;
+    transition: all .2s ease; white-space: nowrap; cursor: pointer;
+  }
+  .btn-primary { background: var(--ink); color: var(--paper); }
+  .btn-primary:hover { background: var(--accent-ink); transform: translateY(-1px); }
+  .btn-arrow { transition: transform .2s; }
+  .btn:hover .btn-arrow { transform: translateX(3px); }
+
+  /* Article */
+  .article-header {
+    padding: 72px 0 56px;
+    border-bottom: 1px solid var(--line);
+    max-width: 760px;
+    margin: 0 auto;
+  }
+  .article-eyebrow {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    display: flex; align-items: center; gap: 16px;
+    margin-bottom: 24px;
+  }
+  .article-eyebrow a { color: var(--accent); text-decoration: none; }
+  .article-eyebrow a:hover { text-decoration: underline; }
+  .article-eyebrow span { color: var(--line-2); }
+  .article-title {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(36px, 5vw, 64px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin: 0 0 24px;
+  }
+  .article-title em { font-style: italic; color: var(--accent); }
+  .article-meta {
+    font-family: var(--mono);
+    font-size: 11.5px;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+    display: flex; gap: 20px;
+  }
+
+  .article-body {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 56px 0;
+  }
+  .article-body h2 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(28px, 3vw, 40px);
+    line-height: 1.1;
+    letter-spacing: -0.018em;
+    margin: 56px 0 20px;
+    color: var(--ink);
+  }
+  .article-body h2:first-child { margin-top: 0; }
+  .article-body h3 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(22px, 2vw, 28px);
+    letter-spacing: -0.012em;
+    margin: 40px 0 16px;
+    color: var(--ink);
+  }
+  .article-body p {
+    color: var(--ink-2);
+    font-size: 17px;
+    line-height: 1.7;
+    margin: 0 0 24px;
+  }
+  .article-body ul, .article-body ol {
+    color: var(--ink-2);
+    font-size: 17px;
+    line-height: 1.7;
+    margin: 0 0 24px;
+    padding-left: 0;
+    list-style: none;
+  }
+  .article-body ul li, .article-body ol li {
+    padding: 6px 0 6px 24px;
+    position: relative;
+    border-bottom: 1px solid var(--line);
+  }
+  .article-body ul li:last-child, .article-body ol li:last-child { border-bottom: 0; }
+  .article-body ul li::before {
+    content: "→";
+    position: absolute; left: 0;
+    color: var(--accent);
+    font-family: var(--mono);
+  }
+  .article-body ol { counter-reset: ol; }
+  .article-body ol li::before {
+    content: counter(ol);
+    counter-increment: ol;
+    position: absolute; left: 0;
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--muted);
+    font-weight: 500;
+    top: 8px;
+  }
+  .article-body blockquote {
+    border-left: 3px solid var(--accent);
+    margin: 32px 0;
+    padding: 16px 24px;
+    background: var(--paper-2);
+    border-radius: 0 8px 8px 0;
+    font-family: var(--serif);
+    font-size: 22px;
+    line-height: 1.4;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+  }
+  .article-body strong { color: var(--ink); font-weight: 600; }
+  .article-body a { color: var(--accent-ink); text-decoration: underline; text-underline-offset: 3px; }
+  .article-body a:hover { color: var(--accent); }
+  .callout {
+    background: var(--accent-wash);
+    border: 1px solid color-mix(in srgb, var(--accent) 20%, transparent);
+    border-radius: var(--radius);
+    padding: 24px 28px;
+    margin: 32px 0;
+  }
+  .callout .callout-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent-ink);
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+  .callout p { color: var(--ink-2); margin: 0; font-size: 16px; }
+
+  /* CTA */
+  .article-cta {
+    background: var(--ink);
+    border-radius: 20px;
+    padding: 56px 64px;
+    margin: 64px auto;
+    max-width: 760px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+  }
+  .article-cta h3 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(24px, 2.5vw, 36px);
+    letter-spacing: -0.015em;
+    color: var(--paper);
+    margin: 0 0 8px;
+  }
+  .article-cta p { color: color-mix(in srgb, var(--paper) 65%, transparent); margin: 0; font-size: 15px; }
+  .article-cta .btn-primary { background: var(--paper); color: var(--ink); flex-shrink: 0; }
+  .article-cta .btn-primary:hover { background: #fff; }
+
+  /* Back link */
+  .back-link {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: var(--mono); font-size: 12px;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    color: var(--muted); text-decoration: none;
+    margin: 40px 0 0;
+    transition: color .2s;
+  }
+  .back-link:hover { color: var(--accent); }
+
+  /* Footer */
+  footer {
+    padding: 64px 0 40px;
+    border-top: 1px solid var(--line);
+    background: var(--paper);
+  }
+  .foot-bar {
+    display: flex; justify-content: space-between;
+    font-family: var(--mono); font-size: 11.5px;
+    color: var(--muted); letter-spacing: 0.04em;
+  }
+
+  @media (max-width: 960px) {
+    .nav-links { display: none; }
+    .article-header, .article-body { padding-left: 0; padding-right: 0; }
+    .article-cta { flex-direction: column; padding: 40px 32px; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="brand" aria-label="Sola AI Consulting">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-name">Sola AI<span class="sub">Consulting</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="/#services">Services</a>
+      <a href="/#how">How it works</a>
+      <a href="/#case">Case study</a>
+      <a href="/blog/" class="active">Blog</a>
+      <a href="/#contact">Contact</a>
+    </div>
+    <a href="/#contact" class="btn btn-primary">Book a call <span class="btn-arrow">→</span></a>
+  </div>
+</nav>
+
+<div class="container">
+  <a href="/blog/" class="back-link">← All posts</a>
+</div>
+
+<div class="container">
+  <header class="article-header">
+    <div class="article-eyebrow">
+      <a href="/blog/">Blog</a>
+      <span>·</span>
+      <span>Guide</span>
+      <span>·</span>
+      <span>5 min read</span>
+    </div>
+    <h1 class="article-title">Automated Onboarding System for Home Health: Stop the Paper Chase</h1>
+    <div class="article-meta">
+      <span>APR 21, 2026</span>
+      <span>·</span>
+      <span>Sola AI Consulting</span>
+    </div>
+  </header>
+
+  <article class="article-body">
+    <h2>Why Onboarding Breaks Down in Home Health Agencies</h2>
+
+<p>Most home health agencies are running onboarding on a combination of email threads, printed packets, and someone's memory. A new caregiver gets hired on a Thursday. By Monday, half their paperwork is missing, their background check is stuck in someone's inbox, and the scheduler is already asking when they can take a case.</p>
+
+<p>That gap between hire date and first shift costs you real money. It also costs you caregivers. In a field where turnover runs above 60%, a chaotic first week sends a clear message: <em>we are not organized.</em> People leave before they even start.</p>
+
+<p>The good news is that most of what breaks during onboarding is fixable with automation. Not artificial intelligence. Not expensive enterprise software. Simple, connected workflows that handle the repetitive steps so your team can focus on the human ones.</p>
+
+<blockquote>
+  <p>"The first week is the job interview in reverse — the caregiver is deciding whether your agency is worth their time. A disorganized onboarding tells them everything they need to know."</p>
+</blockquote>
+
+<h2>What an Automated Onboarding System for Home Health Actually Looks Like</h2>
+
+<p>When we build an automated onboarding system for home health clients, we start by mapping every single step that happens between a verbal job offer and a caregiver's first billable shift. Most agencies have never done this. When they do, they find 20 to 35 distinct steps — and most of them are being tracked by nobody.</p>
+
+<h3>The Intake Layer</h3>
+
+<p>Automation starts the moment a candidate says yes. A triggered workflow sends them a digital intake form that collects everything at once: contact details, emergency contacts, direct deposit information, certifications, and authorization to run a background check. No back-and-forth. No PDFs that get emailed, printed, signed, and scanned.</p>
+
+<p>That form feeds directly into your system of record — whether that's a SharePoint list, a database, or your HR platform. The data lands in one place, tagged and searchable, before anyone on your team has touched it.</p>
+
+<h3>The Document Collection Layer</h3>
+
+<p>Compliance documentation is where onboarding goes to die. CPR cards, TB tests, driver's licenses, nursing licenses, I-9 verification — each one has an expiration date, a specific format requirement, and a consequence if it's missing during a state audit.</p>
+
+<p>An automated system sends each new hire a checklist with individual upload links for every required document. As files come in, they're automatically named, sorted, and logged. Your compliance coordinator gets a dashboard view instead of an email chain. When something is still missing 48 hours before a scheduled start date, the system sends a reminder — not a human.</p>
+
+<div class="callout">
+  <div class="callout-label">Key takeaway</div>
+  <p>Build your document checklist around your state's specific licensure requirements, not a generic template. A system that flags missing TB test documentation in Maryland needs to behave differently than one built for Texas. Specificity is what makes automation trustworthy.</p>
+</div>
+
+<h3>The Training and Orientation Layer</h3>
+
+<p>Orientation doesn't need to be a full-day in-person event. For many tasks — watching policy videos, completing HIPAA acknowledgment, reviewing the employee handbook — asynchronous delivery works better. The caregiver completes it on their own time. The system records completion and timestamps it.</p>
+
+<p>Live orientation becomes a shorter, higher-value touchpoint: meeting the scheduler, understanding the culture, asking real questions. You get more from that time when the administrative tasks are already done.</p>
+
+<h2>The Role of SharePoint and Power Automate in Building This System</h2>
+
+<p>For most small to mid-size home health agencies, you don't need to buy new software. You need to use what you already pay for. Microsoft 365 — specifically SharePoint and Power Automate — can run a fully functional automated onboarding system for home health without a single additional license.</p>
+
+<p>Here's how the stack typically works in practice:</p>
+
+<ul>
+  <li><strong>SharePoint</strong> serves as the employee record hub — one site per hire, with folders auto-created when a new intake form is submitted.</li>
+  <li><strong>Power Automate</strong> handles the triggered workflows: sending forms, moving documents, updating status fields, and firing reminders.</li>
+  <li><strong>Microsoft Forms or a connected form tool</strong> handles the candidate-facing intake and document submission experience.</li>
+  <li><strong>Power BI or a SharePoint dashboard</strong> gives HR and operations a real-time view of every hire's onboarding status.</li>
+</ul>
+
+<p>We've built this exact system for home health clients in under three weeks. The first time they run a new hire through it, they usually say some version of the same thing: <em>"I didn't realize how much we were doing manually."</em></p>
+
+<h2>What Changes When Onboarding Is Automated</h2>
+
+<p>The operational benefits are obvious — faster time-to-first-shift, fewer compliance gaps, less coordinator burnout. But the downstream effects matter just as much.</p>
+
+<h3>Faster Revenue Recognition</h3>
+
+<p>Every day a caregiver sits in onboarding limbo is a day they're not generating revenue. Agencies that build a tight, automated onboarding system for home health typically cut their time-to-productivity by 30 to 50 percent. For an agency hiring 10 caregivers a month, that's a meaningful number.</p>
+
+<h3>Audit Readiness, Always</h3>
+
+<p>State audits in home health are not optional and they are not forgiving. When your onboarding system automatically logs every document submission, every training completion, and every acknowledgment with a timestamp, you are audit-ready on any given day. Not scrambling the week before a survey. Ready.</p>
+
+<h3>A Better First Impression</h3>
+
+<p>Caregivers who move through a smooth, professional onboarding experience start their jobs with higher confidence in the organization. That confidence is correlated with retention. It's harder to quantify than revenue, but agencies that prioritize the onboarding experience see it show up in their 90-day retention numbers.</p>
+
+<p>At <a href="https://solasupport.com">Sola AI Consulting</a>, we've worked with home health agencies that were losing new hires before they ever took a case — not because the job was bad, but because the process felt broken. Fixing onboarding changed that.</p>
+
+<p>If your agency is ready to stop managing onboarding through email and gut feel, the next step is a simple audit of your current process — what's manual, what's duplicated, and where things fall through the cracks. That audit usually reveals more than people expect, and it's the foundation for building something that actually holds together.</p>
+  </article>
+</div>
+
+<div class="article-cta">
+  <div>
+    <h3>Ready to put this into practice?</h3>
+    <p>We build portals, intranets, and automations for small teams — usually in 4–8 weeks.</p>
+  </div>
+  <a href="https://solasupport.com/#contact" class="btn btn-primary">Book a discovery call <span class="btn-arrow">→</span></a>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="foot-bar">
+      <span>© 2026 SOLA AI CONSULTING, LLC · BALTIMORE, MD</span>
+      <a href="/" style="color: var(--muted); text-decoration: none; letter-spacing: 0.04em; font-size: 11.5px;">← Back to solasupport.com</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
