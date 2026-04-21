@@ -1,0 +1,60 @@
+name: Weekly Blog Post
+
+on:
+  schedule:
+    - cron: "0 8 * * 1"   # Every Monday 08:00 UTC (4:00 AM Eastern)
+  workflow_dispatch:        # Manual trigger button in GitHub UI
+
+permissions:
+  contents: write
+
+jobs:
+  generate-post:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+          cache-dependency-path: scripts/package.json
+
+      - name: Install dependencies
+        run: npm install
+        working-directory: scripts
+
+      - name: Pick keyword for this week
+        id: keyword
+        run: |
+          KEYWORDS=(
+            "SharePoint intranet for home health agency"
+            "internal portal for small business"
+            "employee portal for healthcare admin"
+            "Power Automate workflows for small business"
+            "AI automation for home health agency"
+            "Microsoft 365 intranet setup guide"
+            "how to build a staff portal without IT department"
+            "automated onboarding system for home health"
+            "SharePoint vs custom portal for small business"
+            "internal hub for growing business"
+          )
+          WEEK=$(( $(date +%s) / 604800 ))
+          INDEX=$(( WEEK % ${#KEYWORDS[@]} ))
+          KEYWORD="${KEYWORDS[$INDEX]}"
+          echo "keyword=$KEYWORD" >> $GITHUB_OUTPUT
+          echo "index=$INDEX" >> $GITHUB_OUTPUT
+          echo "✅ Week $WEEK → keyword $INDEX: $KEYWORD"
+
+      - name: Generate and publish post
+        run: node generate-post.js "${{ steps.keyword.outputs.keyword }}"
+        working-directory: scripts
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
+          GITHUB_OWNER: VictorAsooye
+          GITHUB_REPO: sola-website
+          GITHUB_BRANCH: main
