@@ -1,19 +1,17 @@
 /**
  * post-to-linkedin.js
  *
- * Formats a LinkedIn post from a published blog article and sends it
- * to an n8n webhook, which handles the actual LinkedIn API call.
+ * Sends a formatted LinkedIn post to Buffer, which publishes it to
+ * the Sola Support LinkedIn company page.
  *
- * Used as a module by generate-post.js — not meant to be run directly.
- *
- * Required env var:
- *   N8N_WEBHOOK_URL — the webhook URL from your n8n LinkedIn workflow
+ * Required env vars:
+ *   BUFFER_ACCESS_TOKEN  — from buffer.com/developers/apps
+ *   BUFFER_PROFILE_ID    — LinkedIn profile ID from Buffer API
  */
 
 const HASHTAGS = "#SmallBusiness #BusinessSystems #InternalPortal #AIAutomation #SolaSupport";
 
 function formatLinkedInPost({ title, excerpt, url }) {
-  // Build a hook line from the title — strip filler words, make it punchy
   const hook = titleToHook(title);
 
   return `${hook}
@@ -53,44 +51,45 @@ function titleToHook(title) {
   if (lower.includes("hire") || lower.includes("staff") || lower.includes("scale")) {
     return "You don't need more people. You need better systems.";
   }
-  if (lower.includes("consultant") || lower.includes("IT")) {
+  if (lower.includes("consultant") || lower.includes("it ")) {
     return "Most small businesses don't need an IT department. They need a system.";
   }
 
-  // Fallback
   return "Running a business is hard enough. Your tools shouldn't make it harder.";
 }
 
 export async function postToLinkedIn({ title, excerpt, url }) {
-  const webhookUrl = process.env.N8N_WEBHOOK_URL;
+  const accessToken = process.env.BUFFER_ACCESS_TOKEN;
+  const profileId = process.env.BUFFER_PROFILE_ID;
 
-  if (!webhookUrl) {
-    console.warn("   ⚠️  N8N_WEBHOOK_URL not set — skipping LinkedIn post.");
+  if (!accessToken || !profileId) {
+    console.warn("   ⚠️  BUFFER_ACCESS_TOKEN or BUFFER_PROFILE_ID not set — skipping LinkedIn post.");
     return;
   }
 
-  const linkedinPost = formatLinkedInPost({ title, excerpt, url });
+  const text = formatLinkedInPost({ title, excerpt, url });
 
-  const payload = {
-    title,
-    excerpt,
-    url,
-    linkedinPost,
-    publishedAt: new Date().toISOString(),
-  };
-
-  console.log("   Sending to n8n LinkedIn webhook…");
-
-  const response = await fetch(webhookUrl, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(payload),
+  const body = new URLSearchParams({
+    access_token: accessToken,
+    text,
+    "profile_ids[]": profileId,
+    shorten: "false",
+    now: "true",
   });
 
-  if (!response.ok) {
-    const text = await response.text();
-    throw new Error(`n8n webhook returned ${response.status}: ${text}`);
+  console.log("   Sending to Buffer → LinkedIn…");
+
+  const response = await fetch("https://api.bufferapp.com/1/updates/create.json", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: body.toString(),
+  });
+
+  const result = await response.json();
+
+  if (!response.ok || result.error) {
+    throw new Error(result.error || `Buffer returned ${response.status}`);
   }
 
-  console.log("   ✅ LinkedIn webhook triggered.");
+  console.log("   ✅ LinkedIn post queued in Buffer.");
 }
