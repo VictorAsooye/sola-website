@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Automate Client Management With a Custom App That Actually Fits — Sola AI Consulting</title>
+<meta name="description" content="Learn how to automate client management with a custom app built for your workflow — save hours, reduce errors, and serve clients better." />
+<meta property="og:title" content="Automate Client Management With a Custom App That Actually Fits" />
+<meta property="og:description" content="Learn how to automate client management with a custom app built for your workflow — save hours, reduce errors, and serve clients better." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://solasupport.com/blog/posts/automate-client-management-with-a-custom-app-that-actually-fits.html" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="canonical" href="https://solasupport.com/blog/posts/automate-client-management-with-a-custom-app-that-actually-fits.html" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap">
+<style>
+  :root {
+    --accent: #4A5A7A;
+    --accent-ink: #2E3A52;
+    --accent-wash: #EEF0F5;
+    --paper: #FAF8F4;
+    --paper-2: #F3EFE7;
+    --line: #E4DFD5;
+    --line-2: #D4CEC0;
+    --muted: #8C8576;
+    --ink-3: #6B6557;
+    --ink-2: #3A362E;
+    --ink: #1C1A16;
+    --radius: 14px;
+    --container: 1200px;
+    --serif: "Instrument Serif", "Cormorant Garamond", Georgia, serif;
+    --sans: "Geist", ui-sans-serif, system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+    --mono: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--sans);
+    color: var(--ink);
+    background: var(--paper);
+    -webkit-font-smoothing: antialiased;
+    font-size: 17px;
+    line-height: 1.55;
+    letter-spacing: -0.003em;
+  }
+
+  .container { max-width: var(--container); margin: 0 auto; padding: 0 32px; }
+
+  /* Nav */
+  .nav {
+    position: sticky; top: 0; z-index: 50;
+    backdrop-filter: saturate(160%) blur(14px);
+    -webkit-backdrop-filter: saturate(160%) blur(14px);
+    background: color-mix(in srgb, var(--paper) 72%, transparent);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner {
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 18px 32px;
+    display: flex; align-items: center; gap: 48px;
+  }
+  .brand {
+    display: inline-flex; align-items: center; gap: 10px;
+    text-decoration: none; color: var(--ink); font-weight: 500;
+  }
+  .brand-mark {
+    width: 30px; height: 30px;
+    background-image: url('/sola-logo-mark.png');
+    background-size: contain; background-repeat: no-repeat; background-position: center;
+  }
+  .brand-name {
+    font-size: 14px; font-weight: 600; letter-spacing: 0.02em;
+    text-transform: uppercase; font-family: var(--sans);
+  }
+  .brand-name .sub {
+    display: block; font-size: 9.5px; letter-spacing: 0.22em;
+    color: var(--muted); font-weight: 500; margin-top: 1px;
+  }
+  .nav-links { display: flex; gap: 28px; margin-left: auto; font-size: 14.5px; }
+  .nav-links a { color: var(--ink-2); text-decoration: none; transition: color .2s; }
+  .nav-links a:hover, .nav-links a.active { color: var(--accent); }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 11px 18px; border-radius: 999px; font-size: 14.5px;
+    font-weight: 500; border: 1px solid transparent; text-decoration: none;
+    transition: all .2s ease; white-space: nowrap; cursor: pointer;
+  }
+  .btn-primary { background: var(--ink); color: var(--paper); }
+  .btn-primary:hover { background: var(--accent-ink); transform: translateY(-1px); }
+  .btn-arrow { transition: transform .2s; }
+  .btn:hover .btn-arrow { transform: translateX(3px); }
+
+  /* Article */
+  .article-header {
+    padding: 72px 0 56px;
+    border-bottom: 1px solid var(--line);
+    max-width: 760px;
+    margin: 0 auto;
+  }
+  .article-eyebrow {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    display: flex; align-items: center; gap: 16px;
+    margin-bottom: 24px;
+  }
+  .article-eyebrow a { color: var(--accent); text-decoration: none; }
+  .article-eyebrow a:hover { text-decoration: underline; }
+  .article-eyebrow span { color: var(--line-2); }
+  .article-title {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(36px, 5vw, 64px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin: 0 0 24px;
+  }
+  .article-title em { font-style: italic; color: var(--accent); }
+  .article-meta {
+    font-family: var(--mono);
+    font-size: 11.5px;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+    display: flex; gap: 20px;
+  }
+
+  .article-body {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 56px 0;
+  }
+  .article-body h2 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(28px, 3vw, 40px);
+    line-height: 1.1;
+    letter-spacing: -0.018em;
+    margin: 56px 0 20px;
+    color: var(--ink);
+  }
+  .article-body h2:first-child { margin-top: 0; }
+  .article-body h3 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(22px, 2vw, 28px);
+    letter-spacing: -0.012em;
+    margin: 40px 0 16px;
+    color: var(--ink);
+  }
+  .article-body p {
+    color: var(--ink-2);
+    font-size: 17px;
+    line-height: 1.7;
+    margin: 0 0 24px;
+  }
+  .article-body ul, .article-body ol {
+    color: var(--ink-2);
+    font-size: 17px;
+    line-height: 1.7;
+    margin: 0 0 24px;
+    padding-left: 0;
+    list-style: none;
+  }
+  .article-body ul li, .article-body ol li {
+    padding: 6px 0 6px 24px;
+    position: relative;
+    border-bottom: 1px solid var(--line);
+  }
+  .article-body ul li:last-child, .article-body ol li:last-child { border-bottom: 0; }
+  .article-body ul li::before {
+    content: "→";
+    position: absolute; left: 0;
+    color: var(--accent);
+    font-family: var(--mono);
+  }
+  .article-body ol { counter-reset: ol; }
+  .article-body ol li::before {
+    content: counter(ol);
+    counter-increment: ol;
+    position: absolute; left: 0;
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--muted);
+    font-weight: 500;
+    top: 8px;
+  }
+  .article-body blockquote {
+    border-left: 3px solid var(--accent);
+    margin: 32px 0;
+    padding: 16px 24px;
+    background: var(--paper-2);
+    border-radius: 0 8px 8px 0;
+    font-family: var(--serif);
+    font-size: 22px;
+    line-height: 1.4;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+  }
+  .article-body strong { color: var(--ink); font-weight: 600; }
+  .article-body a { color: var(--accent-ink); text-decoration: underline; text-underline-offset: 3px; }
+  .article-body a:hover { color: var(--accent); }
+  .callout {
+    background: var(--accent-wash);
+    border: 1px solid color-mix(in srgb, var(--accent) 20%, transparent);
+    border-radius: var(--radius);
+    padding: 24px 28px;
+    margin: 32px 0;
+  }
+  .callout .callout-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent-ink);
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+  .callout p { color: var(--ink-2); margin: 0; font-size: 16px; }
+
+  /* CTA */
+  .article-cta {
+    background: var(--ink);
+    border-radius: 20px;
+    padding: 56px 64px;
+    margin: 64px auto;
+    max-width: 760px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+  }
+  .article-cta h3 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(24px, 2.5vw, 36px);
+    letter-spacing: -0.015em;
+    color: var(--paper);
+    margin: 0 0 8px;
+  }
+  .article-cta p { color: color-mix(in srgb, var(--paper) 65%, transparent); margin: 0; font-size: 15px; }
+  .article-cta .btn-primary { background: var(--paper); color: var(--ink); flex-shrink: 0; }
+  .article-cta .btn-primary:hover { background: #fff; }
+
+  /* Back link */
+  .back-link {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: var(--mono); font-size: 12px;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    color: var(--muted); text-decoration: none;
+    margin: 40px 0 0;
+    transition: color .2s;
+  }
+  .back-link:hover { color: var(--accent); }
+
+  /* Footer */
+  footer {
+    padding: 64px 0 40px;
+    border-top: 1px solid var(--line);
+    background: var(--paper);
+  }
+  .foot-bar {
+    display: flex; justify-content: space-between;
+    font-family: var(--mono); font-size: 11.5px;
+    color: var(--muted); letter-spacing: 0.04em;
+  }
+
+  @media (max-width: 960px) {
+    .nav-links { display: none; }
+    .article-header, .article-body { padding-left: 0; padding-right: 0; }
+    .article-cta { flex-direction: column; padding: 40px 32px; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="brand" aria-label="Sola AI Consulting">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-name">Sola AI<span class="sub">Consulting</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="/#services">Services</a>
+      <a href="/#how">How it works</a>
+      <a href="/#case">Case study</a>
+      <a href="/blog/" class="active">Blog</a>
+      <a href="/#contact">Contact</a>
+    </div>
+    <a href="/#contact" class="btn btn-primary">Book a call <span class="btn-arrow">→</span></a>
+  </div>
+</nav>
+
+<div class="container">
+  <a href="/blog/" class="back-link">← All posts</a>
+</div>
+
+<div class="container">
+  <header class="article-header">
+    <div class="article-eyebrow">
+      <a href="/blog/">Blog</a>
+      <span>·</span>
+      <span>Guide</span>
+      <span>·</span>
+      <span>6 min read</span>
+    </div>
+    <h1 class="article-title">Automate Client Management With a Custom App That Actually Fits</h1>
+    <div class="article-meta">
+      <span>MAY 04, 2026</span>
+      <span>·</span>
+      <span>Sola AI Consulting</span>
+    </div>
+  </header>
+
+  <article class="article-body">
+    <h2>The Problem With Managing Clients in Spreadsheets and Sticky Notes</h2>
+
+<p>Most small businesses reach a breaking point around the same time. You've got 30, 40, maybe 60 active clients. You're tracking follow-ups in a spreadsheet someone built three years ago. Intake forms live in email threads. Your team asks the same questions twice because nobody can find the first answer. And somewhere in all of that, a client slips through.</p>
+
+<p>This isn't a discipline problem. It's a systems problem. And the fix isn't another project management tool that your team will abandon in six weeks — it's a custom app built around the way your business actually operates.</p>
+
+<p>When we work with home health agencies and small service businesses at <a href="https://solasupport.com">Sola AI Consulting</a>, this is usually the first thing we address. Not because it's the flashiest solution, but because everything else — billing, scheduling, compliance — gets harder when your client data is scattered.</p>
+
+<h3>What "Custom" Actually Means Here</h3>
+
+<p>A custom app doesn't mean hiring a software firm and spending $200,000 on something that takes two years to build. For most small businesses, it means a purpose-built internal tool — often on top of platforms like Microsoft Power Apps, SharePoint, or a lightweight database — that handles your specific workflows and nothing else.</p>
+
+<p>It might be a client intake portal that automatically routes new referrals to the right coordinator. It might be a dashboard that shows every open case with status flags. The point is that it reflects your process, not a generic template.</p>
+
+<h2>What You Can Actually Automate in Client Management</h2>
+
+<p>When people hear "automate client management," they sometimes picture robots doing everything. The reality is more useful and more immediate than that. Automation handles the repetitive, rule-based work so your team can focus on the parts that require human judgment.</p>
+
+<p>Here's where we typically start with clients:</p>
+
+<ul>
+  <li><strong>Intake and onboarding:</strong> A new client submits a form. That submission automatically creates a record, triggers a welcome email, and notifies the assigned coordinator — no manual data entry required.</li>
+  <li><strong>Follow-up reminders:</strong> If a client hasn't been contacted in a set number of days, the system flags it. Nobody falls through the cracks because a reminder existed only in someone's head.</li>
+  <li><strong>Document collection:</strong> The app tracks which required documents have been received and sends automated requests for anything missing. For home health agencies dealing with authorization paperwork, this alone saves hours per week.</li>
+  <li><strong>Status updates:</strong> As a case moves through stages — active, pending, closed — the record updates automatically and the right people get notified.</li>
+  <li><strong>Reporting:</strong> Instead of pulling data manually every Monday morning, a dashboard shows current caseloads, conversion rates, or compliance deadlines in real time.</li>
+</ul>
+
+<blockquote>
+  <p>"The coordinators were spending 45 minutes every morning just figuring out who needed a callback that day. After we built the dashboard, that became a two-minute scan. They didn't believe it would work until they used it for a week."</p>
+</blockquote>
+
+<h3>Automation That Fits Your Compliance Requirements</h3>
+
+<p>For regulated industries — home health, elder care, behavioral health — automation has to be designed with compliance in mind from the start. That means role-based access so only authorized staff see sensitive records, audit trails that log every change, and document retention that follows your state's rules.</p>
+
+<p>This is where generic off-the-shelf CRM tools often fail. They're built for sales teams, not care coordinators. The fields don't match. The workflows don't match. And the compliance features are either missing or buried behind enterprise pricing tiers.</p>
+
+<p>A custom app built on Microsoft's ecosystem — SharePoint, Power Apps, Power Automate — gives you HIPAA-aligned infrastructure without starting from scratch on security.</p>
+
+<h2>How to Build a Client Management App Without Overcomplicating It</h2>
+
+<p>The biggest mistake we see is scope creep at the design stage. Someone says, "Can it also handle invoicing? And scheduling? And training records?" Before long, you're building a platform instead of a tool, and nothing ships for six months.</p>
+
+<p>Start with one painful problem. Fix that. Then expand.</p>
+
+<h3>Step One: Map the Workflow Before Touching Any Technology</h3>
+
+<p>Sit down with the people who actually do the work and walk through the current process step by step. Where does information first come in? Where does it get handed off? Where does it get lost? Where are people doing the same task twice?</p>
+
+<p>This usually takes one good working session and produces a simple flowchart. That flowchart becomes the blueprint for your app. You're not designing software — you're digitizing a process you already understand.</p>
+
+<h3>Step Two: Choose the Right Platform for Your Scale</h3>
+
+<p>For most small businesses and home health agencies we work with, Microsoft Power Apps is the right answer. It integrates with the Microsoft 365 tools your team already uses, it's included in many existing licenses, and it can connect directly to SharePoint lists or Dataverse for storage.</p>
+
+<p>If you're starting even smaller, a SharePoint-based list with Power Automate flows can handle a surprising amount of client management work without building a formal app at all. We've automated full onboarding workflows for agencies using nothing but SharePoint, Power Automate, and a few well-built forms.</p>
+
+<h3>Step Three: Build the Automation Layer</h3>
+
+<p>Once the data structure is in place, you add the automation. This is where Power Automate earns its keep. Triggers, conditions, and actions can be set up to handle most of the routine tasks your team currently does by hand — without writing a line of code.</p>
+
+<div class="callout"><div class="callout-label">Key takeaway</div><p>Don't automate a broken process. Before you build anything, make sure the underlying workflow makes sense. Automation amplifies whatever's already there — if the process is messy, the app will be messy faster.</p></div>
+
+<h2>What Results Look Like in Practice</h2>
+
+<p>A home health agency we worked with in the mid-Atlantic region was managing roughly 80 active cases through a combination of Excel, email, and phone calls. Intake was handled manually by one coordinator who was the single point of failure for the entire referral process.</p>
+
+<p>We built a Power Apps intake portal connected to SharePoint. New referrals now enter through a form, automatically create a case record, and trigger a notification to the appropriate coordinator based on geography. Document checklists populate automatically based on payer type. A weekly summary email goes to the director every Monday without anyone building it by hand.</p>
+
+<p>The coordinator who used to spend her mornings sorting emails now uses that time on actual casework. The director has visibility she didn't have before. And when a state auditor asked for documentation on a specific case, pulling it took three minutes instead of three hours.</p>
+
+<p>That's what it looks like to automate client management with a custom app — not a dramatic transformation, but a steady, compounding reduction in friction that changes how the whole team operates.</p>
+
+<p>If your business is at the point where client management feels like it's running you instead of the other way around, the right custom app can change that equation faster than you might expect.</p>
+  </article>
+</div>
+
+<div class="article-cta">
+  <div>
+    <h3>Ready to put this into practice?</h3>
+    <p>We build portals, intranets, and automations for small teams — usually in 4–8 weeks.</p>
+  </div>
+  <a href="https://solasupport.com/#contact" class="btn btn-primary">Book a discovery call <span class="btn-arrow">→</span></a>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="foot-bar">
+      <span>© 2026 SOLA AI CONSULTING, LLC · BALTIMORE, MD</span>
+      <a href="/" style="color: var(--muted); text-decoration: none; letter-spacing: 0.04em; font-size: 11.5px;">← Back to solasupport.com</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
