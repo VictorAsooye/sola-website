@@ -1,0 +1,412 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Custom Business Tools Under $1,000: What's Actually Possible — Sola AI Consulting</title>
+<meta name="description" content="Discover what custom business tools under $1,000 can do for your operations. Real builds, real results — no bloated software subscriptions required." />
+<meta property="og:title" content="Custom Business Tools Under $1,000: What's Actually Possible" />
+<meta property="og:description" content="Discover what custom business tools under $1,000 can do for your operations. Real builds, real results — no bloated software subscriptions required." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://solasupport.com/blog/posts/custom-business-tools-under-1-000-what-s-actually-possible.html" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="canonical" href="https://solasupport.com/blog/posts/custom-business-tools-under-1-000-what-s-actually-possible.html" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap">
+<style>
+  :root {
+    --accent: #4A5A7A;
+    --accent-ink: #2E3A52;
+    --accent-wash: #EEF0F5;
+    --paper: #FAF8F4;
+    --paper-2: #F3EFE7;
+    --line: #E4DFD5;
+    --line-2: #D4CEC0;
+    --muted: #8C8576;
+    --ink-3: #6B6557;
+    --ink-2: #3A362E;
+    --ink: #1C1A16;
+    --radius: 14px;
+    --container: 1200px;
+    --serif: "Instrument Serif", "Cormorant Garamond", Georgia, serif;
+    --sans: "Geist", ui-sans-serif, system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+    --mono: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--sans);
+    color: var(--ink);
+    background: var(--paper);
+    -webkit-font-smoothing: antialiased;
+    font-size: 17px;
+    line-height: 1.55;
+    letter-spacing: -0.003em;
+  }
+
+  .container { max-width: var(--container); margin: 0 auto; padding: 0 32px; }
+
+  /* Nav */
+  .nav {
+    position: sticky; top: 0; z-index: 50;
+    backdrop-filter: saturate(160%) blur(14px);
+    -webkit-backdrop-filter: saturate(160%) blur(14px);
+    background: color-mix(in srgb, var(--paper) 72%, transparent);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner {
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 18px 32px;
+    display: flex; align-items: center; gap: 48px;
+  }
+  .brand {
+    display: inline-flex; align-items: center; gap: 10px;
+    text-decoration: none; color: var(--ink); font-weight: 500;
+  }
+  .brand-mark {
+    width: 30px; height: 30px;
+    background-image: url('/sola-logo-mark.png');
+    background-size: contain; background-repeat: no-repeat; background-position: center;
+  }
+  .brand-name {
+    font-size: 14px; font-weight: 600; letter-spacing: 0.02em;
+    text-transform: uppercase; font-family: var(--sans);
+  }
+  .brand-name .sub {
+    display: block; font-size: 9.5px; letter-spacing: 0.22em;
+    color: var(--muted); font-weight: 500; margin-top: 1px;
+  }
+  .nav-links { display: flex; gap: 28px; margin-left: auto; font-size: 14.5px; }
+  .nav-links a { color: var(--ink-2); text-decoration: none; transition: color .2s; }
+  .nav-links a:hover, .nav-links a.active { color: var(--accent); }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 11px 18px; border-radius: 999px; font-size: 14.5px;
+    font-weight: 500; border: 1px solid transparent; text-decoration: none;
+    transition: all .2s ease; white-space: nowrap; cursor: pointer;
+  }
+  .btn-primary { background: var(--ink); color: var(--paper); }
+  .btn-primary:hover { background: var(--accent-ink); transform: translateY(-1px); }
+  .btn-arrow { transition: transform .2s; }
+  .btn:hover .btn-arrow { transform: translateX(3px); }
+
+  /* Article */
+  .article-header {
+    padding: 72px 0 56px;
+    border-bottom: 1px solid var(--line);
+    max-width: 760px;
+    margin: 0 auto;
+  }
+  .article-eyebrow {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    display: flex; align-items: center; gap: 16px;
+    margin-bottom: 24px;
+  }
+  .article-eyebrow a { color: var(--accent); text-decoration: none; }
+  .article-eyebrow a:hover { text-decoration: underline; }
+  .article-eyebrow span { color: var(--line-2); }
+  .article-title {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(36px, 5vw, 64px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin: 0 0 24px;
+  }
+  .article-title em { font-style: italic; color: var(--accent); }
+  .article-meta {
+    font-family: var(--mono);
+    font-size: 11.5px;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+    display: flex; gap: 20px;
+  }
+
+  .article-body {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 56px 0;
+  }
+  .article-body h2 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(28px, 3vw, 40px);
+    line-height: 1.1;
+    letter-spacing: -0.018em;
+    margin: 56px 0 20px;
+    color: var(--ink);
+  }
+  .article-body h2:first-child { margin-top: 0; }
+  .article-body h3 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(22px, 2vw, 28px);
+    letter-spacing: -0.012em;
+    margin: 40px 0 16px;
+    color: var(--ink);
+  }
+  .article-body p {
+    color: var(--ink-2);
+    font-size: 17px;
+    line-height: 1.7;
+    margin: 0 0 24px;
+  }
+  .article-body ul, .article-body ol {
+    color: var(--ink-2);
+    font-size: 17px;
+    line-height: 1.7;
+    margin: 0 0 24px;
+    padding-left: 0;
+    list-style: none;
+  }
+  .article-body ul li, .article-body ol li {
+    padding: 6px 0 6px 24px;
+    position: relative;
+    border-bottom: 1px solid var(--line);
+  }
+  .article-body ul li:last-child, .article-body ol li:last-child { border-bottom: 0; }
+  .article-body ul li::before {
+    content: "→";
+    position: absolute; left: 0;
+    color: var(--accent);
+    font-family: var(--mono);
+  }
+  .article-body ol { counter-reset: ol; }
+  .article-body ol li::before {
+    content: counter(ol);
+    counter-increment: ol;
+    position: absolute; left: 0;
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--muted);
+    font-weight: 500;
+    top: 8px;
+  }
+  .article-body blockquote {
+    border-left: 3px solid var(--accent);
+    margin: 32px 0;
+    padding: 16px 24px;
+    background: var(--paper-2);
+    border-radius: 0 8px 8px 0;
+    font-family: var(--serif);
+    font-size: 22px;
+    line-height: 1.4;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+  }
+  .article-body strong { color: var(--ink); font-weight: 600; }
+  .article-body a { color: var(--accent-ink); text-decoration: underline; text-underline-offset: 3px; }
+  .article-body a:hover { color: var(--accent); }
+  .callout {
+    background: var(--accent-wash);
+    border: 1px solid color-mix(in srgb, var(--accent) 20%, transparent);
+    border-radius: var(--radius);
+    padding: 24px 28px;
+    margin: 32px 0;
+  }
+  .callout .callout-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent-ink);
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+  .callout p { color: var(--ink-2); margin: 0; font-size: 16px; }
+
+  /* CTA */
+  .article-cta {
+    background: var(--ink);
+    border-radius: 20px;
+    padding: 56px 64px;
+    margin: 64px auto;
+    max-width: 760px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+  }
+  .article-cta h3 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(24px, 2.5vw, 36px);
+    letter-spacing: -0.015em;
+    color: var(--paper);
+    margin: 0 0 8px;
+  }
+  .article-cta p { color: color-mix(in srgb, var(--paper) 65%, transparent); margin: 0; font-size: 15px; }
+  .article-cta .btn-primary { background: var(--paper); color: var(--ink); flex-shrink: 0; }
+  .article-cta .btn-primary:hover { background: #fff; }
+
+  /* Back link */
+  .back-link {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: var(--mono); font-size: 12px;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    color: var(--muted); text-decoration: none;
+    margin: 40px 0 0;
+    transition: color .2s;
+  }
+  .back-link:hover { color: var(--accent); }
+
+  /* Footer */
+  footer {
+    padding: 64px 0 40px;
+    border-top: 1px solid var(--line);
+    background: var(--paper);
+  }
+  .foot-bar {
+    display: flex; justify-content: space-between;
+    font-family: var(--mono); font-size: 11.5px;
+    color: var(--muted); letter-spacing: 0.04em;
+  }
+
+  @media (max-width: 960px) {
+    .nav-links { display: none; }
+    .article-header, .article-body { padding-left: 0; padding-right: 0; }
+    .article-cta { flex-direction: column; padding: 40px 32px; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="brand" aria-label="Sola AI Consulting">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-name">Sola AI<span class="sub">Consulting</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="/#services">Services</a>
+      <a href="/#how">How it works</a>
+      <a href="/#case">Case study</a>
+      <a href="/blog/" class="active">Blog</a>
+      <a href="/#contact">Contact</a>
+    </div>
+    <a href="/#contact" class="btn btn-primary">Book a call <span class="btn-arrow">→</span></a>
+  </div>
+</nav>
+
+<div class="container">
+  <a href="/blog/" class="back-link">← All posts</a>
+</div>
+
+<div class="container">
+  <header class="article-header">
+    <div class="article-eyebrow">
+      <a href="/blog/">Blog</a>
+      <span>·</span>
+      <span>Guide</span>
+      <span>·</span>
+      <span>5 min read</span>
+    </div>
+    <h1 class="article-title">Custom Business Tools Under $1,000: What's Actually Possible</h1>
+    <div class="article-meta">
+      <span>MAY 06, 2026</span>
+      <span>·</span>
+      <span>Sola AI Consulting</span>
+    </div>
+  </header>
+
+  <article class="article-body">
+    <h2>The $1,000 Myth: Why Small Businesses Assume Custom Tools Are Out of Reach</h2>
+
+<p>Most small business owners have been burned before. They paid for software that didn't fit. They duct-taped together spreadsheets and email threads. They hired someone who quoted $15,000 for a simple intake form. So when someone says "custom business tool," they mentally add a zero that isn't there.</p>
+
+<p>Here's what I've seen building tools for home health agencies, staffing companies, and service businesses in Baltimore and beyond: the gap between a generic platform and something built specifically for your workflow is often smaller than you think — and almost always under $1,000 to close.</p>
+
+<p>That number isn't a marketing floor. It's the actual ceiling on most of the builds we deliver. A staff scheduling portal. A client intake workflow with automated follow-up. A SharePoint intranet that replaces four disconnected tools. These aren't prototypes. They're in production, used every day by real teams.</p>
+
+<blockquote>
+  "The businesses that move fastest aren't the ones with the biggest budgets. They're the ones who stopped waiting for perfect and built something that works for Tuesday morning."
+</blockquote>
+
+<h2>What Custom Business Tools Under $1,000 Actually Look Like</h2>
+
+<p>Let's get specific, because vague promises don't help you make decisions.</p>
+
+<h3>Internal Staff Portals</h3>
+
+<p>A home health agency we worked with was managing caregiver schedules across three coordinators using a shared Google Sheet. It worked — until it didn't. Edits collided. No one knew which version was current. Coordinators were texting each other at 6 AM to sort it out.</p>
+
+<p>We built them a SharePoint-based staff portal with a clean schedule view, a document library for compliance files, and a simple announcement board. Total build time: under two weeks. Total cost: well under $1,000. The platform (Microsoft 365) they already paid for. We just made it work for them.</p>
+
+<h3>Automated Intake and Onboarding Flows</h3>
+
+<p>Another client — a small staffing firm — was manually emailing new hire paperwork, chasing signatures, and re-entering data into three different places. Every new hire cost someone about two hours of admin time.</p>
+
+<p>We connected a Microsoft Form to Power Automate, which triggered a document set, sent signature requests, and updated a SharePoint list automatically. The whole flow cost less than $800 to design and deploy. Now onboarding a new hire takes the coordinator about ten minutes instead of two hours.</p>
+
+<h3>Custom Reporting Dashboards</h3>
+
+<p>Operators often don't lack data. They lack clarity. A single Power BI dashboard connected to your existing data sources — even just Excel files or a SharePoint list — can replace the weekly "let me pull that together" email that nobody enjoys sending.</p>
+
+<p>These builds are often the fastest and most immediately useful. A basic operational dashboard runs $400–$700 depending on the number of data sources and views needed.</p>
+
+<div class="callout"><div class="callout-label">Key takeaway</div><p>If your team is already on Microsoft 365, you are almost certainly underusing tools you already pay for. A focused build — not a new subscription — is usually the right move. Start with one workflow, automate it completely, and measure the time saved before adding more.</p></div>
+
+<h2>How to Know If Your Problem Is Actually a $1,000 Problem</h2>
+
+<p>Not every operational headache needs a custom solution. Some things genuinely belong in a spreadsheet. So here's a quick way to think about it.</p>
+
+<ul>
+  <li><strong>Repetition:</strong> Is someone doing the same manual task more than five times a week? That's automatable.</li>
+  <li><strong>Handoffs:</strong> Are things falling through the cracks between people or departments? That's a portal or workflow problem.</li>
+  <li><strong>Visibility:</strong> Does leadership lack a clear view of what's happening without asking someone to pull a report? That's a dashboard problem.</li>
+  <li><strong>Compliance:</strong> Are important documents scattered across email and personal drives? That's a document management problem.</li>
+</ul>
+
+<p>If your answer to any of those is yes, the fix is almost certainly scoped under $1,000 — especially if you're already on a platform like Microsoft 365 or Google Workspace. The infrastructure is there. You're paying for the build, not the foundation.</p>
+
+<h3>When the Budget Needs to Be Higher</h3>
+
+<p>To be fair: some problems are bigger. If you need a multi-role permission system, external client-facing portals with login authentication, or deep integration with a third-party CRM, expect to go higher. Those builds are still cost-effective compared to enterprise software — but they're not $800 projects. We'll tell you that upfront, because scoping honestly saves everyone time.</p>
+
+<h2>What the Build Process Actually Feels Like</h2>
+
+<p>One thing that surprises clients is how fast the scoping conversation goes. We're not asking you to write a requirements document. We're asking: what's the thing that frustrates you most on a Tuesday afternoon?</p>
+
+<p>From that conversation, we can usually sketch a solution in the first call. We identify what platform makes sense, what you already have available, and what the simplest version of the tool looks like. We build that first. We don't overengineer.</p>
+
+<p>Most custom business tools under $1,000 go from scoping call to live deployment in one to three weeks. That's not because we rush — it's because focused builds stay focused. We're not building everything. We're building the one thing that unlocks the most time or reduces the most friction.</p>
+
+<p>At <a href="https://solasupport.com">Sola AI Consulting</a>, we've made a point of staying in this range deliberately. We've seen what happens when small businesses over-invest in tools before they've validated the workflow. A lean build you can adjust is worth more than a comprehensive system you can't change.</p>
+
+<h3>After the Build</h3>
+
+<p>The tools we build don't require us to maintain them indefinitely. We train your team, document what we built, and hand it over. If you want ongoing support, that's available. But the goal is always to leave you more capable, not more dependent.</p>
+
+<p>That's also why we favor platforms your team already touches — SharePoint, Teams, Power Automate, Microsoft Forms. The learning curve is low because the environment is familiar. We're adding function, not teaching a new system from scratch.</p>
+
+<p>If you've been waiting to fix an operational problem because you assumed the cost was out of reach, it's worth having a direct conversation about what's actually involved.</p>
+  </article>
+</div>
+
+<div class="article-cta">
+  <div>
+    <h3>Ready to put this into practice?</h3>
+    <p>We build portals, intranets, and automations for small teams — usually in 4–8 weeks.</p>
+  </div>
+  <a href="https://solasupport.com/#contact" class="btn btn-primary">Book a discovery call <span class="btn-arrow">→</span></a>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="foot-bar">
+      <span>© 2026 SOLA AI CONSULTING, LLC · BALTIMORE, MD</span>
+      <a href="/" style="color: var(--muted); text-decoration: none; letter-spacing: 0.04em; font-size: 11.5px;">← Back to solasupport.com</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
