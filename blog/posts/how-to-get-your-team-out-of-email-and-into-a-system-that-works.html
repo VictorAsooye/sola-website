@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>How to Get Your Team Out of Email and Into a System That Works — Sola AI Consulting</title>
+<meta name="description" content="Learn how to get your team out of email and into a real system. Practical steps for small businesses and home health agencies ready to work smarter." />
+<meta property="og:title" content="How to Get Your Team Out of Email and Into a System That Works" />
+<meta property="og:description" content="Learn how to get your team out of email and into a real system. Practical steps for small businesses and home health agencies ready to work smarter." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://solasupport.com/blog/posts/how-to-get-your-team-out-of-email-and-into-a-system-that-works.html" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="canonical" href="https://solasupport.com/blog/posts/how-to-get-your-team-out-of-email-and-into-a-system-that-works.html" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap">
+<style>
+  :root {
+    --accent: #4A5A7A;
+    --accent-ink: #2E3A52;
+    --accent-wash: #EEF0F5;
+    --paper: #FAF8F4;
+    --paper-2: #F3EFE7;
+    --line: #E4DFD5;
+    --line-2: #D4CEC0;
+    --muted: #8C8576;
+    --ink-3: #6B6557;
+    --ink-2: #3A362E;
+    --ink: #1C1A16;
+    --radius: 14px;
+    --container: 1200px;
+    --serif: "Instrument Serif", "Cormorant Garamond", Georgia, serif;
+    --sans: "Geist", ui-sans-serif, system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+    --mono: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--sans);
+    color: var(--ink);
+    background: var(--paper);
+    -webkit-font-smoothing: antialiased;
+    font-size: 17px;
+    line-height: 1.55;
+    letter-spacing: -0.003em;
+  }
+
+  .container { max-width: var(--container); margin: 0 auto; padding: 0 32px; }
+
+  /* Nav */
+  .nav {
+    position: sticky; top: 0; z-index: 50;
+    backdrop-filter: saturate(160%) blur(14px);
+    -webkit-backdrop-filter: saturate(160%) blur(14px);
+    background: color-mix(in srgb, var(--paper) 72%, transparent);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner {
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 18px 32px;
+    display: flex; align-items: center; gap: 48px;
+  }
+  .brand {
+    display: inline-flex; align-items: center; gap: 10px;
+    text-decoration: none; color: var(--ink); font-weight: 500;
+  }
+  .brand-mark {
+    width: 30px; height: 30px;
+    background-image: url('/sola-logo-mark.png');
+    background-size: contain; background-repeat: no-repeat; background-position: center;
+  }
+  .brand-name {
+    font-size: 14px; font-weight: 600; letter-spacing: 0.02em;
+    text-transform: uppercase; font-family: var(--sans);
+  }
+  .brand-name .sub {
+    display: block; font-size: 9.5px; letter-spacing: 0.22em;
+    color: var(--muted); font-weight: 500; margin-top: 1px;
+  }
+  .nav-links { display: flex; gap: 28px; margin-left: auto; font-size: 14.5px; }
+  .nav-links a { color: var(--ink-2); text-decoration: none; transition: color .2s; }
+  .nav-links a:hover, .nav-links a.active { color: var(--accent); }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 11px 18px; border-radius: 999px; font-size: 14.5px;
+    font-weight: 500; border: 1px solid transparent; text-decoration: none;
+    transition: all .2s ease; white-space: nowrap; cursor: pointer;
+  }
+  .btn-primary { background: var(--ink); color: var(--paper); }
+  .btn-primary:hover { background: var(--accent-ink); transform: translateY(-1px); }
+  .btn-arrow { transition: transform .2s; }
+  .btn:hover .btn-arrow { transform: translateX(3px); }
+
+  /* Article */
+  .article-header {
+    padding: 72px 0 56px;
+    border-bottom: 1px solid var(--line);
+    max-width: 760px;
+    margin: 0 auto;
+  }
+  .article-eyebrow {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    display: flex; align-items: center; gap: 16px;
+    margin-bottom: 24px;
+  }
+  .article-eyebrow a { color: var(--accent); text-decoration: none; }
+  .article-eyebrow a:hover { text-decoration: underline; }
+  .article-eyebrow span { color: var(--line-2); }
+  .article-title {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(36px, 5vw, 64px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin: 0 0 24px;
+  }
+  .article-title em { font-style: italic; color: var(--accent); }
+  .article-meta {
+    font-family: var(--mono);
+    font-size: 11.5px;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+    display: flex; gap: 20px;
+  }
+
+  .article-body {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 56px 0;
+  }
+  .article-body h2 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(28px, 3vw, 40px);
+    line-height: 1.1;
+    letter-spacing: -0.018em;
+    margin: 56px 0 20px;
+    color: var(--ink);
+  }
+  .article-body h2:first-child { margin-top: 0; }
+  .article-body h3 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(22px, 2vw, 28px);
+    letter-spacing: -0.012em;
+    margin: 40px 0 16px;
+    color: var(--ink);
+  }
+  .article-body p {
+    color: var(--ink-2);
+    font-size: 17px;
+    line-height: 1.7;
+    margin: 0 0 24px;
+  }
+  .article-body ul, .article-body ol {
+    color: var(--ink-2);
+    font-size: 17px;
+    line-height: 1.7;
+    margin: 0 0 24px;
+    padding-left: 0;
+    list-style: none;
+  }
+  .article-body ul li, .article-body ol li {
+    padding: 6px 0 6px 24px;
+    position: relative;
+    border-bottom: 1px solid var(--line);
+  }
+  .article-body ul li:last-child, .article-body ol li:last-child { border-bottom: 0; }
+  .article-body ul li::before {
+    content: "→";
+    position: absolute; left: 0;
+    color: var(--accent);
+    font-family: var(--mono);
+  }
+  .article-body ol { counter-reset: ol; }
+  .article-body ol li::before {
+    content: counter(ol);
+    counter-increment: ol;
+    position: absolute; left: 0;
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--muted);
+    font-weight: 500;
+    top: 8px;
+  }
+  .article-body blockquote {
+    border-left: 3px solid var(--accent);
+    margin: 32px 0;
+    padding: 16px 24px;
+    background: var(--paper-2);
+    border-radius: 0 8px 8px 0;
+    font-family: var(--serif);
+    font-size: 22px;
+    line-height: 1.4;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+  }
+  .article-body strong { color: var(--ink); font-weight: 600; }
+  .article-body a { color: var(--accent-ink); text-decoration: underline; text-underline-offset: 3px; }
+  .article-body a:hover { color: var(--accent); }
+  .callout {
+    background: var(--accent-wash);
+    border: 1px solid color-mix(in srgb, var(--accent) 20%, transparent);
+    border-radius: var(--radius);
+    padding: 24px 28px;
+    margin: 32px 0;
+  }
+  .callout .callout-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent-ink);
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+  .callout p { color: var(--ink-2); margin: 0; font-size: 16px; }
+
+  /* CTA */
+  .article-cta {
+    background: var(--ink);
+    border-radius: 20px;
+    padding: 56px 64px;
+    margin: 64px auto;
+    max-width: 760px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+  }
+  .article-cta h3 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(24px, 2.5vw, 36px);
+    letter-spacing: -0.015em;
+    color: var(--paper);
+    margin: 0 0 8px;
+  }
+  .article-cta p { color: color-mix(in srgb, var(--paper) 65%, transparent); margin: 0; font-size: 15px; }
+  .article-cta .btn-primary { background: var(--paper); color: var(--ink); flex-shrink: 0; }
+  .article-cta .btn-primary:hover { background: #fff; }
+
+  /* Back link */
+  .back-link {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: var(--mono); font-size: 12px;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    color: var(--muted); text-decoration: none;
+    margin: 40px 0 0;
+    transition: color .2s;
+  }
+  .back-link:hover { color: var(--accent); }
+
+  /* Footer */
+  footer {
+    padding: 64px 0 40px;
+    border-top: 1px solid var(--line);
+    background: var(--paper);
+  }
+  .foot-bar {
+    display: flex; justify-content: space-between;
+    font-family: var(--mono); font-size: 11.5px;
+    color: var(--muted); letter-spacing: 0.04em;
+  }
+
+  @media (max-width: 960px) {
+    .nav-links { display: none; }
+    .article-header, .article-body { padding-left: 0; padding-right: 0; }
+    .article-cta { flex-direction: column; padding: 40px 32px; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="brand" aria-label="Sola AI Consulting">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-name">Sola AI<span class="sub">Consulting</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="/#services">Services</a>
+      <a href="/#how">How it works</a>
+      <a href="/#case">Case study</a>
+      <a href="/blog/" class="active">Blog</a>
+      <a href="/#contact">Contact</a>
+    </div>
+    <a href="/#contact" class="btn btn-primary">Book a call <span class="btn-arrow">→</span></a>
+  </div>
+</nav>
+
+<div class="container">
+  <a href="/blog/" class="back-link">← All posts</a>
+</div>
+
+<div class="container">
+  <header class="article-header">
+    <div class="article-eyebrow">
+      <a href="/blog/">Blog</a>
+      <span>·</span>
+      <span>Guide</span>
+      <span>·</span>
+      <span>5 min read</span>
+    </div>
+    <h1 class="article-title">How to Get Your Team Out of Email and Into a System That Works</h1>
+    <div class="article-meta">
+      <span>MAY 15, 2026</span>
+      <span>·</span>
+      <span>Sola AI Consulting</span>
+    </div>
+  </header>
+
+  <article class="article-body">
+    <h2>Why Email Is Quietly Killing Your Operation</h2>
+
+<p>Email was never designed to run a business. It was designed to send messages. But somewhere along the way, it became the default home for approvals, task assignments, client updates, policy questions, and everything else. Now your team is drowning in threads, and nothing is actually getting tracked.</p>
+
+<p>If you've ever thought "how do I get my team out of email and into a system," you're not behind — you're just honest. Most small businesses and home health agencies we work with hit this wall around the time they reach 10 to 20 employees. The cracks start showing. Things fall through. Good people get frustrated. Owners work weekends trying to hold it together.</p>
+
+<p>The problem isn't your team. The problem is that email creates the illusion of communication without the infrastructure of coordination. There's a difference.</p>
+
+<blockquote>
+  <p>"A replied email feels like a completed task. But a replied email is just a replied email. Nothing moves unless someone does something with it — and that someone is usually you."</p>
+</blockquote>
+
+<h2>What "Getting Into a System" Actually Means</h2>
+
+<p>Before you can move your team, you need to know what you're moving them toward. "A system" is not a software purchase. It's a shared agreement about where work lives, how it moves, and who's responsible at each step.</p>
+
+<h3>Start With the Work That's Currently Living in Inboxes</h3>
+
+<p>The first thing I do with a new client is ask them to forward me five emails from the past week that required action. Every time, the pattern is the same: intake requests, shift approvals, vendor follow-ups, internal questions that someone had to dig for. All of it is trapped in personal inboxes, invisible to everyone else.</p>
+
+<p>The goal isn't to eliminate email entirely. External communication still lives there. But internal coordination — anything your team needs to act on, track, or hand off — belongs in a shared system where everyone can see the status without asking.</p>
+
+<h3>Choose the Right Type of System for Your Business</h3>
+
+<p>There are three types of internal systems worth knowing:</p>
+
+<ul>
+  <li><strong>Intranet portals</strong> — A central hub where your team finds documents, policies, forms, and announcements. SharePoint is the most common platform for this. It replaces the "where do I find the PTO form?" emails.</li>
+  <li><strong>Task and workflow tools</strong> — Platforms like Microsoft Planner, Monday.com, or even a structured SharePoint list. These replace the "can you remind me what I'm supposed to do?" threads.</li>
+  <li><strong>Automated intake systems</strong> — Forms and logic flows that route requests without anyone having to forward an email. Someone submits a request, it goes to the right person automatically, and the status updates without a single back-and-forth.</li>
+</ul>
+
+<p>Most small businesses need a combination of all three. But you don't have to build everything at once.</p>
+
+<div class="callout">
+  <div class="callout-label">Key takeaway</div>
+  <p>Don't start by picking software. Start by mapping two or three high-friction email processes — the ones that cause the most confusion or rework every week. Build your system around those first. Early wins create buy-in. Buy-in drives adoption.</p>
+</div>
+
+<h2>How to Actually Get Your Team to Use It</h2>
+
+<p>This is where most implementations fail. The portal gets built. The tools get set up. Nobody uses them. Three months later, it's back to email.</p>
+
+<p>Adoption isn't a training problem. It's a habit and incentive problem. If using the new system is harder than sending an email — even slightly — people will default back. You have to make the system the path of least resistance.</p>
+
+<h3>Reduce the Steps, Not Just the Emails</h3>
+
+<p>One home health agency we worked with had a 12-step process for submitting a scheduling change request. All 12 steps happened over email. We moved it into a SharePoint form with conditional logic — took about two hours to build. The submission took 90 seconds. Approvals happened in the same system. Within two weeks, nobody was emailing scheduling changes anymore. Not because we told them to stop. Because the form was faster.</p>
+
+<p>That's the real lever. When the system is genuinely easier, adoption takes care of itself.</p>
+
+<h3>Designate a System Owner, Not Just an Admin</h3>
+
+<p>Someone on your team needs to own the system — not just maintain it, but advocate for it. This person answers questions, updates outdated content, and flags when people are going around the system. In small businesses, this is often an operations coordinator or office manager. The role doesn't need to be full-time. It needs to be clearly assigned.</p>
+
+<h3>Set a Hard Date, Then Hold It</h3>
+
+<p>At some point you have to draw a line. Pick a date — two weeks out, four weeks out — and communicate clearly that after that date, requests submitted by email won't be processed. That sounds harsh. It isn't. It's kind to your team, because it removes the ambiguity about which channel to use. The hardest part of transitioning out of email isn't the technology. It's giving people permission to stop checking it for every little thing.</p>
+
+<h2>What to Build First (And What to Ignore for Now)</h2>
+
+<p>If you're trying to move your team out of email and into a real system, here's the sequence that works in practice:</p>
+
+<ol>
+  <li><strong>Document library first.</strong> Put your policies, forms, and SOPs in one place everyone can access. This alone eliminates a significant volume of "can you send me the..." emails.</li>
+  <li><strong>One intake process second.</strong> Pick your highest-volume internal request — shift changes, supply orders, onboarding tasks — and build a form for it. Automate the routing if you can.</li>
+  <li><strong>Team announcements third.</strong> Stop using email for internal announcements. A SharePoint news feed or Teams channel works better. It's searchable. It doesn't get buried.</li>
+</ol>
+
+<p>Skip the project management tools, the dashboards, and the integrations for now. Those come later, after your team has proven they'll use a shared system at all. Complexity kills momentum. Start narrow, prove the value, then expand.</p>
+
+<p>At <a href="https://solasupport.com">Sola AI Consulting</a>, we've helped dozens of small businesses and home health agencies make exactly this transition — not with massive overhauls, but with focused builds that solve the right problems in the right order.</p>
+
+<p>If your team is still running on email threads and you're ready to build something that actually holds the work, we should talk about where to start.</p>
+  </article>
+</div>
+
+<div class="article-cta">
+  <div>
+    <h3>Ready to put this into practice?</h3>
+    <p>We build portals, intranets, and automations for small teams — usually in 4–8 weeks.</p>
+  </div>
+  <a href="https://solasupport.com/#contact" class="btn btn-primary">Book a discovery call <span class="btn-arrow">→</span></a>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="foot-bar">
+      <span>© 2026 SOLA AI CONSULTING, LLC · BALTIMORE, MD</span>
+      <a href="/" style="color: var(--muted); text-decoration: none; letter-spacing: 0.04em; font-size: 11.5px;">← Back to solasupport.com</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
