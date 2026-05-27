@@ -1,0 +1,409 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Custom Intranet Solutions for Small Business: What Actually Works — Sola AI Consulting</title>
+<meta name="description" content="Discover how a custom intranet solution for small business can cut confusion, save hours, and keep your team aligned — without enterprise-level complexity." />
+<meta property="og:title" content="Custom Intranet Solutions for Small Business: What Actually Works" />
+<meta property="og:description" content="Discover how a custom intranet solution for small business can cut confusion, save hours, and keep your team aligned — without enterprise-level complexity." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://solasupport.com/blog/posts/custom-intranet-solutions-for-small-business-what-actually-works.html" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="canonical" href="https://solasupport.com/blog/posts/custom-intranet-solutions-for-small-business-what-actually-works.html" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap">
+<style>
+  :root {
+    --accent: #4A5A7A;
+    --accent-ink: #2E3A52;
+    --accent-wash: #EEF0F5;
+    --paper: #FAF8F4;
+    --paper-2: #F3EFE7;
+    --line: #E4DFD5;
+    --line-2: #D4CEC0;
+    --muted: #8C8576;
+    --ink-3: #6B6557;
+    --ink-2: #3A362E;
+    --ink: #1C1A16;
+    --radius: 14px;
+    --container: 1200px;
+    --serif: "Instrument Serif", "Cormorant Garamond", Georgia, serif;
+    --sans: "Geist", ui-sans-serif, system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+    --mono: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--sans);
+    color: var(--ink);
+    background: var(--paper);
+    -webkit-font-smoothing: antialiased;
+    font-size: 17px;
+    line-height: 1.55;
+    letter-spacing: -0.003em;
+  }
+
+  .container { max-width: var(--container); margin: 0 auto; padding: 0 32px; }
+
+  /* Nav */
+  .nav {
+    position: sticky; top: 0; z-index: 50;
+    backdrop-filter: saturate(160%) blur(14px);
+    -webkit-backdrop-filter: saturate(160%) blur(14px);
+    background: color-mix(in srgb, var(--paper) 72%, transparent);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner {
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 18px 32px;
+    display: flex; align-items: center; gap: 48px;
+  }
+  .brand {
+    display: inline-flex; align-items: center; gap: 10px;
+    text-decoration: none; color: var(--ink); font-weight: 500;
+  }
+  .brand-mark {
+    width: 30px; height: 30px;
+    background-image: url('/sola-logo-mark.png');
+    background-size: contain; background-repeat: no-repeat; background-position: center;
+  }
+  .brand-name {
+    font-size: 14px; font-weight: 600; letter-spacing: 0.02em;
+    text-transform: uppercase; font-family: var(--sans);
+  }
+  .brand-name .sub {
+    display: block; font-size: 9.5px; letter-spacing: 0.22em;
+    color: var(--muted); font-weight: 500; margin-top: 1px;
+  }
+  .nav-links { display: flex; gap: 28px; margin-left: auto; font-size: 14.5px; }
+  .nav-links a { color: var(--ink-2); text-decoration: none; transition: color .2s; }
+  .nav-links a:hover, .nav-links a.active { color: var(--accent); }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 11px 18px; border-radius: 999px; font-size: 14.5px;
+    font-weight: 500; border: 1px solid transparent; text-decoration: none;
+    transition: all .2s ease; white-space: nowrap; cursor: pointer;
+  }
+  .btn-primary { background: var(--ink); color: var(--paper); }
+  .btn-primary:hover { background: var(--accent-ink); transform: translateY(-1px); }
+  .btn-arrow { transition: transform .2s; }
+  .btn:hover .btn-arrow { transform: translateX(3px); }
+
+  /* Article */
+  .article-header {
+    padding: 72px 0 56px;
+    border-bottom: 1px solid var(--line);
+    max-width: 760px;
+    margin: 0 auto;
+  }
+  .article-eyebrow {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    display: flex; align-items: center; gap: 16px;
+    margin-bottom: 24px;
+  }
+  .article-eyebrow a { color: var(--accent); text-decoration: none; }
+  .article-eyebrow a:hover { text-decoration: underline; }
+  .article-eyebrow span { color: var(--line-2); }
+  .article-title {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(36px, 5vw, 64px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin: 0 0 24px;
+  }
+  .article-title em { font-style: italic; color: var(--accent); }
+  .article-meta {
+    font-family: var(--mono);
+    font-size: 11.5px;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+    display: flex; gap: 20px;
+  }
+
+  .article-body {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 56px 0;
+  }
+  .article-body h2 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(28px, 3vw, 40px);
+    line-height: 1.1;
+    letter-spacing: -0.018em;
+    margin: 56px 0 20px;
+    color: var(--ink);
+  }
+  .article-body h2:first-child { margin-top: 0; }
+  .article-body h3 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(22px, 2vw, 28px);
+    letter-spacing: -0.012em;
+    margin: 40px 0 16px;
+    color: var(--ink);
+  }
+  .article-body p {
+    color: var(--ink-2);
+    font-size: 17px;
+    line-height: 1.7;
+    margin: 0 0 24px;
+  }
+  .article-body ul, .article-body ol {
+    color: var(--ink-2);
+    font-size: 17px;
+    line-height: 1.7;
+    margin: 0 0 24px;
+    padding-left: 0;
+    list-style: none;
+  }
+  .article-body ul li, .article-body ol li {
+    padding: 6px 0 6px 24px;
+    position: relative;
+    border-bottom: 1px solid var(--line);
+  }
+  .article-body ul li:last-child, .article-body ol li:last-child { border-bottom: 0; }
+  .article-body ul li::before {
+    content: "→";
+    position: absolute; left: 0;
+    color: var(--accent);
+    font-family: var(--mono);
+  }
+  .article-body ol { counter-reset: ol; }
+  .article-body ol li::before {
+    content: counter(ol);
+    counter-increment: ol;
+    position: absolute; left: 0;
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--muted);
+    font-weight: 500;
+    top: 8px;
+  }
+  .article-body blockquote {
+    border-left: 3px solid var(--accent);
+    margin: 32px 0;
+    padding: 16px 24px;
+    background: var(--paper-2);
+    border-radius: 0 8px 8px 0;
+    font-family: var(--serif);
+    font-size: 22px;
+    line-height: 1.4;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+  }
+  .article-body strong { color: var(--ink); font-weight: 600; }
+  .article-body a { color: var(--accent-ink); text-decoration: underline; text-underline-offset: 3px; }
+  .article-body a:hover { color: var(--accent); }
+  .callout {
+    background: var(--accent-wash);
+    border: 1px solid color-mix(in srgb, var(--accent) 20%, transparent);
+    border-radius: var(--radius);
+    padding: 24px 28px;
+    margin: 32px 0;
+  }
+  .callout .callout-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent-ink);
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+  .callout p { color: var(--ink-2); margin: 0; font-size: 16px; }
+
+  /* CTA */
+  .article-cta {
+    background: var(--ink);
+    border-radius: 20px;
+    padding: 56px 64px;
+    margin: 64px auto;
+    max-width: 760px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+  }
+  .article-cta h3 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(24px, 2.5vw, 36px);
+    letter-spacing: -0.015em;
+    color: var(--paper);
+    margin: 0 0 8px;
+  }
+  .article-cta p { color: color-mix(in srgb, var(--paper) 65%, transparent); margin: 0; font-size: 15px; }
+  .article-cta .btn-primary { background: var(--paper); color: var(--ink); flex-shrink: 0; }
+  .article-cta .btn-primary:hover { background: #fff; }
+
+  /* Back link */
+  .back-link {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: var(--mono); font-size: 12px;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    color: var(--muted); text-decoration: none;
+    margin: 40px 0 0;
+    transition: color .2s;
+  }
+  .back-link:hover { color: var(--accent); }
+
+  /* Footer */
+  footer {
+    padding: 64px 0 40px;
+    border-top: 1px solid var(--line);
+    background: var(--paper);
+  }
+  .foot-bar {
+    display: flex; justify-content: space-between;
+    font-family: var(--mono); font-size: 11.5px;
+    color: var(--muted); letter-spacing: 0.04em;
+  }
+
+  @media (max-width: 960px) {
+    .nav-links { display: none; }
+    .article-header, .article-body { padding-left: 0; padding-right: 0; }
+    .article-cta { flex-direction: column; padding: 40px 32px; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="brand" aria-label="Sola AI Consulting">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-name">Sola AI<span class="sub">Consulting</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="/#services">Services</a>
+      <a href="/#how">How it works</a>
+      <a href="/#case">Case study</a>
+      <a href="/blog/" class="active">Blog</a>
+      <a href="/#contact">Contact</a>
+    </div>
+    <a href="/#contact" class="btn btn-primary">Book a call <span class="btn-arrow">→</span></a>
+  </div>
+</nav>
+
+<div class="container">
+  <a href="/blog/" class="back-link">← All posts</a>
+</div>
+
+<div class="container">
+  <header class="article-header">
+    <div class="article-eyebrow">
+      <a href="/blog/">Blog</a>
+      <span>·</span>
+      <span>Guide</span>
+      <span>·</span>
+      <span>5 min read</span>
+    </div>
+    <h1 class="article-title">Custom Intranet Solutions for Small Business: What Actually Works</h1>
+    <div class="article-meta">
+      <span>MAY 27, 2026</span>
+      <span>·</span>
+      <span>Sola AI Consulting</span>
+    </div>
+  </header>
+
+  <article class="article-body">
+    <h2>Why Off-the-Shelf Intranets Fail Small Businesses</h2>
+
+<p>Most small businesses don't need a 200-feature platform. They need one place where staff can find the employee handbook, check their schedule, and submit a form without calling the office. That's it. But when they try tools like Confluence or Notion or a generic SharePoint template, they run into the same wall: the tool was built for someone else.</p>
+
+<p>The setup is complicated. The interface is cluttered. Nobody trains on it. Within three months, people are back to texting each other questions and emailing documents that should have been retired in 2019.</p>
+
+<p>A custom intranet solution for small business is different because it starts with how your team actually works — not how a software company assumes you work. That distinction matters more than any feature list.</p>
+
+<blockquote>
+  <p>"The best intranet is the one your employees actually open. Every decision we make in the build is aimed at that single outcome — will real people use this tomorrow morning without being told to?"</p>
+</blockquote>
+
+<p>When we build an internal portal for a client, the first thing we do is map the friction. Where are the repeated questions? Where are staff going to find information and coming up empty? Where is the owner still the single point of contact for things that shouldn't require them? That friction map becomes the architecture.</p>
+
+<h2>What a Custom Intranet Actually Looks Like for a Small Team</h2>
+
+<p>Let's make this concrete. A home health agency with 35 caregivers doesn't need a wiki. They need three things: current policies in one place, a way to submit incident reports without paperwork, and a simple HR document library that's always up to date. That's a two-week build on SharePoint, not a six-month software project.</p>
+
+<h3>The Core Components Worth Building</h3>
+
+<p>Every custom intranet solution for small business we've delivered shares a short list of core pieces. These aren't glamorous — they're useful.</p>
+
+<ul>
+  <li><strong>A staff-facing homepage</strong> with announcements, quick links, and a search bar that actually returns results</li>
+  <li><strong>A document library</strong> with version control so people stop emailing old copies of the same policy</li>
+  <li><strong>Simple forms</strong> for recurring requests — PTO, supply orders, incident logs — that route to the right person automatically</li>
+  <li><strong>A staff directory</strong> with roles, contact info, and department — especially important if you have remote or hybrid employees</li>
+  <li><strong>Access controls</strong> so the front desk sees what they need, and managers see what's theirs</li>
+</ul>
+
+<p>None of this is exotic. But done right, inside a single branded environment your team recognizes as theirs, it changes how the office functions. We've seen clients cut their internal email volume by nearly half inside the first 60 days — not because we told them to use email less, but because the answer was finally somewhere obvious.</p>
+
+<h3>SharePoint Is the Right Foundation — With Caveats</h3>
+
+<p>If your business already runs on Microsoft 365, SharePoint is the right base for a custom intranet. The licensing is already paid. The data stays inside your tenant. And with proper configuration, it looks nothing like the default SharePoint experience most people dread.</p>
+
+<p>The caveat is this: SharePoint out of the box is not an intranet. It's a set of tools that can become one. The difference between a confusing SharePoint site and a polished internal portal is information architecture, intentional design, and someone who knows what not to build. That's where working with a team like <a href="https://solasupport.com">Sola AI Consulting</a> pays off — we skip the features that slow teams down and build around the workflows you actually have.</p>
+
+<div class="callout">
+  <div class="callout-label">Key takeaway</div>
+  <p>Before you evaluate any platform, document your top five internal friction points — the questions that get asked every week, the forms that still live on paper, the documents people can never find. Your intranet should solve those five things first. Everything else is optional.</p>
+</div>
+
+<h2>AI Automations That Belong Inside Your Intranet</h2>
+
+<p>A modern custom intranet solution for small business isn't just a document library with a nice skin. The most useful builds we're doing right now layer in lightweight AI automations that handle repetitive tasks without adding headcount.</p>
+
+<h3>Practical AI Use Cases for Small Business Intranets</h3>
+
+<p>These aren't hypothetical. These are things we've deployed for real clients in the past year.</p>
+
+<ol>
+  <li><strong>A policy Q&amp;A bot</strong> trained on your employee handbook — staff ask questions in plain language and get answers in seconds, without calling HR</li>
+  <li><strong>Automated form routing</strong> that reads a submitted request and sends it to the right approver based on type, location, or department</li>
+  <li><strong>Onboarding checklists</strong> that trigger automatically when a new hire is added to the system, assigning tasks to both the new employee and their manager</li>
+  <li><strong>Document expiration alerts</strong> that flag policies due for review before they become compliance problems</li>
+</ol>
+
+<p>The key word in all of these is <em>lightweight</em>. We're not talking about a full AI platform deployment. We're talking about Power Automate flows and Azure OpenAI integrations that live quietly inside your existing intranet and handle specific, defined tasks. Small businesses don't need AI to be impressive — they need it to save two hours a week. That's a real return.</p>
+
+<h2>How to Know If You're Ready for a Custom Build</h2>
+
+<p>Not every business needs a custom intranet solution today. Here's a simple threshold: if more than one person is spending time each week answering the same internal questions, finding files for other people, or manually routing requests that should flow automatically — you're ready. The cost of the build is almost always less than the annual cost of that administrative drag.</p>
+
+<p>The businesses that get the most value from a custom intranet are usually between 10 and 75 employees. Big enough to have real coordination problems. Small enough that a focused, well-scoped build can solve them without a six-month rollout. A home health agency, a regional logistics company, a growing dental practice — these are exactly the organizations where a targeted internal portal pays back quickly.</p>
+
+<p>The right custom intranet solution for small business isn't the most feature-rich one. It's the one that fits your team so naturally that adoption isn't a project — it just happens. If you're ready to stop managing your business through group texts and email chains, the next step is simpler than you think.</p>
+  </article>
+</div>
+
+<div class="article-cta">
+  <div>
+    <h3>Ready to put this into practice?</h3>
+    <p>We build portals, intranets, and automations for small teams — usually in 4–8 weeks.</p>
+  </div>
+  <a href="https://solasupport.com/#contact" class="btn btn-primary">Book a discovery call <span class="btn-arrow">→</span></a>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="foot-bar">
+      <span>© 2026 SOLA AI CONSULTING, LLC · BALTIMORE, MD</span>
+      <a href="/" style="color: var(--muted); text-decoration: none; letter-spacing: 0.04em; font-size: 11.5px;">← Back to solasupport.com</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
