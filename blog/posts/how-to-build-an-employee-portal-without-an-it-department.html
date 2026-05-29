@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>How to Build an Employee Portal Without an IT Department — Sola AI Consulting</title>
+<meta name="description" content="Learn how small businesses can launch a functional employee portal without IT staff. Practical steps, real tools, and no tech team required." />
+<meta property="og:title" content="How to Build an Employee Portal Without an IT Department" />
+<meta property="og:description" content="Learn how small businesses can launch a functional employee portal without IT staff. Practical steps, real tools, and no tech team required." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://solasupport.com/blog/posts/how-to-build-an-employee-portal-without-an-it-department.html" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="canonical" href="https://solasupport.com/blog/posts/how-to-build-an-employee-portal-without-an-it-department.html" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap">
+<style>
+  :root {
+    --accent: #4A5A7A;
+    --accent-ink: #2E3A52;
+    --accent-wash: #EEF0F5;
+    --paper: #FAF8F4;
+    --paper-2: #F3EFE7;
+    --line: #E4DFD5;
+    --line-2: #D4CEC0;
+    --muted: #8C8576;
+    --ink-3: #6B6557;
+    --ink-2: #3A362E;
+    --ink: #1C1A16;
+    --radius: 14px;
+    --container: 1200px;
+    --serif: "Instrument Serif", "Cormorant Garamond", Georgia, serif;
+    --sans: "Geist", ui-sans-serif, system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+    --mono: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--sans);
+    color: var(--ink);
+    background: var(--paper);
+    -webkit-font-smoothing: antialiased;
+    font-size: 17px;
+    line-height: 1.55;
+    letter-spacing: -0.003em;
+  }
+
+  .container { max-width: var(--container); margin: 0 auto; padding: 0 32px; }
+
+  /* Nav */
+  .nav {
+    position: sticky; top: 0; z-index: 50;
+    backdrop-filter: saturate(160%) blur(14px);
+    -webkit-backdrop-filter: saturate(160%) blur(14px);
+    background: color-mix(in srgb, var(--paper) 72%, transparent);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner {
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 18px 32px;
+    display: flex; align-items: center; gap: 48px;
+  }
+  .brand {
+    display: inline-flex; align-items: center; gap: 10px;
+    text-decoration: none; color: var(--ink); font-weight: 500;
+  }
+  .brand-mark {
+    width: 30px; height: 30px;
+    background-image: url('/sola-logo-mark.png');
+    background-size: contain; background-repeat: no-repeat; background-position: center;
+  }
+  .brand-name {
+    font-size: 14px; font-weight: 600; letter-spacing: 0.02em;
+    text-transform: uppercase; font-family: var(--sans);
+  }
+  .brand-name .sub {
+    display: block; font-size: 9.5px; letter-spacing: 0.22em;
+    color: var(--muted); font-weight: 500; margin-top: 1px;
+  }
+  .nav-links { display: flex; gap: 28px; margin-left: auto; font-size: 14.5px; }
+  .nav-links a { color: var(--ink-2); text-decoration: none; transition: color .2s; }
+  .nav-links a:hover, .nav-links a.active { color: var(--accent); }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 11px 18px; border-radius: 999px; font-size: 14.5px;
+    font-weight: 500; border: 1px solid transparent; text-decoration: none;
+    transition: all .2s ease; white-space: nowrap; cursor: pointer;
+  }
+  .btn-primary { background: var(--ink); color: var(--paper); }
+  .btn-primary:hover { background: var(--accent-ink); transform: translateY(-1px); }
+  .btn-arrow { transition: transform .2s; }
+  .btn:hover .btn-arrow { transform: translateX(3px); }
+
+  /* Article */
+  .article-header {
+    padding: 72px 0 56px;
+    border-bottom: 1px solid var(--line);
+    max-width: 760px;
+    margin: 0 auto;
+  }
+  .article-eyebrow {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    display: flex; align-items: center; gap: 16px;
+    margin-bottom: 24px;
+  }
+  .article-eyebrow a { color: var(--accent); text-decoration: none; }
+  .article-eyebrow a:hover { text-decoration: underline; }
+  .article-eyebrow span { color: var(--line-2); }
+  .article-title {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(36px, 5vw, 64px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin: 0 0 24px;
+  }
+  .article-title em { font-style: italic; color: var(--accent); }
+  .article-meta {
+    font-family: var(--mono);
+    font-size: 11.5px;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+    display: flex; gap: 20px;
+  }
+
+  .article-body {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 56px 0;
+  }
+  .article-body h2 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(28px, 3vw, 40px);
+    line-height: 1.1;
+    letter-spacing: -0.018em;
+    margin: 56px 0 20px;
+    color: var(--ink);
+  }
+  .article-body h2:first-child { margin-top: 0; }
+  .article-body h3 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(22px, 2vw, 28px);
+    letter-spacing: -0.012em;
+    margin: 40px 0 16px;
+    color: var(--ink);
+  }
+  .article-body p {
+    color: var(--ink-2);
+    font-size: 17px;
+    line-height: 1.7;
+    margin: 0 0 24px;
+  }
+  .article-body ul, .article-body ol {
+    color: var(--ink-2);
+    font-size: 17px;
+    line-height: 1.7;
+    margin: 0 0 24px;
+    padding-left: 0;
+    list-style: none;
+  }
+  .article-body ul li, .article-body ol li {
+    padding: 6px 0 6px 24px;
+    position: relative;
+    border-bottom: 1px solid var(--line);
+  }
+  .article-body ul li:last-child, .article-body ol li:last-child { border-bottom: 0; }
+  .article-body ul li::before {
+    content: "→";
+    position: absolute; left: 0;
+    color: var(--accent);
+    font-family: var(--mono);
+  }
+  .article-body ol { counter-reset: ol; }
+  .article-body ol li::before {
+    content: counter(ol);
+    counter-increment: ol;
+    position: absolute; left: 0;
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--muted);
+    font-weight: 500;
+    top: 8px;
+  }
+  .article-body blockquote {
+    border-left: 3px solid var(--accent);
+    margin: 32px 0;
+    padding: 16px 24px;
+    background: var(--paper-2);
+    border-radius: 0 8px 8px 0;
+    font-family: var(--serif);
+    font-size: 22px;
+    line-height: 1.4;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+  }
+  .article-body strong { color: var(--ink); font-weight: 600; }
+  .article-body a { color: var(--accent-ink); text-decoration: underline; text-underline-offset: 3px; }
+  .article-body a:hover { color: var(--accent); }
+  .callout {
+    background: var(--accent-wash);
+    border: 1px solid color-mix(in srgb, var(--accent) 20%, transparent);
+    border-radius: var(--radius);
+    padding: 24px 28px;
+    margin: 32px 0;
+  }
+  .callout .callout-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent-ink);
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+  .callout p { color: var(--ink-2); margin: 0; font-size: 16px; }
+
+  /* CTA */
+  .article-cta {
+    background: var(--ink);
+    border-radius: 20px;
+    padding: 56px 64px;
+    margin: 64px auto;
+    max-width: 760px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+  }
+  .article-cta h3 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(24px, 2.5vw, 36px);
+    letter-spacing: -0.015em;
+    color: var(--paper);
+    margin: 0 0 8px;
+  }
+  .article-cta p { color: color-mix(in srgb, var(--paper) 65%, transparent); margin: 0; font-size: 15px; }
+  .article-cta .btn-primary { background: var(--paper); color: var(--ink); flex-shrink: 0; }
+  .article-cta .btn-primary:hover { background: #fff; }
+
+  /* Back link */
+  .back-link {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: var(--mono); font-size: 12px;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    color: var(--muted); text-decoration: none;
+    margin: 40px 0 0;
+    transition: color .2s;
+  }
+  .back-link:hover { color: var(--accent); }
+
+  /* Footer */
+  footer {
+    padding: 64px 0 40px;
+    border-top: 1px solid var(--line);
+    background: var(--paper);
+  }
+  .foot-bar {
+    display: flex; justify-content: space-between;
+    font-family: var(--mono); font-size: 11.5px;
+    color: var(--muted); letter-spacing: 0.04em;
+  }
+
+  @media (max-width: 960px) {
+    .nav-links { display: none; }
+    .article-header, .article-body { padding-left: 0; padding-right: 0; }
+    .article-cta { flex-direction: column; padding: 40px 32px; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="brand" aria-label="Sola AI Consulting">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-name">Sola AI<span class="sub">Consulting</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="/#services">Services</a>
+      <a href="/#how">How it works</a>
+      <a href="/#case">Case study</a>
+      <a href="/blog/" class="active">Blog</a>
+      <a href="/#contact">Contact</a>
+    </div>
+    <a href="/#contact" class="btn btn-primary">Book a call <span class="btn-arrow">→</span></a>
+  </div>
+</nav>
+
+<div class="container">
+  <a href="/blog/" class="back-link">← All posts</a>
+</div>
+
+<div class="container">
+  <header class="article-header">
+    <div class="article-eyebrow">
+      <a href="/blog/">Blog</a>
+      <span>·</span>
+      <span>Guide</span>
+      <span>·</span>
+      <span>6 min read</span>
+    </div>
+    <h1 class="article-title">How to Build an Employee Portal Without an IT Department</h1>
+    <div class="article-meta">
+      <span>MAY 29, 2026</span>
+      <span>·</span>
+      <span>Sola AI Consulting</span>
+    </div>
+  </header>
+
+  <article class="article-body">
+    <h2>The Problem Nobody Talks About Out Loud</h2>
+
+<p>Most small businesses and home health agencies don't have an IT department. They have a office manager who's good with computers, maybe a nephew who "does tech stuff," and a growing pile of problems that spreadsheets can no longer solve. When staff need to find their schedule, submit PTO, or read the updated compliance policy — they text someone. That someone is usually already overwhelmed.</p>
+
+<p>An employee portal fixes this. One place. Everything lives there. Staff stop asking the same questions. But every article about building a portal assumes you have a dedicated IT team, a developer on payroll, or at minimum someone who knows what a SharePoint site collection is. Most of you don't have that, and you shouldn't need it.</p>
+
+<p>Here's what actually works when you're building an employee portal without an IT department — based on what we've implemented for real clients, not what looks good in a product demo.</p>
+
+<blockquote>
+  <p>"The best portal isn't the most powerful one. It's the one your staff will actually use — and that you can update yourself on a Tuesday afternoon without calling anyone."</p>
+</blockquote>
+
+<h2>Start With What Your Staff Actually Need</h2>
+
+<p>Before you pick a platform, write down the five things your employees ask about most. In our experience working with small businesses and home health agencies, it's almost always the same short list:</p>
+
+<ul>
+  <li>Where do I find my schedule?</li>
+  <li>How do I request time off?</li>
+  <li>Where's the employee handbook?</li>
+  <li>What's the latest policy update?</li>
+  <li>Who do I contact about payroll or HR?</li>
+</ul>
+
+<p>That list is your portal. You don't need a massive intranet with 40 pages and a custom search function. You need clean answers to those five questions, accessible from a phone, updated without friction.</p>
+
+<h3>Don't Over-Engineer It on Day One</h3>
+
+<p>One client — a home health agency with 60 caregivers — spent three months trying to build the "perfect" portal before launching anything. When we came in, we helped them launch a basic SharePoint site in two weeks. It had six pages. Staff adoption jumped immediately because something finally existed. Perfect is the enemy of launched.</p>
+
+<p>Start with a read-only portal. Policies, contacts, forms, schedules. Get that live. Then add interactive features once staff are in the habit of checking it.</p>
+
+<div class="callout">
+  <div class="callout-label">Key takeaway</div>
+  <p>Your first employee portal should take two to four weeks to launch, not months. Limit scope to the top five staff questions, get it live, then iterate. Momentum matters more than completeness.</p>
+</div>
+
+<h2>Choosing the Right Platform When You Have No IT Department</h2>
+
+<p>The good news: the platform gap has mostly closed. You no longer need a developer to build something functional and professional. The bad news: the market is noisy and several "no-code" tools still require someone technical to maintain them in practice.</p>
+
+<h3>Microsoft SharePoint (Via Microsoft 365)</h3>
+
+<p>If your organization already uses Outlook or Microsoft 365, SharePoint is the strongest starting point. Modern SharePoint is genuinely drag-and-drop for basic pages. You can build a clean employee portal — with document libraries, news posts, and department pages — without writing a single line of code.</p>
+
+<p>The catch is the initial setup. Permissions, navigation structure, and getting documents organized properly takes real thought. It's not difficult, but it does take a few hours of focused work upfront. Once it's built, a non-technical admin can manage it day-to-day with minimal training.</p>
+
+<p>This is the platform we use most often at <a href="https://solasupport.com">Sola AI Consulting</a> when building internal portals for clients who need something durable and already within their Microsoft ecosystem.</p>
+
+<h3>Google Sites</h3>
+
+<p>If your team lives in Google Workspace — Gmail, Drive, Google Docs — then Google Sites is the fastest path to a working portal. It's free, it connects natively to your existing files, and almost anyone can edit it after ten minutes of orientation.</p>
+
+<p>It won't win design awards. It doesn't have robust permissions controls for large organizations. But for a 10-to-30 person business that needs a central place for documents and announcements, Google Sites works and it works fast.</p>
+
+<h3>What to Avoid</h3>
+
+<p>Avoid platforms that require ongoing subscription management, complex integrations, or dedicated vendor support to function. We've seen small businesses get locked into systems they can't update themselves — which means the portal goes stale, staff stop trusting it, and you're back to the group text within six months.</p>
+
+<h2>Making It Stick: Adoption Is the Real Work</h2>
+
+<p>The biggest mistake organizations make after building an employee portal without IT is assuming staff will just find it and use it. They won't, at least not without a push.</p>
+
+<h3>Announce It Like It Matters — Because It Does</h3>
+
+<p>Send a direct message to every employee when the portal goes live. Not a mass email they'll ignore. A personal message, a team meeting mention, a supervisor walkthrough. Tell them specifically what they can find there and why it saves them time. "You can now find your schedule here without calling the office" is more compelling than "please visit our new intranet."</p>
+
+<h3>Kill the Old Habits</h3>
+
+<p>If your staff can still text the office manager for a copy of the PTO form, they will. You have to remove the old path, or at minimum redirect it. When someone texts for something that lives on the portal, the response becomes: "It's on the portal — here's the link." Consistent redirection is what builds the habit.</p>
+
+<h3>Keep It Current</h3>
+
+<p>A portal with outdated information is worse than no portal. Staff will check it once, find something wrong, and never trust it again. Assign one person to own the portal — not as an IT function, but as an admin task. Schedule a monthly 30-minute review. Update what changed. This is not technical work. It's editorial discipline.</p>
+
+<p>For home health agencies specifically, keeping compliance documents, training materials, and policy updates current on the portal reduces audit risk and keeps caregivers informed without requiring coordinator time for every individual question.</p>
+
+<h2>What It Looks Like Six Months Later</h2>
+
+<p>When we've implemented employee portals for clients running lean operations, the consistent outcome after six months is the same: the office manager gets fewer repetitive questions, onboarding new staff takes less time because everything is written down in one place, and there's a visible paper trail when policies change.</p>
+
+<p>None of that required an IT department. It required a clear scope, the right platform for the existing tech stack, and someone willing to spend a few weeks building something that would save hours every month.</p>
+
+<p>Building an employee portal without an IT department isn't a compromise — it's actually how most successful small business portals get built. Lean teams make better decisions about what to include because they can't afford to build things nobody will use. If you're ready to stop the group text chaos and give your staff one reliable place to find what they need, we can help you figure out exactly where to start.</p>
+  </article>
+</div>
+
+<div class="article-cta">
+  <div>
+    <h3>Ready to put this into practice?</h3>
+    <p>We build portals, intranets, and automations for small teams — usually in 4–8 weeks.</p>
+  </div>
+  <a href="https://solasupport.com/#contact" class="btn btn-primary">Book a discovery call <span class="btn-arrow">→</span></a>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="foot-bar">
+      <span>© 2026 SOLA AI CONSULTING, LLC · BALTIMORE, MD</span>
+      <a href="/" style="color: var(--muted); text-decoration: none; letter-spacing: 0.04em; font-size: 11.5px;">← Back to solasupport.com</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
