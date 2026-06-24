@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>n8n Automation for Small Business: A Practical Guide — Sola AI Consulting</title>
+<meta name="description" content="Learn how n8n automation for small business can eliminate manual tasks, connect your tools, and save hours each week — without a developer on staff." />
+<meta property="og:title" content="n8n Automation for Small Business: A Practical Guide" />
+<meta property="og:description" content="Learn how n8n automation for small business can eliminate manual tasks, connect your tools, and save hours each week — without a developer on staff." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://solasupport.com/blog/posts/n8n-automation-for-small-business-a-practical-guide.html" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="canonical" href="https://solasupport.com/blog/posts/n8n-automation-for-small-business-a-practical-guide.html" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap">
+<style>
+  :root {
+    --accent: #4A5A7A;
+    --accent-ink: #2E3A52;
+    --accent-wash: #EEF0F5;
+    --paper: #FAF8F4;
+    --paper-2: #F3EFE7;
+    --line: #E4DFD5;
+    --line-2: #D4CEC0;
+    --muted: #8C8576;
+    --ink-3: #6B6557;
+    --ink-2: #3A362E;
+    --ink: #1C1A16;
+    --radius: 14px;
+    --container: 1200px;
+    --serif: "Instrument Serif", "Cormorant Garamond", Georgia, serif;
+    --sans: "Geist", ui-sans-serif, system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+    --mono: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--sans);
+    color: var(--ink);
+    background: var(--paper);
+    -webkit-font-smoothing: antialiased;
+    font-size: 17px;
+    line-height: 1.55;
+    letter-spacing: -0.003em;
+  }
+
+  .container { max-width: var(--container); margin: 0 auto; padding: 0 32px; }
+
+  /* Nav */
+  .nav {
+    position: sticky; top: 0; z-index: 50;
+    backdrop-filter: saturate(160%) blur(14px);
+    -webkit-backdrop-filter: saturate(160%) blur(14px);
+    background: color-mix(in srgb, var(--paper) 72%, transparent);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner {
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 18px 32px;
+    display: flex; align-items: center; gap: 48px;
+  }
+  .brand {
+    display: inline-flex; align-items: center; gap: 10px;
+    text-decoration: none; color: var(--ink); font-weight: 500;
+  }
+  .brand-mark {
+    width: 30px; height: 30px;
+    background-image: url('/sola-logo-mark.png');
+    background-size: contain; background-repeat: no-repeat; background-position: center;
+  }
+  .brand-name {
+    font-size: 14px; font-weight: 600; letter-spacing: 0.02em;
+    text-transform: uppercase; font-family: var(--sans);
+  }
+  .brand-name .sub {
+    display: block; font-size: 9.5px; letter-spacing: 0.22em;
+    color: var(--muted); font-weight: 500; margin-top: 1px;
+  }
+  .nav-links { display: flex; gap: 28px; margin-left: auto; font-size: 14.5px; }
+  .nav-links a { color: var(--ink-2); text-decoration: none; transition: color .2s; }
+  .nav-links a:hover, .nav-links a.active { color: var(--accent); }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 11px 18px; border-radius: 999px; font-size: 14.5px;
+    font-weight: 500; border: 1px solid transparent; text-decoration: none;
+    transition: all .2s ease; white-space: nowrap; cursor: pointer;
+  }
+  .btn-primary { background: var(--ink); color: var(--paper); }
+  .btn-primary:hover { background: var(--accent-ink); transform: translateY(-1px); }
+  .btn-arrow { transition: transform .2s; }
+  .btn:hover .btn-arrow { transform: translateX(3px); }
+
+  /* Article */
+  .article-header {
+    padding: 72px 0 56px;
+    border-bottom: 1px solid var(--line);
+    max-width: 760px;
+    margin: 0 auto;
+  }
+  .article-eyebrow {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    display: flex; align-items: center; gap: 16px;
+    margin-bottom: 24px;
+  }
+  .article-eyebrow a { color: var(--accent); text-decoration: none; }
+  .article-eyebrow a:hover { text-decoration: underline; }
+  .article-eyebrow span { color: var(--line-2); }
+  .article-title {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(36px, 5vw, 64px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin: 0 0 24px;
+  }
+  .article-title em { font-style: italic; color: var(--accent); }
+  .article-meta {
+    font-family: var(--mono);
+    font-size: 11.5px;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+    display: flex; gap: 20px;
+  }
+
+  .article-body {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 56px 0;
+  }
+  .article-body h2 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(28px, 3vw, 40px);
+    line-height: 1.1;
+    letter-spacing: -0.018em;
+    margin: 56px 0 20px;
+    color: var(--ink);
+  }
+  .article-body h2:first-child { margin-top: 0; }
+  .article-body h3 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(22px, 2vw, 28px);
+    letter-spacing: -0.012em;
+    margin: 40px 0 16px;
+    color: var(--ink);
+  }
+  .article-body p {
+    color: var(--ink-2);
+    font-size: 17px;
+    line-height: 1.7;
+    margin: 0 0 24px;
+  }
+  .article-body ul, .article-body ol {
+    color: var(--ink-2);
+    font-size: 17px;
+    line-height: 1.7;
+    margin: 0 0 24px;
+    padding-left: 0;
+    list-style: none;
+  }
+  .article-body ul li, .article-body ol li {
+    padding: 6px 0 6px 24px;
+    position: relative;
+    border-bottom: 1px solid var(--line);
+  }
+  .article-body ul li:last-child, .article-body ol li:last-child { border-bottom: 0; }
+  .article-body ul li::before {
+    content: "→";
+    position: absolute; left: 0;
+    color: var(--accent);
+    font-family: var(--mono);
+  }
+  .article-body ol { counter-reset: ol; }
+  .article-body ol li::before {
+    content: counter(ol);
+    counter-increment: ol;
+    position: absolute; left: 0;
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--muted);
+    font-weight: 500;
+    top: 8px;
+  }
+  .article-body blockquote {
+    border-left: 3px solid var(--accent);
+    margin: 32px 0;
+    padding: 16px 24px;
+    background: var(--paper-2);
+    border-radius: 0 8px 8px 0;
+    font-family: var(--serif);
+    font-size: 22px;
+    line-height: 1.4;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+  }
+  .article-body strong { color: var(--ink); font-weight: 600; }
+  .article-body a { color: var(--accent-ink); text-decoration: underline; text-underline-offset: 3px; }
+  .article-body a:hover { color: var(--accent); }
+  .callout {
+    background: var(--accent-wash);
+    border: 1px solid color-mix(in srgb, var(--accent) 20%, transparent);
+    border-radius: var(--radius);
+    padding: 24px 28px;
+    margin: 32px 0;
+  }
+  .callout .callout-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent-ink);
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+  .callout p { color: var(--ink-2); margin: 0; font-size: 16px; }
+
+  /* CTA */
+  .article-cta {
+    background: var(--ink);
+    border-radius: 20px;
+    padding: 56px 64px;
+    margin: 64px auto;
+    max-width: 760px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+  }
+  .article-cta h3 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(24px, 2.5vw, 36px);
+    letter-spacing: -0.015em;
+    color: var(--paper);
+    margin: 0 0 8px;
+  }
+  .article-cta p { color: color-mix(in srgb, var(--paper) 65%, transparent); margin: 0; font-size: 15px; }
+  .article-cta .btn-primary { background: var(--paper); color: var(--ink); flex-shrink: 0; }
+  .article-cta .btn-primary:hover { background: #fff; }
+
+  /* Back link */
+  .back-link {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: var(--mono); font-size: 12px;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    color: var(--muted); text-decoration: none;
+    margin: 40px 0 0;
+    transition: color .2s;
+  }
+  .back-link:hover { color: var(--accent); }
+
+  /* Footer */
+  footer {
+    padding: 64px 0 40px;
+    border-top: 1px solid var(--line);
+    background: var(--paper);
+  }
+  .foot-bar {
+    display: flex; justify-content: space-between;
+    font-family: var(--mono); font-size: 11.5px;
+    color: var(--muted); letter-spacing: 0.04em;
+  }
+
+  @media (max-width: 960px) {
+    .nav-links { display: none; }
+    .article-header, .article-body { padding-left: 0; padding-right: 0; }
+    .article-cta { flex-direction: column; padding: 40px 32px; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="brand" aria-label="Sola AI Consulting">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-name">Sola AI<span class="sub">Consulting</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="/#services">Services</a>
+      <a href="/#how">How it works</a>
+      <a href="/#case">Case study</a>
+      <a href="/blog/" class="active">Blog</a>
+      <a href="/#contact">Contact</a>
+    </div>
+    <a href="/#contact" class="btn btn-primary">Book a call <span class="btn-arrow">→</span></a>
+  </div>
+</nav>
+
+<div class="container">
+  <a href="/blog/" class="back-link">← All posts</a>
+</div>
+
+<div class="container">
+  <header class="article-header">
+    <div class="article-eyebrow">
+      <a href="/blog/">Blog</a>
+      <span>·</span>
+      <span>Guide</span>
+      <span>·</span>
+      <span>5 min read</span>
+    </div>
+    <h1 class="article-title">n8n Automation for Small Business: A Practical Guide</h1>
+    <div class="article-meta">
+      <span>JUN 24, 2026</span>
+      <span>·</span>
+      <span>Sola AI Consulting</span>
+    </div>
+  </header>
+
+  <article class="article-body">
+    <h2>Why Small Businesses Are Moving to n8n</h2>
+
+<p>Most small business owners don't have a lack of tools. They have too many tools that don't talk to each other. A form submission lands in one place. A client record lives in another. Someone on your team manually copies data between them every single day. That's the problem n8n was built to solve.</p>
+
+<p>n8n is an open-source workflow automation platform — think of it as the connective tissue between your apps. It lets you build automations that trigger actions across multiple systems without writing code from scratch. And unlike some of its competitors, you can self-host it, which matters when you're handling sensitive client data.</p>
+
+<p>For home health agencies and small service businesses in particular, n8n automation hits differently than generic SaaS tools. You're not locked into someone else's pricing tiers. You're not limited to pre-built templates that almost fit your process. You build exactly what your operation needs.</p>
+
+<blockquote>
+  <p>"The first automation we built for a home health client took about four hours to set up. It replaced a task their admin had been doing manually every morning for three years. She estimated it was saving her forty-five minutes a day within the first week."</p>
+</blockquote>
+
+<h2>What n8n Actually Does (In Plain Terms)</h2>
+
+<p>An n8n workflow is made of nodes. Each node is a step — trigger something, do something, send something somewhere. You connect them visually in a canvas. When one thing happens, the next thing fires automatically.</p>
+
+<h3>Common triggers small businesses use</h3>
+
+<ul>
+  <li>A new form submission on your website</li>
+  <li>A new row added to a Google Sheet</li>
+  <li>An email arriving with a specific subject line</li>
+  <li>A webhook fired from your scheduling software or CRM</li>
+  <li>A scheduled time, like every morning at 7am</li>
+</ul>
+
+<h3>What those triggers can kick off</h3>
+
+<ul>
+  <li>Creating or updating a client record in your CRM</li>
+  <li>Sending a personalized email or SMS notification</li>
+  <li>Posting a summary to a Slack channel</li>
+  <li>Generating a document and saving it to SharePoint or Google Drive</li>
+  <li>Calling an AI model to classify, summarize, or respond to something</li>
+</ul>
+
+<p>The value isn't in any single automation. It's in the compounding effect. Once your tools are connected, your team stops being the glue. They start doing actual work instead.</p>
+
+<div class="callout"><div class="callout-label">Key takeaway</div><p>Start with the task someone on your team does every single day without thinking. That repetitive, low-judgment task is your best first automation. It's easy to build, easy to test, and the time savings show up immediately.</p></div>
+
+<h2>Real Use Cases We've Built for Small Businesses</h2>
+
+<p>n8n automation for small business isn't theoretical. Here's what it looks like in practice, based on actual workflows we've deployed at <a href="https://solasupport.com">Sola AI Consulting</a>.</p>
+
+<h3>New client onboarding</h3>
+
+<p>A home health agency was onboarding new clients through a paper-heavy process. Intake form came in by fax or email. Someone typed the data into their scheduling system. Someone else sent a welcome packet. A coordinator followed up by phone to confirm the first visit.</p>
+
+<p>We built an n8n workflow that took a completed intake form, extracted the data, created a client record in their system, triggered a welcome email with relevant documents attached, and posted a notification to the coordinator's Slack channel — all within two minutes of form submission. No manual steps.</p>
+
+<h3>Caregiver scheduling alerts</h3>
+
+<p>Last-minute schedule changes were a constant fire drill. When a shift went uncovered, the office manager would call through a list until someone picked up. We automated the first pass: n8n monitors the scheduling system via webhook, detects uncovered shifts, and sends a text blast to available caregivers in the right geography. Responses come back through a simple form. If no one picks up within 30 minutes, the escalation goes to the manager. Response time dropped significantly, and the manager stopped being the first call.</p>
+
+<h3>Invoice and reporting workflows</h3>
+
+<p>A small marketing firm was compiling weekly performance reports by pulling data from three platforms and pasting it into a Google Sheet. We built an n8n workflow that pulls data from each platform on a schedule, formats it, drops it into the right spreadsheet cells, and sends a summary email to the client automatically. The account manager still reviews it — but the building is done.</p>
+
+<h2>What to Know Before You Start</h2>
+
+<p>n8n is powerful, but it's not plug-and-play for everyone. There's a learning curve if you've never worked with APIs or webhooks. Self-hosting requires a server — usually a small VPS running around $6–12 a month — and some basic setup. n8n also offers a cloud-hosted version if you want to skip the infrastructure entirely.</p>
+
+<h3>Questions to ask before building your first workflow</h3>
+
+<ol>
+  <li>What's the trigger? Be specific about exactly what event starts the automation.</li>
+  <li>What data needs to move, and where does it live today?</li>
+  <li>What does success look like? How will you know it worked?</li>
+  <li>What happens when it breaks? Every automation needs a failure path.</li>
+</ol>
+
+<p>That last point matters more than most guides admit. Automations break. APIs change. Fields get renamed. A good n8n workflow includes error handling — a node that catches failures and notifies someone instead of silently failing for three days while your data goes nowhere.</p>
+
+<p>For businesses without an internal IT team, working with a partner who's already built these systems cuts months off the learning curve and prevents the costly mistakes that come from building on shaky foundations.</p>
+
+<p>If you're serious about putting n8n automation to work for your small business — not just experimenting with it, but actually deploying it across your operations — the right next step is a focused conversation about where your biggest manual bottlenecks are.</p>
+  </article>
+</div>
+
+<div class="article-cta">
+  <div>
+    <h3>Ready to put this into practice?</h3>
+    <p>We build portals, intranets, and automations for small teams — usually in 4–8 weeks.</p>
+  </div>
+  <a href="https://solasupport.com/#contact" class="btn btn-primary">Book a discovery call <span class="btn-arrow">→</span></a>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="foot-bar">
+      <span>© 2026 SOLA AI CONSULTING, LLC · BALTIMORE, MD</span>
+      <a href="/" style="color: var(--muted); text-decoration: none; letter-spacing: 0.04em; font-size: 11.5px;">← Back to solasupport.com</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
