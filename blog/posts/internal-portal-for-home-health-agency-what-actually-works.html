@@ -1,0 +1,425 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Internal Portal for Home Health Agency: What Actually Works — Sola AI Consulting</title>
+<meta name="description" content="Discover how an internal portal for home health agency operations cuts chaos, improves compliance, and keeps your staff connected. Real-world guidance inside." />
+<meta property="og:title" content="Internal Portal for Home Health Agency: What Actually Works" />
+<meta property="og:description" content="Discover how an internal portal for home health agency operations cuts chaos, improves compliance, and keeps your staff connected. Real-world guidance inside." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://solasupport.com/blog/posts/internal-portal-for-home-health-agency-what-actually-works.html" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="canonical" href="https://solasupport.com/blog/posts/internal-portal-for-home-health-agency-what-actually-works.html" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap">
+<style>
+  :root {
+    --accent: #4A5A7A;
+    --accent-ink: #2E3A52;
+    --accent-wash: #EEF0F5;
+    --paper: #FAF8F4;
+    --paper-2: #F3EFE7;
+    --line: #E4DFD5;
+    --line-2: #D4CEC0;
+    --muted: #8C8576;
+    --ink-3: #6B6557;
+    --ink-2: #3A362E;
+    --ink: #1C1A16;
+    --radius: 14px;
+    --container: 1200px;
+    --serif: "Instrument Serif", "Cormorant Garamond", Georgia, serif;
+    --sans: "Geist", ui-sans-serif, system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+    --mono: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--sans);
+    color: var(--ink);
+    background: var(--paper);
+    -webkit-font-smoothing: antialiased;
+    font-size: 17px;
+    line-height: 1.55;
+    letter-spacing: -0.003em;
+  }
+
+  .container { max-width: var(--container); margin: 0 auto; padding: 0 32px; }
+
+  /* Nav */
+  .nav {
+    position: sticky; top: 0; z-index: 50;
+    backdrop-filter: saturate(160%) blur(14px);
+    -webkit-backdrop-filter: saturate(160%) blur(14px);
+    background: color-mix(in srgb, var(--paper) 72%, transparent);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner {
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 18px 32px;
+    display: flex; align-items: center; gap: 48px;
+  }
+  .brand {
+    display: inline-flex; align-items: center; gap: 10px;
+    text-decoration: none; color: var(--ink); font-weight: 500;
+  }
+  .brand-mark {
+    width: 30px; height: 30px;
+    background-image: url('/sola-logo-mark.png');
+    background-size: contain; background-repeat: no-repeat; background-position: center;
+  }
+  .brand-name {
+    font-size: 14px; font-weight: 600; letter-spacing: 0.02em;
+    text-transform: uppercase; font-family: var(--sans);
+  }
+  .brand-name .sub {
+    display: block; font-size: 9.5px; letter-spacing: 0.22em;
+    color: var(--muted); font-weight: 500; margin-top: 1px;
+  }
+  .nav-links { display: flex; gap: 28px; margin-left: auto; font-size: 14.5px; }
+  .nav-links a { color: var(--ink-2); text-decoration: none; transition: color .2s; }
+  .nav-links a:hover, .nav-links a.active { color: var(--accent); }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 11px 18px; border-radius: 999px; font-size: 14.5px;
+    font-weight: 500; border: 1px solid transparent; text-decoration: none;
+    transition: all .2s ease; white-space: nowrap; cursor: pointer;
+  }
+  .btn-primary { background: var(--ink); color: var(--paper); }
+  .btn-primary:hover { background: var(--accent-ink); transform: translateY(-1px); }
+  .btn-arrow { transition: transform .2s; }
+  .btn:hover .btn-arrow { transform: translateX(3px); }
+
+  /* Article */
+  .article-header {
+    padding: 72px 0 56px;
+    border-bottom: 1px solid var(--line);
+    max-width: 760px;
+    margin: 0 auto;
+  }
+  .article-eyebrow {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    display: flex; align-items: center; gap: 16px;
+    margin-bottom: 24px;
+  }
+  .article-eyebrow a { color: var(--accent); text-decoration: none; }
+  .article-eyebrow a:hover { text-decoration: underline; }
+  .article-eyebrow span { color: var(--line-2); }
+  .article-title {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(36px, 5vw, 64px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin: 0 0 24px;
+  }
+  .article-title em { font-style: italic; color: var(--accent); }
+  .article-meta {
+    font-family: var(--mono);
+    font-size: 11.5px;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+    display: flex; gap: 20px;
+  }
+
+  .article-body {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 56px 0;
+  }
+  .article-body h2 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(28px, 3vw, 40px);
+    line-height: 1.1;
+    letter-spacing: -0.018em;
+    margin: 56px 0 20px;
+    color: var(--ink);
+  }
+  .article-body h2:first-child { margin-top: 0; }
+  .article-body h3 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(22px, 2vw, 28px);
+    letter-spacing: -0.012em;
+    margin: 40px 0 16px;
+    color: var(--ink);
+  }
+  .article-body p {
+    color: var(--ink-2);
+    font-size: 17px;
+    line-height: 1.7;
+    margin: 0 0 24px;
+  }
+  .article-body ul, .article-body ol {
+    color: var(--ink-2);
+    font-size: 17px;
+    line-height: 1.7;
+    margin: 0 0 24px;
+    padding-left: 0;
+    list-style: none;
+  }
+  .article-body ul li, .article-body ol li {
+    padding: 6px 0 6px 24px;
+    position: relative;
+    border-bottom: 1px solid var(--line);
+  }
+  .article-body ul li:last-child, .article-body ol li:last-child { border-bottom: 0; }
+  .article-body ul li::before {
+    content: "→";
+    position: absolute; left: 0;
+    color: var(--accent);
+    font-family: var(--mono);
+  }
+  .article-body ol { counter-reset: ol; }
+  .article-body ol li::before {
+    content: counter(ol);
+    counter-increment: ol;
+    position: absolute; left: 0;
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--muted);
+    font-weight: 500;
+    top: 8px;
+  }
+  .article-body blockquote {
+    border-left: 3px solid var(--accent);
+    margin: 32px 0;
+    padding: 16px 24px;
+    background: var(--paper-2);
+    border-radius: 0 8px 8px 0;
+    font-family: var(--serif);
+    font-size: 22px;
+    line-height: 1.4;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+  }
+  .article-body strong { color: var(--ink); font-weight: 600; }
+  .article-body a { color: var(--accent-ink); text-decoration: underline; text-underline-offset: 3px; }
+  .article-body a:hover { color: var(--accent); }
+  .callout {
+    background: var(--accent-wash);
+    border: 1px solid color-mix(in srgb, var(--accent) 20%, transparent);
+    border-radius: var(--radius);
+    padding: 24px 28px;
+    margin: 32px 0;
+  }
+  .callout .callout-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent-ink);
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+  .callout p { color: var(--ink-2); margin: 0; font-size: 16px; }
+
+  /* CTA */
+  .article-cta {
+    background: var(--ink);
+    border-radius: 20px;
+    padding: 56px 64px;
+    margin: 64px auto;
+    max-width: 760px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+  }
+  .article-cta h3 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(24px, 2.5vw, 36px);
+    letter-spacing: -0.015em;
+    color: var(--paper);
+    margin: 0 0 8px;
+  }
+  .article-cta p { color: color-mix(in srgb, var(--paper) 65%, transparent); margin: 0; font-size: 15px; }
+  .article-cta .btn-primary { background: var(--paper); color: var(--ink); flex-shrink: 0; }
+  .article-cta .btn-primary:hover { background: #fff; }
+
+  /* Back link */
+  .back-link {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: var(--mono); font-size: 12px;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    color: var(--muted); text-decoration: none;
+    margin: 40px 0 0;
+    transition: color .2s;
+  }
+  .back-link:hover { color: var(--accent); }
+
+  /* Footer */
+  footer {
+    padding: 64px 0 40px;
+    border-top: 1px solid var(--line);
+    background: var(--paper);
+  }
+  .foot-bar {
+    display: flex; justify-content: space-between;
+    font-family: var(--mono); font-size: 11.5px;
+    color: var(--muted); letter-spacing: 0.04em;
+  }
+
+  @media (max-width: 960px) {
+    .nav-links { display: none; }
+    .article-header, .article-body { padding-left: 0; padding-right: 0; }
+    .article-cta { flex-direction: column; padding: 40px 32px; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="brand" aria-label="Sola AI Consulting">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-name">Sola AI<span class="sub">Consulting</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="/#services">Services</a>
+      <a href="/#how">How it works</a>
+      <a href="/#case">Case study</a>
+      <a href="/blog/" class="active">Blog</a>
+      <a href="/#contact">Contact</a>
+    </div>
+    <a href="/#contact" class="btn btn-primary">Book a call <span class="btn-arrow">→</span></a>
+  </div>
+</nav>
+
+<div class="container">
+  <a href="/blog/" class="back-link">← All posts</a>
+</div>
+
+<div class="container">
+  <header class="article-header">
+    <div class="article-eyebrow">
+      <a href="/blog/">Blog</a>
+      <span>·</span>
+      <span>Guide</span>
+      <span>·</span>
+      <span>5 min read</span>
+    </div>
+    <h1 class="article-title">Internal Portal for Home Health Agency: What Actually Works</h1>
+    <div class="article-meta">
+      <span>JUL 06, 2026</span>
+      <span>·</span>
+      <span>Sola AI Consulting</span>
+    </div>
+  </header>
+
+  <article class="article-body">
+    <h2>Why Home Health Agencies Struggle Without a Central Hub</h2>
+
+<p>Most home health agencies run on a patchwork of tools. Texts for scheduling. Email chains for policy updates. Paper binders for onboarding. A shared drive nobody can find anything in. It works — until it doesn't.</p>
+
+<p>When a caregiver misses a compliance training deadline because the reminder got buried in their inbox, that's not a people problem. That's a systems problem. And it's one of the most common things we see when a new client calls us.</p>
+
+<p>An internal portal for a home health agency isn't just a fancy intranet. Done right, it becomes the single place your staff goes to get oriented, stay current, and do their jobs with less friction. It replaces the "who do I ask about this?" culture with something more reliable: a system that just tells them.</p>
+
+<blockquote>
+  "Before we had the portal, onboarding a new aide took three separate people and a stack of PDFs. Now the new hire gets a link, and by day two they've read everything, signed everything, and know where to find their schedule."
+  <br><br>— Operations manager at a Maryland home health agency, after implementing a SharePoint-based staff portal
+</blockquote>
+
+<h2>What Belongs in a Home Health Agency Portal</h2>
+
+<p>A lot of agencies build portals that are basically digital filing cabinets. Directories full of documents nobody opens. That's not useful. The goal is a portal that staff actually return to — one that earns its place in their daily routine.</p>
+
+<p>Here's what we consistently build into portals for home health clients:</p>
+
+<ul>
+  <li><strong>Policy and procedure library</strong> — Version-controlled, searchable, with clear update dates so staff always know what's current</li>
+  <li><strong>Onboarding pathways</strong> — Step-by-step checklists that guide new hires through training, credentialing, and paperwork without hand-holding from HR</li>
+  <li><strong>Compliance tracking</strong> — A dashboard showing who's completed mandatory trainings, who's due, and who's overdue</li>
+  <li><strong>Announcements and updates</strong> — A news feed that pushes important info to staff without relying on email</li>
+  <li><strong>Forms and requests</strong> — PTO requests, incident reports, mileage submissions — all in one place, routing automatically to the right person</li>
+  <li><strong>Resource library</strong> — Care protocols, emergency contacts, payer-specific documentation guides</li>
+</ul>
+
+<p>Notice that scheduling and clinical documentation aren't on that list. Those belong in your EHR or scheduling software. A good portal doesn't try to replace those systems — it connects your staff to everything around them.</p>
+
+<h3>Mobile Access Is Not Optional</h3>
+
+<p>Your aides are in the field. They're not sitting at a desk. If your internal portal doesn't work on a phone, it doesn't work. Full stop.</p>
+
+<p>SharePoint-based portals, when configured correctly, render cleanly on mobile. So does a well-built custom portal. But this has to be a design requirement from day one, not an afterthought. We've seen agencies spend months building a portal only to discover their staff can't access it from their Android phones. Don't let that be you.</p>
+
+<div class="callout">
+  <div class="callout-label">Key takeaway</div>
+  <p>Before you build anything, pull up your current intranet or shared drive on your phone and try to find a policy document. If it takes more than 30 seconds, mobile usability needs to be your first priority in a new portal build.</p>
+</div>
+
+<h2>Building It: Custom vs. SharePoint vs. Off-the-Shelf</h2>
+
+<p>This is where a lot of agencies get stuck. There are three real paths, and each one fits a different situation.</p>
+
+<h3>SharePoint Intranet</h3>
+
+<p>If your agency already uses Microsoft 365 — which most do, for email at minimum — SharePoint is the fastest path to a solid internal portal. The licensing cost is already baked in. The security infrastructure is enterprise-grade. And with Power Automate, you can build approval workflows and compliance reminders without custom code.</p>
+
+<p>The catch: out-of-the-box SharePoint looks like it was designed in 2009. It needs configuration and branding work to feel like something your staff will actually want to use. That's where a partner like <a href="https://solasupport.com">Sola AI Consulting</a> comes in — we build SharePoint portals that look modern, load fast, and are organized around how your team actually works.</p>
+
+<h3>Custom-Built Portals</h3>
+
+<p>For agencies with very specific workflows — complex multi-location structures, unique credentialing processes, or deep integration needs with their EHR — a custom portal can be worth the investment. You get exactly what you need, nothing more, nothing less.</p>
+
+<p>The tradeoff is cost and timeline. A custom portal takes longer to build and more budget to maintain. For most small to mid-sized home health agencies, SharePoint with good configuration gets you 90% of the way there at a fraction of the cost.</p>
+
+<h3>Off-the-Shelf Platforms</h3>
+
+<p>There are generic intranet tools — Notion, Guru, Confluence — that some agencies try to repurpose. They can work as a stopgap. But they're built for software companies and knowledge workers, not home health operations. You'll spend more time working around the platform than with it.</p>
+
+<h2>The Compliance Problem (And How a Portal Solves It)</h2>
+
+<p>Home health is one of the most heavily regulated industries in the country. Medicaid, Medicare, state licensure — every payer and every accreditor has documentation requirements. Staying compliant isn't just about doing the right thing. It's about being able to prove it.</p>
+
+<p>An internal portal for a home health agency becomes your compliance backbone when it's built correctly. Training completions are logged automatically. Policy acknowledgments are time-stamped and stored. When a surveyor walks in and asks for documentation, your administrator can pull it in minutes instead of hours.</p>
+
+<p>We've worked with agencies that were spending entire afternoons before every survey just pulling together compliance records. After building a portal with automated tracking, that same prep work takes under an hour. That's not a small thing when your team is already stretched thin.</p>
+
+<h3>AI Automations That Amplify the Portal</h3>
+
+<p>A portal is a foundation. AI automations are what make it smart. We're increasingly connecting home health portals to lightweight AI tools that do things like:</p>
+
+<ul>
+  <li>Send automated reminders when a training is about to expire</li>
+  <li>Route submitted forms to the right supervisor based on the content</li>
+  <li>Summarize policy documents so staff can get the key points without reading 12 pages</li>
+  <li>Flag incomplete onboarding steps before a new hire's first day</li>
+</ul>
+
+<p>None of this requires a large IT department or a big technology budget. It requires knowing what to build and where to connect things. That's the work we do every day.</p>
+
+<p>If your agency is still managing operations through group texts and shared drives, you're not behind because you don't care — you're behind because nobody's shown you a better path yet. Building an internal portal designed specifically for home health operations is one of the highest-leverage investments you can make in your infrastructure this year.</p>
+  </article>
+</div>
+
+<div class="article-cta">
+  <div>
+    <h3>Ready to put this into practice?</h3>
+    <p>We build portals, intranets, and automations for small teams — usually in 4–8 weeks.</p>
+  </div>
+  <a href="https://solasupport.com/#contact" class="btn btn-primary">Book a discovery call <span class="btn-arrow">→</span></a>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="foot-bar">
+      <span>© 2026 SOLA AI CONSULTING, LLC · BALTIMORE, MD</span>
+      <a href="/" style="color: var(--muted); text-decoration: none; letter-spacing: 0.04em; font-size: 11.5px;">← Back to solasupport.com</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
