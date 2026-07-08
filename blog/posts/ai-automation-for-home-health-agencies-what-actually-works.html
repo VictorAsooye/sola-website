@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>AI Automation for Home Health Agencies: What Actually Works — Sola AI Consulting</title>
+<meta name="description" content="Discover how AI automation for home health agencies cuts admin work, reduces errors, and keeps caregivers focused on patients — not paperwork." />
+<meta property="og:title" content="AI Automation for Home Health Agencies: What Actually Works" />
+<meta property="og:description" content="Discover how AI automation for home health agencies cuts admin work, reduces errors, and keeps caregivers focused on patients — not paperwork." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://solasupport.com/blog/posts/ai-automation-for-home-health-agencies-what-actually-works.html" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="canonical" href="https://solasupport.com/blog/posts/ai-automation-for-home-health-agencies-what-actually-works.html" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap">
+<style>
+  :root {
+    --accent: #4A5A7A;
+    --accent-ink: #2E3A52;
+    --accent-wash: #EEF0F5;
+    --paper: #FAF8F4;
+    --paper-2: #F3EFE7;
+    --line: #E4DFD5;
+    --line-2: #D4CEC0;
+    --muted: #8C8576;
+    --ink-3: #6B6557;
+    --ink-2: #3A362E;
+    --ink: #1C1A16;
+    --radius: 14px;
+    --container: 1200px;
+    --serif: "Instrument Serif", "Cormorant Garamond", Georgia, serif;
+    --sans: "Geist", ui-sans-serif, system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+    --mono: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--sans);
+    color: var(--ink);
+    background: var(--paper);
+    -webkit-font-smoothing: antialiased;
+    font-size: 17px;
+    line-height: 1.55;
+    letter-spacing: -0.003em;
+  }
+
+  .container { max-width: var(--container); margin: 0 auto; padding: 0 32px; }
+
+  /* Nav */
+  .nav {
+    position: sticky; top: 0; z-index: 50;
+    backdrop-filter: saturate(160%) blur(14px);
+    -webkit-backdrop-filter: saturate(160%) blur(14px);
+    background: color-mix(in srgb, var(--paper) 72%, transparent);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner {
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 18px 32px;
+    display: flex; align-items: center; gap: 48px;
+  }
+  .brand {
+    display: inline-flex; align-items: center; gap: 10px;
+    text-decoration: none; color: var(--ink); font-weight: 500;
+  }
+  .brand-mark {
+    width: 30px; height: 30px;
+    background-image: url('/sola-logo-mark.png');
+    background-size: contain; background-repeat: no-repeat; background-position: center;
+  }
+  .brand-name {
+    font-size: 14px; font-weight: 600; letter-spacing: 0.02em;
+    text-transform: uppercase; font-family: var(--sans);
+  }
+  .brand-name .sub {
+    display: block; font-size: 9.5px; letter-spacing: 0.22em;
+    color: var(--muted); font-weight: 500; margin-top: 1px;
+  }
+  .nav-links { display: flex; gap: 28px; margin-left: auto; font-size: 14.5px; }
+  .nav-links a { color: var(--ink-2); text-decoration: none; transition: color .2s; }
+  .nav-links a:hover, .nav-links a.active { color: var(--accent); }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 11px 18px; border-radius: 999px; font-size: 14.5px;
+    font-weight: 500; border: 1px solid transparent; text-decoration: none;
+    transition: all .2s ease; white-space: nowrap; cursor: pointer;
+  }
+  .btn-primary { background: var(--ink); color: var(--paper); }
+  .btn-primary:hover { background: var(--accent-ink); transform: translateY(-1px); }
+  .btn-arrow { transition: transform .2s; }
+  .btn:hover .btn-arrow { transform: translateX(3px); }
+
+  /* Article */
+  .article-header {
+    padding: 72px 0 56px;
+    border-bottom: 1px solid var(--line);
+    max-width: 760px;
+    margin: 0 auto;
+  }
+  .article-eyebrow {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    display: flex; align-items: center; gap: 16px;
+    margin-bottom: 24px;
+  }
+  .article-eyebrow a { color: var(--accent); text-decoration: none; }
+  .article-eyebrow a:hover { text-decoration: underline; }
+  .article-eyebrow span { color: var(--line-2); }
+  .article-title {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(36px, 5vw, 64px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin: 0 0 24px;
+  }
+  .article-title em { font-style: italic; color: var(--accent); }
+  .article-meta {
+    font-family: var(--mono);
+    font-size: 11.5px;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+    display: flex; gap: 20px;
+  }
+
+  .article-body {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 56px 0;
+  }
+  .article-body h2 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(28px, 3vw, 40px);
+    line-height: 1.1;
+    letter-spacing: -0.018em;
+    margin: 56px 0 20px;
+    color: var(--ink);
+  }
+  .article-body h2:first-child { margin-top: 0; }
+  .article-body h3 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(22px, 2vw, 28px);
+    letter-spacing: -0.012em;
+    margin: 40px 0 16px;
+    color: var(--ink);
+  }
+  .article-body p {
+    color: var(--ink-2);
+    font-size: 17px;
+    line-height: 1.7;
+    margin: 0 0 24px;
+  }
+  .article-body ul, .article-body ol {
+    color: var(--ink-2);
+    font-size: 17px;
+    line-height: 1.7;
+    margin: 0 0 24px;
+    padding-left: 0;
+    list-style: none;
+  }
+  .article-body ul li, .article-body ol li {
+    padding: 6px 0 6px 24px;
+    position: relative;
+    border-bottom: 1px solid var(--line);
+  }
+  .article-body ul li:last-child, .article-body ol li:last-child { border-bottom: 0; }
+  .article-body ul li::before {
+    content: "→";
+    position: absolute; left: 0;
+    color: var(--accent);
+    font-family: var(--mono);
+  }
+  .article-body ol { counter-reset: ol; }
+  .article-body ol li::before {
+    content: counter(ol);
+    counter-increment: ol;
+    position: absolute; left: 0;
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--muted);
+    font-weight: 500;
+    top: 8px;
+  }
+  .article-body blockquote {
+    border-left: 3px solid var(--accent);
+    margin: 32px 0;
+    padding: 16px 24px;
+    background: var(--paper-2);
+    border-radius: 0 8px 8px 0;
+    font-family: var(--serif);
+    font-size: 22px;
+    line-height: 1.4;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+  }
+  .article-body strong { color: var(--ink); font-weight: 600; }
+  .article-body a { color: var(--accent-ink); text-decoration: underline; text-underline-offset: 3px; }
+  .article-body a:hover { color: var(--accent); }
+  .callout {
+    background: var(--accent-wash);
+    border: 1px solid color-mix(in srgb, var(--accent) 20%, transparent);
+    border-radius: var(--radius);
+    padding: 24px 28px;
+    margin: 32px 0;
+  }
+  .callout .callout-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent-ink);
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+  .callout p { color: var(--ink-2); margin: 0; font-size: 16px; }
+
+  /* CTA */
+  .article-cta {
+    background: var(--ink);
+    border-radius: 20px;
+    padding: 56px 64px;
+    margin: 64px auto;
+    max-width: 760px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+  }
+  .article-cta h3 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(24px, 2.5vw, 36px);
+    letter-spacing: -0.015em;
+    color: var(--paper);
+    margin: 0 0 8px;
+  }
+  .article-cta p { color: color-mix(in srgb, var(--paper) 65%, transparent); margin: 0; font-size: 15px; }
+  .article-cta .btn-primary { background: var(--paper); color: var(--ink); flex-shrink: 0; }
+  .article-cta .btn-primary:hover { background: #fff; }
+
+  /* Back link */
+  .back-link {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: var(--mono); font-size: 12px;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    color: var(--muted); text-decoration: none;
+    margin: 40px 0 0;
+    transition: color .2s;
+  }
+  .back-link:hover { color: var(--accent); }
+
+  /* Footer */
+  footer {
+    padding: 64px 0 40px;
+    border-top: 1px solid var(--line);
+    background: var(--paper);
+  }
+  .foot-bar {
+    display: flex; justify-content: space-between;
+    font-family: var(--mono); font-size: 11.5px;
+    color: var(--muted); letter-spacing: 0.04em;
+  }
+
+  @media (max-width: 960px) {
+    .nav-links { display: none; }
+    .article-header, .article-body { padding-left: 0; padding-right: 0; }
+    .article-cta { flex-direction: column; padding: 40px 32px; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="brand" aria-label="Sola AI Consulting">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-name">Sola AI<span class="sub">Consulting</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="/#services">Services</a>
+      <a href="/#how">How it works</a>
+      <a href="/#case">Case study</a>
+      <a href="/blog/" class="active">Blog</a>
+      <a href="/#contact">Contact</a>
+    </div>
+    <a href="/#contact" class="btn btn-primary">Book a call <span class="btn-arrow">→</span></a>
+  </div>
+</nav>
+
+<div class="container">
+  <a href="/blog/" class="back-link">← All posts</a>
+</div>
+
+<div class="container">
+  <header class="article-header">
+    <div class="article-eyebrow">
+      <a href="/blog/">Blog</a>
+      <span>·</span>
+      <span>Guide</span>
+      <span>·</span>
+      <span>6 min read</span>
+    </div>
+    <h1 class="article-title">AI Automation for Home Health Agencies: What Actually Works</h1>
+    <div class="article-meta">
+      <span>JUL 08, 2026</span>
+      <span>·</span>
+      <span>Sola AI Consulting</span>
+    </div>
+  </header>
+
+  <article class="article-body">
+    <h2>The Hidden Cost of Running a Home Health Agency on Manual Processes</h2>
+
+<p>If you run a home health agency, your days probably look something like this: coordinators chasing down signatures, schedulers juggling last-minute call-outs, billing staff reconciling visit notes against payer requirements, and compliance deadlines that never stop moving. You hired caregivers to care for people — but somewhere along the way, the paperwork started consuming everything.</p>
+
+<p>That's not a staffing problem. That's a systems problem. And it's exactly where AI automation for home health agencies delivers its clearest return.</p>
+
+<p>When we work with agencies at <a href="https://solasupport.com">Sola AI Consulting</a>, we don't start by pitching software. We start by mapping what actually happens between the moment a client is referred and the moment a claim gets paid. That process usually has eight to fourteen handoffs. Most of them are manual. Several of them are redundant. At least one of them is a single person who holds critical institutional knowledge in their head.</p>
+
+<blockquote>
+  <p>"We didn't realize how much time our care coordinators spent copying information from one system into another. It wasn't any one big thing — it was forty small things adding up to hours every day."</p>
+</blockquote>
+
+<p>That observation, from an administrator at a mid-sized home health agency we partnered with, is more common than most owners want to admit. The goal of AI automation isn't to replace your team. It's to stop your team from doing work that a machine can do more consistently and faster.</p>
+
+<h2>Where AI Automation Makes the Biggest Difference in Home Health</h2>
+
+<p>Not every part of your operation benefits equally from automation. Here's where we've consistently seen the highest impact when implementing home health agency automation workflows:</p>
+
+<h3>Intake and Authorization Tracking</h3>
+
+<p>Intake is messy. Referrals arrive by fax, email, phone, and EHR portal — often all in the same afternoon. An automated intake workflow can pull referral data into a central system, flag missing information, trigger authorization requests, and send status updates to the referring physician's office without anyone touching a keyboard.</p>
+
+<p>We built one of these for an agency in the mid-Atlantic region. Before automation, their average intake-to-start-of-care time was eleven days. After implementing an AI-assisted intake workflow connected to their existing EHR, that dropped to six days. Same staff, same payer mix — just fewer things falling through the cracks.</p>
+
+<h3>Scheduling and Visit Confirmation</h3>
+
+<p>Scheduling in home health is a logic puzzle with human stakes. You're matching caregiver availability, geography, patient preferences, certification requirements, and payer visit authorizations — simultaneously, often under time pressure. AI scheduling tools don't solve every part of that puzzle, but they handle the parts that are purely logical: suggesting matches, flagging authorization limits, sending automated visit reminders via text or phone, and alerting coordinators when a caregiver hasn't checked in within an expected window.</p>
+
+<p>That last piece — real-time monitoring of visit status — is underrated. It means a missed visit gets caught in thirty minutes, not at end-of-day when options are limited.</p>
+
+<h3>Documentation and Billing Workflow</h3>
+
+<p>Clinical documentation is where agencies lose the most money they don't realize they're losing. Notes submitted late, codes that don't match the care plan, visit records that don't satisfy OASIS requirements — these aren't always caught until a claim denies or an auditor asks questions.</p>
+
+<p>AI automation tools can review submitted documentation against payer rules before claims go out. They can flag visit notes that are missing required elements and route them back to the clinician with specific prompts — not a generic rejection, but a targeted one. Some agencies have reduced their claim denial rate by fifteen to twenty percent just by adding this layer of automated pre-billing review.</p>
+
+<div class="callout">
+  <div class="callout-label">Key takeaway</div>
+  <p>Start your automation journey with intake or billing — not scheduling. These are the areas with the most structured data, the clearest rules, and the easiest wins. Build confidence and ROI there before tackling the more complex, judgment-heavy workflows.</p>
+</div>
+
+<h2>What "AI Automation" Actually Means for a Small to Mid-Size Agency</h2>
+
+<p>A lot of home health owners hear "AI automation" and picture expensive enterprise software, a six-month implementation, and a team of consultants who don't understand home health. That's a real risk. But it's not the only path.</p>
+
+<p>Practical AI automation for a home health agency often looks like this:</p>
+
+<ul>
+  <li>A Power Automate workflow that routes incoming faxes to the right coordinator based on referral source or payer, with no manual sorting required</li>
+  <li>An AI assistant embedded in your SharePoint intranet that answers HR and policy questions so coordinators stop emailing the administrator for things that are already written down</li>
+  <li>Automated text reminders and caregiver check-in confirmations tied to your existing scheduling platform</li>
+  <li>A document review bot that compares visit notes against your payer contracts before claims are submitted</li>
+</ul>
+
+<p>None of these require you to replace your EHR. Most of them can be built on top of tools you already pay for — Microsoft 365, SharePoint, or your existing scheduling system. The key is knowing what to connect and how to connect it.</p>
+
+<h3>The Integration Question</h3>
+
+<p>The most common obstacle we encounter isn't technology — it's integration. Your scheduling system knows something. Your EHR knows something. Your billing platform knows something. But they don't always talk to each other, and your staff ends up being the bridge. Automating that bridge, even partially, is often where the fastest ROI lives.</p>
+
+<p>When we design automation workflows for home health agencies, we focus on data handoffs first. Where is information being re-entered by hand? Where is something being looked up in one system and typed into another? Those friction points are almost always automatable, and eliminating them usually frees up several hours per coordinator per week.</p>
+
+<h2>Getting Started Without Getting Overwhelmed</h2>
+
+<p>The agencies that successfully implement AI automation don't try to automate everything at once. They pick one painful, repetitive process — something that takes time, causes errors, or frustrates good employees — and they automate that first. Then they measure the result. Then they move to the next one.</p>
+
+<p>This isn't just good project management. It's how you build organizational trust in automation. When your scheduling coordinator sees that the new intake routing tool actually works and saves her forty-five minutes every morning, she becomes an advocate instead of a skeptic. That matters when you're asking people to change how they work.</p>
+
+<p>It also helps to have a partner who understands both the technology and the regulatory environment of home health. HIPAA compliance, EVV requirements, payer documentation standards — these aren't afterthoughts. Any automation you build has to respect those constraints from day one, not be retrofitted later.</p>
+
+<p>If your agency is still running on spreadsheets, email chains, and the goodwill of an overextended coordinator, you're not behind — but the gap is starting to matter. Agencies that have invested in home health automation are moving faster, catching more errors before they cost money, and retaining staff because the work is less exhausting. If you're ready to look at what that could mean for your operation specifically, here's where to start.</p>
+  </article>
+</div>
+
+<div class="article-cta">
+  <div>
+    <h3>Ready to put this into practice?</h3>
+    <p>We build portals, intranets, and automations for small teams — usually in 4–8 weeks.</p>
+  </div>
+  <a href="https://solasupport.com/#contact" class="btn btn-primary">Book a discovery call <span class="btn-arrow">→</span></a>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="foot-bar">
+      <span>© 2026 SOLA AI CONSULTING, LLC · BALTIMORE, MD</span>
+      <a href="/" style="color: var(--muted); text-decoration: none; letter-spacing: 0.04em; font-size: 11.5px;">← Back to solasupport.com</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
