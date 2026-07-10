@@ -1,0 +1,409 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>HIPAA Compliant Staff Portal for Small Agencies: What Works — Sola AI Consulting</title>
+<meta name="description" content="Build a HIPAA compliant staff portal for your small agency without enterprise costs. Practical advice from real implementations that protect patients and staff." />
+<meta property="og:title" content="HIPAA Compliant Staff Portal for Small Agencies: What Works" />
+<meta property="og:description" content="Build a HIPAA compliant staff portal for your small agency without enterprise costs. Practical advice from real implementations that protect patients and staff." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://solasupport.com/blog/posts/hipaa-compliant-staff-portal-for-small-agencies-what-works.html" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="canonical" href="https://solasupport.com/blog/posts/hipaa-compliant-staff-portal-for-small-agencies-what-works.html" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap">
+<style>
+  :root {
+    --accent: #4A5A7A;
+    --accent-ink: #2E3A52;
+    --accent-wash: #EEF0F5;
+    --paper: #FAF8F4;
+    --paper-2: #F3EFE7;
+    --line: #E4DFD5;
+    --line-2: #D4CEC0;
+    --muted: #8C8576;
+    --ink-3: #6B6557;
+    --ink-2: #3A362E;
+    --ink: #1C1A16;
+    --radius: 14px;
+    --container: 1200px;
+    --serif: "Instrument Serif", "Cormorant Garamond", Georgia, serif;
+    --sans: "Geist", ui-sans-serif, system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+    --mono: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--sans);
+    color: var(--ink);
+    background: var(--paper);
+    -webkit-font-smoothing: antialiased;
+    font-size: 17px;
+    line-height: 1.55;
+    letter-spacing: -0.003em;
+  }
+
+  .container { max-width: var(--container); margin: 0 auto; padding: 0 32px; }
+
+  /* Nav */
+  .nav {
+    position: sticky; top: 0; z-index: 50;
+    backdrop-filter: saturate(160%) blur(14px);
+    -webkit-backdrop-filter: saturate(160%) blur(14px);
+    background: color-mix(in srgb, var(--paper) 72%, transparent);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner {
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 18px 32px;
+    display: flex; align-items: center; gap: 48px;
+  }
+  .brand {
+    display: inline-flex; align-items: center; gap: 10px;
+    text-decoration: none; color: var(--ink); font-weight: 500;
+  }
+  .brand-mark {
+    width: 30px; height: 30px;
+    background-image: url('/sola-logo-mark.png');
+    background-size: contain; background-repeat: no-repeat; background-position: center;
+  }
+  .brand-name {
+    font-size: 14px; font-weight: 600; letter-spacing: 0.02em;
+    text-transform: uppercase; font-family: var(--sans);
+  }
+  .brand-name .sub {
+    display: block; font-size: 9.5px; letter-spacing: 0.22em;
+    color: var(--muted); font-weight: 500; margin-top: 1px;
+  }
+  .nav-links { display: flex; gap: 28px; margin-left: auto; font-size: 14.5px; }
+  .nav-links a { color: var(--ink-2); text-decoration: none; transition: color .2s; }
+  .nav-links a:hover, .nav-links a.active { color: var(--accent); }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 11px 18px; border-radius: 999px; font-size: 14.5px;
+    font-weight: 500; border: 1px solid transparent; text-decoration: none;
+    transition: all .2s ease; white-space: nowrap; cursor: pointer;
+  }
+  .btn-primary { background: var(--ink); color: var(--paper); }
+  .btn-primary:hover { background: var(--accent-ink); transform: translateY(-1px); }
+  .btn-arrow { transition: transform .2s; }
+  .btn:hover .btn-arrow { transform: translateX(3px); }
+
+  /* Article */
+  .article-header {
+    padding: 72px 0 56px;
+    border-bottom: 1px solid var(--line);
+    max-width: 760px;
+    margin: 0 auto;
+  }
+  .article-eyebrow {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    display: flex; align-items: center; gap: 16px;
+    margin-bottom: 24px;
+  }
+  .article-eyebrow a { color: var(--accent); text-decoration: none; }
+  .article-eyebrow a:hover { text-decoration: underline; }
+  .article-eyebrow span { color: var(--line-2); }
+  .article-title {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(36px, 5vw, 64px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin: 0 0 24px;
+  }
+  .article-title em { font-style: italic; color: var(--accent); }
+  .article-meta {
+    font-family: var(--mono);
+    font-size: 11.5px;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+    display: flex; gap: 20px;
+  }
+
+  .article-body {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 56px 0;
+  }
+  .article-body h2 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(28px, 3vw, 40px);
+    line-height: 1.1;
+    letter-spacing: -0.018em;
+    margin: 56px 0 20px;
+    color: var(--ink);
+  }
+  .article-body h2:first-child { margin-top: 0; }
+  .article-body h3 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(22px, 2vw, 28px);
+    letter-spacing: -0.012em;
+    margin: 40px 0 16px;
+    color: var(--ink);
+  }
+  .article-body p {
+    color: var(--ink-2);
+    font-size: 17px;
+    line-height: 1.7;
+    margin: 0 0 24px;
+  }
+  .article-body ul, .article-body ol {
+    color: var(--ink-2);
+    font-size: 17px;
+    line-height: 1.7;
+    margin: 0 0 24px;
+    padding-left: 0;
+    list-style: none;
+  }
+  .article-body ul li, .article-body ol li {
+    padding: 6px 0 6px 24px;
+    position: relative;
+    border-bottom: 1px solid var(--line);
+  }
+  .article-body ul li:last-child, .article-body ol li:last-child { border-bottom: 0; }
+  .article-body ul li::before {
+    content: "→";
+    position: absolute; left: 0;
+    color: var(--accent);
+    font-family: var(--mono);
+  }
+  .article-body ol { counter-reset: ol; }
+  .article-body ol li::before {
+    content: counter(ol);
+    counter-increment: ol;
+    position: absolute; left: 0;
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--muted);
+    font-weight: 500;
+    top: 8px;
+  }
+  .article-body blockquote {
+    border-left: 3px solid var(--accent);
+    margin: 32px 0;
+    padding: 16px 24px;
+    background: var(--paper-2);
+    border-radius: 0 8px 8px 0;
+    font-family: var(--serif);
+    font-size: 22px;
+    line-height: 1.4;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+  }
+  .article-body strong { color: var(--ink); font-weight: 600; }
+  .article-body a { color: var(--accent-ink); text-decoration: underline; text-underline-offset: 3px; }
+  .article-body a:hover { color: var(--accent); }
+  .callout {
+    background: var(--accent-wash);
+    border: 1px solid color-mix(in srgb, var(--accent) 20%, transparent);
+    border-radius: var(--radius);
+    padding: 24px 28px;
+    margin: 32px 0;
+  }
+  .callout .callout-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent-ink);
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+  .callout p { color: var(--ink-2); margin: 0; font-size: 16px; }
+
+  /* CTA */
+  .article-cta {
+    background: var(--ink);
+    border-radius: 20px;
+    padding: 56px 64px;
+    margin: 64px auto;
+    max-width: 760px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+  }
+  .article-cta h3 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(24px, 2.5vw, 36px);
+    letter-spacing: -0.015em;
+    color: var(--paper);
+    margin: 0 0 8px;
+  }
+  .article-cta p { color: color-mix(in srgb, var(--paper) 65%, transparent); margin: 0; font-size: 15px; }
+  .article-cta .btn-primary { background: var(--paper); color: var(--ink); flex-shrink: 0; }
+  .article-cta .btn-primary:hover { background: #fff; }
+
+  /* Back link */
+  .back-link {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: var(--mono); font-size: 12px;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    color: var(--muted); text-decoration: none;
+    margin: 40px 0 0;
+    transition: color .2s;
+  }
+  .back-link:hover { color: var(--accent); }
+
+  /* Footer */
+  footer {
+    padding: 64px 0 40px;
+    border-top: 1px solid var(--line);
+    background: var(--paper);
+  }
+  .foot-bar {
+    display: flex; justify-content: space-between;
+    font-family: var(--mono); font-size: 11.5px;
+    color: var(--muted); letter-spacing: 0.04em;
+  }
+
+  @media (max-width: 960px) {
+    .nav-links { display: none; }
+    .article-header, .article-body { padding-left: 0; padding-right: 0; }
+    .article-cta { flex-direction: column; padding: 40px 32px; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="brand" aria-label="Sola AI Consulting">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-name">Sola AI<span class="sub">Consulting</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="/#services">Services</a>
+      <a href="/#how">How it works</a>
+      <a href="/#case">Case study</a>
+      <a href="/blog/" class="active">Blog</a>
+      <a href="/#contact">Contact</a>
+    </div>
+    <a href="/#contact" class="btn btn-primary">Book a call <span class="btn-arrow">→</span></a>
+  </div>
+</nav>
+
+<div class="container">
+  <a href="/blog/" class="back-link">← All posts</a>
+</div>
+
+<div class="container">
+  <header class="article-header">
+    <div class="article-eyebrow">
+      <a href="/blog/">Blog</a>
+      <span>·</span>
+      <span>Guide</span>
+      <span>·</span>
+      <span>5 min read</span>
+    </div>
+    <h1 class="article-title">HIPAA Compliant Staff Portal for Small Agencies: What Works</h1>
+    <div class="article-meta">
+      <span>JUL 10, 2026</span>
+      <span>·</span>
+      <span>Sola AI Consulting</span>
+    </div>
+  </header>
+
+  <article class="article-body">
+    <h2>Why Small Agencies Get This Wrong From the Start</h2>
+
+<p>Most small home health agencies build their staff portals the same way they build everything else — fast and cheap. Someone sets up a shared Google Drive. Another person starts a Facebook group for scheduling updates. A manager emails scanned intake forms to fifteen caregivers at once. It works, until it doesn't.</p>
+
+<p>A HIPAA compliant staff portal for a small agency isn't about being paranoid. It's about building something your staff will actually use that doesn't put your agency at legal risk the moment an employee's phone gets stolen or a former caregiver still has access to client files.</p>
+
+<p>The good news: you don't need an enterprise IT budget to do this right. What you need is clarity on what HIPAA actually requires for internal staff tools, and a practical setup that fits how your team works day to day.</p>
+
+<blockquote>
+  <p>"The violations we see most often aren't from data breaches. They're from shared passwords, unsecured file sharing, and staff using personal apps because the official system was too hard to use."</p>
+</blockquote>
+
+<p>That last part matters. A compliant portal that your caregivers ignore is not a compliant portal. Adoption and security have to work together.</p>
+
+<h2>What HIPAA Actually Requires for an Internal Staff Portal</h2>
+
+<p>HIPAA's Security Rule covers electronic Protected Health Information — any patient data your staff touches digitally. For a staff portal, that means you need to address three core areas: access controls, audit controls, and transmission security.</p>
+
+<h3>Access Controls</h3>
+
+<p>Every employee needs a unique login. Shared accounts are a compliance violation waiting to happen. Your portal needs role-based permissions so a scheduler sees scheduling data, a caregiver sees their assigned clients, and an administrator sees everything. When someone leaves your agency, their access needs to be revoked immediately — not next week, not when someone remembers.</p>
+
+<p>For most small agencies, this means setting up individual user accounts with clearly defined permission levels. Microsoft 365 with SharePoint handles this well. So does a properly configured portal built on a platform that supports Active Directory or similar identity management.</p>
+
+<h3>Audit Logs and Accountability</h3>
+
+<p>HIPAA requires that you can answer the question: who accessed what, and when? Your portal needs to log user activity. Not every platform does this out of the box, and this is where a lot of small agency setups fall short. A shared Google Drive doesn't give you the granular audit trail a compliance officer needs after an incident.</p>
+
+<h3>Encrypted Transmission and Storage</h3>
+
+<p>Any PHI moving through your portal needs to be encrypted in transit and at rest. This is standard for modern platforms, but it's worth verifying. If your portal is built on SharePoint, Microsoft's compliance certifications cover this. If you're using a custom-built solution, your developer needs to confirm encryption standards explicitly.</p>
+
+<div class="callout"><div class="callout-label">Key takeaway</div><p>Before you build or buy a staff portal, ask the vendor or developer one direct question: "Can you provide documentation of your HIPAA-eligible configurations?" If they hesitate, keep looking.</p></div>
+
+<h2>What a HIPAA Compliant Staff Portal Actually Looks Like for a Small Agency</h2>
+
+<p>Let's get specific. A well-built internal staff portal for a home health agency of 15 to 75 employees typically includes the following components working together.</p>
+
+<h3>A Secure Document Hub</h3>
+
+<p>This replaces the shared drive. Staff can access policies, care plans, client forms, and HR documents based on their role. New hires see onboarding materials. Caregivers see client-specific documents they're authorized to view. Nothing is emailed as an attachment. Everything lives in one place with version control so no one is working off an outdated form.</p>
+
+<h3>Staff Communication Tools That Aren't Personal Apps</h3>
+
+<p>This is the one that surprises agency owners most. Text messages and personal WhatsApp groups are not HIPAA compliant for discussing client care. Your portal needs a built-in communication channel — whether that's Microsoft Teams integrated with your SharePoint environment, or a secure messaging tool included in your portal build.</p>
+
+<p>The goal isn't to make communication harder. It's to give staff an easy compliant option so they stop defaulting to their personal phones for client-related conversations.</p>
+
+<h3>Time and Scheduling Integration</h3>
+
+<p>Caregivers need to see their schedules, confirm visits, and access route information without calling the office. When this lives inside the portal — behind a secure login — you eliminate the need to text or email sensitive client addresses and appointment details to personal devices.</p>
+
+<h3>Training and Policy Acknowledgment</h3>
+
+<p>HIPAA requires ongoing workforce training. A compliant portal makes this trackable. Staff complete training modules inside the portal, and the system logs their completion with a timestamp. When you're audited — and if you accept Medicare or Medicaid, assume you will be — you can pull that documentation immediately.</p>
+
+<h2>Building vs. Buying: The Decision Small Agencies Actually Face</h2>
+
+<p>Off-the-shelf home health software platforms like WellSky or ClearCare include portal features and are marketed as HIPAA compliant. If you're already using one of these systems, your portal infrastructure may already be there — the issue is usually adoption and configuration, not the platform itself.</p>
+
+<p>The case for building a custom internal portal on SharePoint or a similar platform is strongest when your agency has workflows that don't fit neatly into home health software, or when you're trying to consolidate multiple tools into one place your staff will actually log into every day.</p>
+
+<p>At <a href="https://solasupport.com">Sola AI Consulting</a>, the implementations we've done for small agencies almost always start with a Business Associate Agreement with Microsoft, then a SharePoint-based portal configured to match the agency's actual org structure and access requirements. It's not glamorous, but it works — and it's something a 20-person agency can actually manage without a full-time IT department.</p>
+
+<p>The hidden cost of getting this wrong isn't just a potential HIPAA fine. It's the operational drag of staff using five different tools, managers fielding calls that a self-service portal would have answered, and the compliance gaps that accumulate every month you delay a proper solution.</p>
+
+<p>If your agency is ready to move from makeshift file sharing and unsecured group texts to a portal that actually works for your team — and holds up to scrutiny — the conversation starts with understanding what you're currently doing and what's at risk.</p>
+  </article>
+</div>
+
+<div class="article-cta">
+  <div>
+    <h3>Ready to put this into practice?</h3>
+    <p>We build portals, intranets, and automations for small teams — usually in 4–8 weeks.</p>
+  </div>
+  <a href="https://solasupport.com/#contact" class="btn btn-primary">Book a discovery call <span class="btn-arrow">→</span></a>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="foot-bar">
+      <span>© 2026 SOLA AI CONSULTING, LLC · BALTIMORE, MD</span>
+      <a href="/" style="color: var(--muted); text-decoration: none; letter-spacing: 0.04em; font-size: 11.5px;">← Back to solasupport.com</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
