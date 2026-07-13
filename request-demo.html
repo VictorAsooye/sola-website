@@ -1,0 +1,806 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Request a demo — Sola AI Consulting</title>
+<meta name="description" content="Tell us a little about your team and we'll prep a demo built around what you actually do each week." />
+<link rel="icon" type="image/png" href="/sola-logo-mark.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap">
+<style>
+  :root {
+    --accent: #4A5A7A;
+    --accent-ink: #2E3A52;
+    --accent-wash: #EEF0F5;
+
+    --paper: #FAF8F4;
+    --paper-2: #F3EFE7;
+    --line: #E4DFD5;
+    --line-2: #D4CEC0;
+    --muted: #8C8576;
+    --ink-3: #6B6557;
+    --ink-2: #3A362E;
+    --ink: #1C1A16;
+
+    --radius: 14px;
+    --radius-sm: 8px;
+    --container: 1200px;
+
+    --serif: "Instrument Serif", "Cormorant Garamond", Georgia, serif;
+    --sans: "Geist", ui-sans-serif, system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+    --mono: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: var(--sans);
+    font-feature-settings: "ss01", "ss02", "cv11";
+    color: var(--ink);
+    background: var(--paper);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    font-size: 17px;
+    line-height: 1.55;
+    letter-spacing: -0.003em;
+  }
+
+  .container {
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  /* ── Nav (mirrors index.html) ───────────────────────────── */
+  .nav {
+    position: sticky; top: 0; z-index: 50;
+    backdrop-filter: saturate(160%) blur(14px);
+    -webkit-backdrop-filter: saturate(160%) blur(14px);
+    background: color-mix(in srgb, var(--paper) 72%, transparent);
+    border-bottom: 1px solid transparent;
+    transition: border-color .25s ease, background .25s ease;
+  }
+  .nav.scrolled { border-bottom-color: var(--line); }
+  .nav-inner {
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 18px 32px;
+    display: flex; align-items: center; gap: 48px;
+  }
+  .brand {
+    display: inline-flex; align-items: center; gap: 10px;
+    text-decoration: none; color: var(--ink);
+    font-weight: 500;
+    letter-spacing: -0.01em;
+  }
+  .brand-mark {
+    width: 30px; height: 30px;
+    display: inline-block;
+    background-image: url('/sola-logo-mark.png');
+    background-size: contain; background-repeat: no-repeat; background-position: center;
+  }
+  .brand-name {
+    font-size: 14px; font-weight: 600;
+    letter-spacing: 0.02em; text-transform: uppercase;
+    font-family: var(--sans);
+  }
+  .brand-name .sub {
+    display: block; font-size: 9.5px;
+    letter-spacing: 0.22em; color: var(--muted);
+    font-weight: 500; margin-top: 1px;
+  }
+  .nav-links {
+    display: flex; gap: 28px; margin-left: auto;
+    font-size: 14.5px;
+  }
+  .nav-links a {
+    color: var(--ink-2); text-decoration: none;
+    letter-spacing: -0.005em; transition: color .2s;
+  }
+  .nav-links a:hover { color: var(--accent); }
+
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 11px 18px;
+    border-radius: 999px;
+    font-size: 14.5px; font-weight: 500;
+    letter-spacing: -0.005em;
+    cursor: pointer;
+    border: 1px solid transparent;
+    text-decoration: none;
+    transition: all .2s ease;
+    white-space: nowrap;
+    font-family: var(--sans);
+  }
+  .btn-primary { background: var(--ink); color: var(--paper); }
+  .btn-primary:hover { background: var(--accent-ink); transform: translateY(-1px); }
+  .btn-arrow { transition: transform .2s; }
+  .btn:hover .btn-arrow { transform: translateX(3px); }
+
+  /* ── Page: hero + intro ───────────────────────────── */
+  .page {
+    padding: 72px 0 96px;
+  }
+  .page-header {
+    max-width: 720px;
+    margin: 0 auto 56px;
+    text-align: left;
+  }
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 12px; font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    display: inline-flex; align-items: center; gap: 10px;
+  }
+  .eyebrow::before {
+    content: "";
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+    display: inline-block;
+  }
+  .display {
+    font-family: var(--serif);
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    line-height: 1.02;
+    color: var(--ink);
+  }
+  h1.display {
+    font-size: clamp(44px, 6vw, 76px);
+    margin: 20px 0 20px;
+  }
+  h1.display .accent { color: var(--accent); font-style: italic; }
+  .page-lead {
+    font-size: clamp(17px, 1.25vw, 19px);
+    color: var(--ink-3);
+    line-height: 1.5;
+    max-width: 56ch;
+    margin: 0;
+  }
+
+  /* ── Form shell ───────────────────────────── */
+  .form-wrap {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  .form {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 40px;
+  }
+  @media (max-width: 640px) {
+    .form { padding: 24px; }
+  }
+
+  .section-block {
+    padding: 28px 0;
+    border-top: 1px solid var(--line);
+  }
+  .section-block:first-child { border-top: 0; padding-top: 0; }
+  .section-eyebrow {
+    display: inline-flex; align-items: baseline; gap: 10px;
+    font-family: var(--mono);
+    font-size: 11px; font-weight: 500;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 6px;
+  }
+  .section-eyebrow .num {
+    color: var(--accent);
+    font-weight: 600;
+  }
+  .section-title {
+    font-family: var(--serif);
+    font-size: 28px;
+    font-weight: 400;
+    letter-spacing: -0.015em;
+    color: var(--ink);
+    margin: 0 0 20px;
+    line-height: 1.15;
+  }
+
+  /* ── Field primitives ───────────────────────────── */
+  .field { display: block; margin-bottom: 18px; }
+  .field label {
+    display: flex; align-items: center; gap: 8px;
+    font-family: var(--mono);
+    font-size: 11px; color: var(--muted);
+    letter-spacing: 0.06em; text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .field label .req {
+    color: var(--accent);
+    font-family: var(--mono);
+    font-size: 10px;
+  }
+  .field input, .field textarea, .field select {
+    width: 100%;
+    padding: 12px 14px;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-sm);
+    font-family: var(--sans);
+    font-size: 15px;
+    color: var(--ink);
+    transition: border-color .2s, background .2s, box-shadow .2s;
+  }
+  .field input::placeholder, .field textarea::placeholder {
+    color: var(--muted);
+  }
+  .field input:focus, .field textarea:focus, .field select:focus {
+    outline: none;
+    border-color: var(--accent);
+    background: #fff;
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 18%, transparent);
+  }
+  .field textarea { resize: vertical; min-height: 96px; }
+  .field.err input, .field.err textarea, .field.err select { border-color: #B85B55; }
+  .field .err-msg {
+    display: none;
+    color: #B85B55;
+    font-size: 12.5px;
+    margin-top: 6px;
+    font-family: var(--mono);
+  }
+  .field.err .err-msg { display: block; }
+  .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  @media (max-width: 640px) {
+    .field-row { grid-template-columns: 1fr; }
+  }
+
+  /* ── Pills (multi-select cards for pain points) ───────── */
+  .pills {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin: 6px 0 16px;
+  }
+  @media (max-width: 640px) {
+    .pills { grid-template-columns: 1fr; }
+  }
+  .pill {
+    -webkit-appearance: none;
+    appearance: none;
+    text-align: left;
+    padding: 14px 16px;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-sm);
+    font-family: var(--sans);
+    font-size: 14.5px;
+    color: var(--ink-2);
+    cursor: pointer;
+    transition: all .18s ease;
+    display: flex; align-items: center; gap: 10px;
+    line-height: 1.35;
+  }
+  .pill:hover {
+    border-color: var(--line-2);
+    background: var(--paper-2);
+  }
+  .pill .dot {
+    width: 14px; height: 14px;
+    border-radius: 50%;
+    border: 1.5px solid var(--line-2);
+    display: inline-block;
+    flex-shrink: 0;
+    transition: all .18s ease;
+    position: relative;
+  }
+  .pill.selected {
+    border-color: var(--accent);
+    background: var(--accent-wash);
+    color: var(--accent-ink);
+  }
+  .pill.selected .dot {
+    border-color: var(--accent);
+    background: var(--accent);
+  }
+  .pill.selected .dot::after {
+    content: "";
+    position: absolute;
+    left: 3px; top: 5px;
+    width: 6px; height: 3px;
+    border-left: 1.5px solid #fff;
+    border-bottom: 1.5px solid #fff;
+    transform: rotate(-45deg);
+  }
+
+  /* ── Color swatches ───────────────────────────── */
+  .swatches {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin: 6px 0 16px;
+  }
+  .swatch {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    cursor: pointer;
+    padding: 0;
+    position: relative;
+    transition: transform .15s ease, box-shadow .15s ease;
+    box-shadow: 0 0 0 1px var(--line) inset;
+  }
+  .swatch:hover { transform: scale(1.06); }
+  .swatch.selected {
+    border-color: var(--ink);
+    box-shadow: 0 0 0 2px var(--paper), 0 0 0 4px var(--ink);
+  }
+  .swatch-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+    margin-top: 8px;
+  }
+  .swatch-label span { color: var(--ink-2); }
+
+  /* ── Submit + success ───────────────────────────── */
+  .form-submit-wrap {
+    margin-top: 28px;
+    padding-top: 28px;
+    border-top: 1px solid var(--line);
+  }
+  .form-submit {
+    margin-top: 0;
+    width: 100%;
+    justify-content: center;
+    padding: 15px;
+    font-size: 15.5px;
+  }
+  .form-error {
+    display: none;
+    margin-top: 14px;
+    padding: 12px 14px;
+    background: #F6DDDC;
+    border: 1px solid #E5B5B2;
+    color: #8E2C38;
+    border-radius: var(--radius-sm);
+    font-size: 13.5px;
+  }
+  .form.errored .form-error { display: block; }
+  .form-fineprint {
+    margin-top: 14px;
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+    text-align: center;
+  }
+  .form-success {
+    display: none;
+    padding: 56px 24px;
+    text-align: center;
+  }
+  .form.success .form-body { display: none; }
+  .form.success .form-success { display: block; }
+  .form-success .checkmark {
+    width: 56px; height: 56px;
+    border-radius: 50%;
+    background: var(--accent);
+    margin: 0 auto;
+    position: relative;
+  }
+  .form-success .checkmark::after {
+    content: "";
+    position: absolute;
+    left: 18px; top: 28px;
+    width: 20px; height: 10px;
+    border-left: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    transform: rotate(-45deg);
+  }
+  .form-success h3 {
+    font-family: var(--serif);
+    font-size: 32px;
+    margin: 20px 0 8px;
+    letter-spacing: -0.015em;
+    font-weight: 400;
+  }
+  .form-success p {
+    color: var(--ink-3);
+    margin: 0 auto;
+    max-width: 42ch;
+  }
+
+  /* ── Footer (mirrors index.html) ───────────────────────── */
+  footer {
+    padding: 80px 0 40px;
+    border-top: 1px solid var(--line);
+    background: var(--paper);
+  }
+  .foot-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1fr;
+    gap: 48px;
+    margin-bottom: 64px;
+  }
+  .foot-grid h4 {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin: 0 0 16px;
+    font-weight: 500;
+  }
+  .foot-grid a {
+    display: block;
+    color: var(--ink-2);
+    text-decoration: none;
+    font-size: 14.5px;
+    margin-bottom: 8px;
+    transition: color .2s;
+  }
+  .foot-grid a:hover { color: var(--accent); }
+  .foot-brand p {
+    color: var(--ink-3);
+    font-size: 14.5px;
+    margin: 16px 0 0;
+    max-width: 32ch;
+  }
+  .foot-bar {
+    padding-top: 32px;
+    border-top: 1px solid var(--line);
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  @media (max-width: 900px) {
+    .nav-links { display: none; }
+    .foot-grid { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="/" class="brand" aria-label="Sola AI Consulting">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-name">Sola AI<span class="sub">Consulting</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="/#services">Services</a>
+      <a href="/#how">How it works</a>
+      <a href="/#case">Case study</a>
+      <a href="/blog/">Blog</a>
+      <a href="/#contact">Contact</a>
+    </div>
+    <a href="/#contact" class="btn btn-primary">Book a call <span class="btn-arrow">→</span></a>
+  </div>
+</nav>
+
+<!-- PAGE -->
+<main class="page">
+  <div class="container">
+    <div class="page-header">
+      <span class="eyebrow">Request a demo</span>
+      <h1 class="display">Tell us a little about <span class="accent">your team.</span></h1>
+      <p class="page-lead">A few short questions, then we'll build a demo around what you actually do each week — using your own paperwork, not a stock example. Takes about two minutes.</p>
+    </div>
+
+    <div class="form-wrap">
+      <form class="form" id="demo-form" novalidate>
+        <div class="form-body">
+
+          <!-- 01 Your company -->
+          <div class="section-block">
+            <div class="section-eyebrow"><span class="num">01</span> <span>Your company</span></div>
+
+            <div class="field">
+              <label for="company_name">Company name <span class="req">· required</span></label>
+              <input id="company_name" name="company_name" type="text" placeholder="e.g. Sunrise Home Care" required />
+              <div class="err-msg">Please enter your company name.</div>
+            </div>
+
+            <div class="field-row">
+              <div class="field">
+                <label for="care_type">Kind of care</label>
+                <select id="care_type" name="care_type">
+                  <option value="">Choose one…</option>
+                  <option>Home Health</option>
+                  <option>Assisted Living</option>
+                  <option>Hospice</option>
+                  <option>Adult Day Care</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="city_state">City, state</label>
+                <input id="city_state" name="city_state" type="text" placeholder="e.g. Baltimore, MD" />
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="team_size">How many people work there?</label>
+              <select id="team_size" name="team_size">
+                <option value="">Choose one…</option>
+                <option>Just me</option>
+                <option>2–10 people</option>
+                <option>11–50 people</option>
+                <option>51–200 people</option>
+                <option>200+ people</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- 02 How to reach you -->
+          <div class="section-block">
+            <div class="section-eyebrow"><span class="num">02</span> <span>How to reach you</span></div>
+
+            <div class="field-row">
+              <div class="field">
+                <label for="contact_name">Your name <span class="req">· required</span></label>
+                <input id="contact_name" name="contact_name" type="text" placeholder="First and last" required />
+                <div class="err-msg">Please enter your name.</div>
+              </div>
+              <div class="field">
+                <label for="contact_role">Your role</label>
+                <input id="contact_role" name="contact_role" type="text" placeholder="e.g. Owner, Office Manager" />
+              </div>
+            </div>
+
+            <div class="field-row">
+              <div class="field">
+                <label for="email">Email <span class="req">· required</span></label>
+                <input id="email" name="email" type="email" placeholder="you@company.com" required />
+                <div class="err-msg">Please enter a valid email.</div>
+              </div>
+              <div class="field">
+                <label for="phone">Phone</label>
+                <input id="phone" name="phone" type="tel" placeholder="(410) 555-0100" />
+              </div>
+            </div>
+          </div>
+
+          <!-- 03 Pain points -->
+          <div class="section-block">
+            <div class="section-eyebrow"><span class="num">03</span> <span>What's slowing you down today</span></div>
+            <p class="page-lead" style="font-size:14.5px; margin: -4px 0 14px; max-width:52ch;">Tap all that apply.</p>
+
+            <div class="pills" role="group" aria-label="Pain points">
+              <button type="button" class="pill" data-value="Filling out paperwork by hand"><span class="dot"></span> Filling out paperwork by hand</button>
+              <button type="button" class="pill" data-value="Tracking licenses and certifications"><span class="dot"></span> Tracking licenses and certifications</button>
+              <button type="button" class="pill" data-value="Creating and updating care plans"><span class="dot"></span> Creating and updating care plans</button>
+              <button type="button" class="pill" data-value="Getting signatures from staff or clients"><span class="dot"></span> Getting signatures from staff or clients</button>
+              <button type="button" class="pill" data-value="Keeping documents organized"><span class="dot"></span> Keeping documents organized</button>
+              <button type="button" class="pill" data-value="Something else"><span class="dot"></span> Something else</button>
+            </div>
+
+            <div class="field">
+              <label for="pain_details">Tell us more (optional)</label>
+              <textarea id="pain_details" name="pain_details" placeholder="What takes the most time in a normal week?"></textarea>
+            </div>
+          </div>
+
+          <!-- 04 Show us an example -->
+          <div class="section-block">
+            <div class="section-eyebrow"><span class="num">04</span> <span>Show us an example</span></div>
+
+            <div class="field">
+              <label for="example_form">Describe one form or piece of paperwork your team fills out today</label>
+              <textarea id="example_form" name="example_form" placeholder="e.g. A one-page intake form we fill out by hand for every new client."></textarea>
+              <p style="font-family: var(--mono); font-size: 11px; color: var(--muted); letter-spacing: 0.04em; margin: 8px 0 0;">This is how we prep your demo around your real paperwork instead of a generic example.</p>
+            </div>
+          </div>
+
+          <!-- 05 Look and feel -->
+          <div class="section-block">
+            <div class="section-eyebrow"><span class="num">05</span> <span>Look and feel <em style="font-style:italic; font-family:var(--serif); font-size:13px; letter-spacing:0; text-transform:none; color:var(--muted);">— optional</em></span></div>
+
+            <div class="field">
+              <label>Pick a color that fits your brand</label>
+              <div class="swatches" role="group" aria-label="Brand color">
+                <button type="button" class="swatch" data-color="#1B2A4E" data-name="Navy"    aria-label="Navy"    style="background:#1B2A4E"></button>
+                <button type="button" class="swatch" data-color="#B08D3F" data-name="Gold"    aria-label="Gold"    style="background:#B08D3F"></button>
+                <button type="button" class="swatch" data-color="#4A5A7A" data-name="Slate"   aria-label="Slate"   style="background:#4A5A7A"></button>
+                <button type="button" class="swatch" data-color="#2E5D4C" data-name="Emerald" aria-label="Emerald" style="background:#2E5D4C"></button>
+                <button type="button" class="swatch" data-color="#5A4FA3" data-name="Purple"  aria-label="Purple"  style="background:#5A4FA3"></button>
+                <button type="button" class="swatch" data-color="#7A2E3D" data-name="Crimson" aria-label="Crimson" style="background:#7A2E3D"></button>
+              </div>
+              <div class="swatch-label">Selected: <span id="swatch-selected">None yet</span></div>
+            </div>
+
+            <div class="field" style="margin-top:20px;">
+              <label for="tagline">What's one line that describes your company?</label>
+              <input id="tagline" name="tagline" type="text" placeholder="e.g. In-home care that treats families like family." />
+            </div>
+          </div>
+
+          <!-- 06 Timeline -->
+          <div class="section-block">
+            <div class="section-eyebrow"><span class="num">06</span> <span>Timeline</span></div>
+
+            <div class="field">
+              <label for="timeline">When are you looking to make a change?</label>
+              <select id="timeline" name="timeline">
+                <option value="">Choose one…</option>
+                <option>Right away</option>
+                <option>In the next month</option>
+                <option>Just exploring for now</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-submit-wrap">
+            <button type="submit" class="btn btn-primary form-submit" id="submit-btn">
+              Send it to Sola. <span class="btn-arrow">→</span>
+            </button>
+            <div class="form-error" id="form-error">Something went wrong on our end. Try again in a moment, or email hello@solasupport.com.</div>
+            <p class="form-fineprint">We'll only use this to prep and schedule your demo.</p>
+          </div>
+
+        </div>
+
+        <div class="form-success">
+          <div class="checkmark"></div>
+          <h3>Thanks — we'll be in touch soon with your demo.</h3>
+          <p>You'll hear from us within one business day. In the meantime, feel free to keep an eye out for an email from <strong>hello@solasupport.com</strong>.</p>
+        </div>
+      </form>
+    </div>
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="/" class="brand">
+          <span class="brand-mark"></span>
+          <span class="brand-name">Sola AI<span class="sub">Consulting</span></span>
+        </a>
+        <p>AI consulting for small-to-mid businesses. Portals, intranets, and automation — built to stay out of your team's way.</p>
+      </div>
+      <div>
+        <h4>Work</h4>
+        <a href="/#services">Services</a>
+        <a href="/#how">How it works</a>
+        <a href="/#case">Case studies</a>
+      </div>
+      <div>
+        <h4>Writing</h4>
+        <a href="/blog/">Blog</a>
+        <a href="/#writing">Recent essays</a>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <a href="/#contact">Contact</a>
+        <a href="/request-demo">Request a demo</a>
+        <a href="/#">Privacy</a>
+      </div>
+    </div>
+    <div class="foot-bar">
+      <span>© 2026 SOLA AI CONSULTING, LLC · BALTIMORE, MD</span>
+      <span>YOUR BUSINESS, ALL IN ONE PLACE.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Nav scroll effect
+  const nav = document.getElementById('nav');
+  const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 12);
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // Pain-point pills (multi-select)
+  const pills = Array.from(document.querySelectorAll('.pill'));
+  pills.forEach(p => {
+    p.addEventListener('click', () => {
+      p.classList.toggle('selected');
+      p.setAttribute('aria-pressed', p.classList.contains('selected') ? 'true' : 'false');
+    });
+    p.setAttribute('aria-pressed', 'false');
+  });
+  const getSelectedPills = () =>
+    pills.filter(p => p.classList.contains('selected')).map(p => p.dataset.value);
+
+  // Color swatches (single-select)
+  const swatches = Array.from(document.querySelectorAll('.swatch'));
+  const swatchLabel = document.getElementById('swatch-selected');
+  let selectedSwatch = { color: null, name: null };
+  swatches.forEach(s => {
+    s.addEventListener('click', () => {
+      swatches.forEach(x => x.classList.remove('selected'));
+      s.classList.add('selected');
+      selectedSwatch = { color: s.dataset.color, name: s.dataset.name };
+      swatchLabel.textContent = `${s.dataset.name} · ${s.dataset.color}`;
+    });
+  });
+
+  // Form submit
+  const form = document.getElementById('demo-form');
+  const submitBtn = document.getElementById('submit-btn');
+  const errorBox = document.getElementById('form-error');
+
+  const requiredFields = ['company_name', 'contact_name', 'email'];
+
+  const setErr = (id, on) => {
+    const el = document.getElementById(id);
+    const field = el && el.closest('.field');
+    if (field) field.classList.toggle('err', on);
+  };
+
+  const validEmail = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim());
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    form.classList.remove('errored');
+
+    // Reset all field errors
+    Array.from(form.querySelectorAll('.field.err')).forEach(f => f.classList.remove('err'));
+
+    let ok = true;
+    requiredFields.forEach(id => {
+      const el = document.getElementById(id);
+      if (!el.value.trim()) { setErr(id, true); ok = false; }
+    });
+    const emailEl = document.getElementById('email');
+    if (emailEl.value.trim() && !validEmail(emailEl.value)) { setErr('email', true); ok = false; }
+
+    if (!ok) {
+      const firstErr = form.querySelector('.field.err input, .field.err select, .field.err textarea');
+      if (firstErr) firstErr.focus();
+      return;
+    }
+
+    const payload = {
+      company_name: document.getElementById('company_name').value.trim(),
+      care_type: document.getElementById('care_type').value,
+      city_state: document.getElementById('city_state').value.trim(),
+      team_size: document.getElementById('team_size').value,
+      contact_name: document.getElementById('contact_name').value.trim(),
+      contact_role: document.getElementById('contact_role').value.trim(),
+      email: document.getElementById('email').value.trim(),
+      phone: document.getElementById('phone').value.trim(),
+      pain_points: getSelectedPills(),
+      pain_details: document.getElementById('pain_details').value.trim(),
+      example_form: document.getElementById('example_form').value.trim(),
+      brand_color: selectedSwatch.color,
+      brand_color_name: selectedSwatch.name,
+      tagline: document.getElementById('tagline').value.trim(),
+      timeline: document.getElementById('timeline').value,
+      submitted_at: new Date().toISOString(),
+      source: 'solasupport.com/request-demo',
+    };
+
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = 'Sending… <span class="btn-arrow">→</span>';
+
+    try {
+      const res = await fetch('/api/request-demo', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      form.classList.add('success');
+      window.scrollTo({ top: form.getBoundingClientRect().top + window.scrollY - 100, behavior: 'smooth' });
+    } catch (err) {
+      form.classList.add('errored');
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = 'Send it to Sola. <span class="btn-arrow">→</span>';
+    }
+  });
+</script>
+</body>
+</html>
