@@ -391,16 +391,13 @@
     border-radius: 50%;
     background: var(--accent);
     margin: 0 auto;
-    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
-  .form-success .checkmark::after {
-    content: "";
-    position: absolute;
-    left: 18px; top: 28px;
-    width: 20px; height: 10px;
-    border-left: 2px solid #fff;
-    border-bottom: 2px solid #fff;
-    transform: rotate(-45deg);
+  .form-success .checkmark svg {
+    width: 28px;
+    height: 28px;
   }
   .form-success h3 {
     font-family: var(--serif);
@@ -645,16 +642,16 @@
             <button type="submit" class="btn btn-primary form-submit" id="submit-btn">
               Send it to Sola. <span class="btn-arrow">→</span>
             </button>
-            <div class="form-error" id="form-error">Something went wrong on our end. Try again in a moment, or email hello@solasupport.com.</div>
+            <div class="form-error" id="form-error">Something went wrong on our end. Try again in a moment, or email team@solaconsulting.io.</div>
             <p class="form-fineprint">We'll only use this to prep and schedule your demo.</p>
           </div>
 
         </div>
 
         <div class="form-success">
-          <div class="checkmark"></div>
+          <div class="checkmark"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M5 12.5 L10 17.5 L19 7.5" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
           <h3>Thanks — we'll be in touch soon with your demo.</h3>
-          <p>You'll hear from us within one business day. In the meantime, feel free to keep an eye out for an email from <strong>hello@solasupport.com</strong>.</p>
+          <p>You'll hear from us within one business day. In the meantime, feel free to keep an eye out for an email from <strong>team@solaconsulting.io</strong>.</p>
         </div>
       </form>
     </div>
