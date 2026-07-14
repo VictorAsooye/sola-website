@@ -285,13 +285,21 @@
     background: var(--paper-2);
   }
   .pill .dot {
-    width: 14px; height: 14px;
+    width: 18px; height: 18px;
     border-radius: 50%;
     border: 1.5px solid var(--line-2);
-    display: inline-block;
+    background: transparent;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     flex-shrink: 0;
     transition: all .18s ease;
-    position: relative;
+  }
+  .pill .dot svg {
+    width: 10px;
+    height: 10px;
+    opacity: 0;
+    transition: opacity .12s ease;
   }
   .pill.selected {
     border-color: var(--accent);
@@ -302,14 +310,8 @@
     border-color: var(--accent);
     background: var(--accent);
   }
-  .pill.selected .dot::after {
-    content: "";
-    position: absolute;
-    left: 3px; top: 5px;
-    width: 6px; height: 3px;
-    border-left: 1.5px solid #fff;
-    border-bottom: 1.5px solid #fff;
-    transform: rotate(-45deg);
+  .pill.selected .dot svg {
+    opacity: 1;
   }
 
   /* ── Color swatches ───────────────────────────── */
@@ -576,12 +578,12 @@
             <p class="page-lead" style="font-size:14.5px; margin: -4px 0 14px; max-width:52ch;">Tap all that apply.</p>
 
             <div class="pills" role="group" aria-label="Pain points">
-              <button type="button" class="pill" data-value="Filling out paperwork by hand"><span class="dot"></span> Filling out paperwork by hand</button>
-              <button type="button" class="pill" data-value="Tracking licenses and certifications"><span class="dot"></span> Tracking licenses and certifications</button>
-              <button type="button" class="pill" data-value="Creating and updating care plans"><span class="dot"></span> Creating and updating care plans</button>
-              <button type="button" class="pill" data-value="Getting signatures from staff or clients"><span class="dot"></span> Getting signatures from staff or clients</button>
-              <button type="button" class="pill" data-value="Keeping documents organized"><span class="dot"></span> Keeping documents organized</button>
-              <button type="button" class="pill" data-value="Something else"><span class="dot"></span> Something else</button>
+              <button type="button" class="pill" data-value="Filling out paperwork by hand"><span class="dot"><svg viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M2 5.3 L4.2 7.5 L8 3.4" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Filling out paperwork by hand</button>
+              <button type="button" class="pill" data-value="Tracking licenses and certifications"><span class="dot"><svg viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M2 5.3 L4.2 7.5 L8 3.4" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Tracking licenses and certifications</button>
+              <button type="button" class="pill" data-value="Creating and updating care plans"><span class="dot"><svg viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M2 5.3 L4.2 7.5 L8 3.4" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Creating and updating care plans</button>
+              <button type="button" class="pill" data-value="Getting signatures from staff or clients"><span class="dot"><svg viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M2 5.3 L4.2 7.5 L8 3.4" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Getting signatures from staff or clients</button>
+              <button type="button" class="pill" data-value="Keeping documents organized"><span class="dot"><svg viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M2 5.3 L4.2 7.5 L8 3.4" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Keeping documents organized</button>
+              <button type="button" class="pill" data-value="Something else"><span class="dot"><svg viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M2 5.3 L4.2 7.5 L8 3.4" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Something else</button>
             </div>
 
             <div class="field">
