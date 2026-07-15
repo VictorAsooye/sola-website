@@ -1,0 +1,412 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>EVV Compliance Automation for Small Agencies: Stop the Manual Chaos — Sola AI Consulting</title>
+<meta name="description" content="Learn how EVV compliance automation helps small home health agencies stay audit-ready, cut admin hours, and reduce costly errors. Practical guidance inside." />
+<meta property="og:title" content="EVV Compliance Automation for Small Agencies: Stop the Manual Chaos" />
+<meta property="og:description" content="Learn how EVV compliance automation helps small home health agencies stay audit-ready, cut admin hours, and reduce costly errors. Practical guidance inside." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://solasupport.com/blog/posts/evv-compliance-automation-for-small-agencies-stop-the-manual-chaos.html" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="canonical" href="https://solasupport.com/blog/posts/evv-compliance-automation-for-small-agencies-stop-the-manual-chaos.html" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap">
+<style>
+  :root {
+    --accent: #4A5A7A;
+    --accent-ink: #2E3A52;
+    --accent-wash: #EEF0F5;
+    --paper: #FAF8F4;
+    --paper-2: #F3EFE7;
+    --line: #E4DFD5;
+    --line-2: #D4CEC0;
+    --muted: #8C8576;
+    --ink-3: #6B6557;
+    --ink-2: #3A362E;
+    --ink: #1C1A16;
+    --radius: 14px;
+    --container: 1200px;
+    --serif: "Instrument Serif", "Cormorant Garamond", Georgia, serif;
+    --sans: "Geist", ui-sans-serif, system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+    --mono: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--sans);
+    color: var(--ink);
+    background: var(--paper);
+    -webkit-font-smoothing: antialiased;
+    font-size: 17px;
+    line-height: 1.55;
+    letter-spacing: -0.003em;
+  }
+
+  .container { max-width: var(--container); margin: 0 auto; padding: 0 32px; }
+
+  /* Nav */
+  .nav {
+    position: sticky; top: 0; z-index: 50;
+    backdrop-filter: saturate(160%) blur(14px);
+    -webkit-backdrop-filter: saturate(160%) blur(14px);
+    background: color-mix(in srgb, var(--paper) 72%, transparent);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner {
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 18px 32px;
+    display: flex; align-items: center; gap: 48px;
+  }
+  .brand {
+    display: inline-flex; align-items: center; gap: 10px;
+    text-decoration: none; color: var(--ink); font-weight: 500;
+  }
+  .brand-mark {
+    width: 30px; height: 30px;
+    background-image: url('/sola-logo-mark.png');
+    background-size: contain; background-repeat: no-repeat; background-position: center;
+  }
+  .brand-name {
+    font-size: 14px; font-weight: 600; letter-spacing: 0.02em;
+    text-transform: uppercase; font-family: var(--sans);
+  }
+  .brand-name .sub {
+    display: block; font-size: 9.5px; letter-spacing: 0.22em;
+    color: var(--muted); font-weight: 500; margin-top: 1px;
+  }
+  .nav-links { display: flex; gap: 28px; margin-left: auto; font-size: 14.5px; }
+  .nav-links a { color: var(--ink-2); text-decoration: none; transition: color .2s; }
+  .nav-links a:hover, .nav-links a.active { color: var(--accent); }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 11px 18px; border-radius: 999px; font-size: 14.5px;
+    font-weight: 500; border: 1px solid transparent; text-decoration: none;
+    transition: all .2s ease; white-space: nowrap; cursor: pointer;
+  }
+  .btn-primary { background: var(--ink); color: var(--paper); }
+  .btn-primary:hover { background: var(--accent-ink); transform: translateY(-1px); }
+  .btn-arrow { transition: transform .2s; }
+  .btn:hover .btn-arrow { transform: translateX(3px); }
+
+  /* Article */
+  .article-header {
+    padding: 72px 0 56px;
+    border-bottom: 1px solid var(--line);
+    max-width: 760px;
+    margin: 0 auto;
+  }
+  .article-eyebrow {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    display: flex; align-items: center; gap: 16px;
+    margin-bottom: 24px;
+  }
+  .article-eyebrow a { color: var(--accent); text-decoration: none; }
+  .article-eyebrow a:hover { text-decoration: underline; }
+  .article-eyebrow span { color: var(--line-2); }
+  .article-title {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(36px, 5vw, 64px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin: 0 0 24px;
+  }
+  .article-title em { font-style: italic; color: var(--accent); }
+  .article-meta {
+    font-family: var(--mono);
+    font-size: 11.5px;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+    display: flex; gap: 20px;
+  }
+
+  .article-body {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 56px 0;
+  }
+  .article-body h2 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(28px, 3vw, 40px);
+    line-height: 1.1;
+    letter-spacing: -0.018em;
+    margin: 56px 0 20px;
+    color: var(--ink);
+  }
+  .article-body h2:first-child { margin-top: 0; }
+  .article-body h3 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(22px, 2vw, 28px);
+    letter-spacing: -0.012em;
+    margin: 40px 0 16px;
+    color: var(--ink);
+  }
+  .article-body p {
+    color: var(--ink-2);
+    font-size: 17px;
+    line-height: 1.7;
+    margin: 0 0 24px;
+  }
+  .article-body ul, .article-body ol {
+    color: var(--ink-2);
+    font-size: 17px;
+    line-height: 1.7;
+    margin: 0 0 24px;
+    padding-left: 0;
+    list-style: none;
+  }
+  .article-body ul li, .article-body ol li {
+    padding: 6px 0 6px 24px;
+    position: relative;
+    border-bottom: 1px solid var(--line);
+  }
+  .article-body ul li:last-child, .article-body ol li:last-child { border-bottom: 0; }
+  .article-body ul li::before {
+    content: "→";
+    position: absolute; left: 0;
+    color: var(--accent);
+    font-family: var(--mono);
+  }
+  .article-body ol { counter-reset: ol; }
+  .article-body ol li::before {
+    content: counter(ol);
+    counter-increment: ol;
+    position: absolute; left: 0;
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--muted);
+    font-weight: 500;
+    top: 8px;
+  }
+  .article-body blockquote {
+    border-left: 3px solid var(--accent);
+    margin: 32px 0;
+    padding: 16px 24px;
+    background: var(--paper-2);
+    border-radius: 0 8px 8px 0;
+    font-family: var(--serif);
+    font-size: 22px;
+    line-height: 1.4;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+  }
+  .article-body strong { color: var(--ink); font-weight: 600; }
+  .article-body a { color: var(--accent-ink); text-decoration: underline; text-underline-offset: 3px; }
+  .article-body a:hover { color: var(--accent); }
+  .callout {
+    background: var(--accent-wash);
+    border: 1px solid color-mix(in srgb, var(--accent) 20%, transparent);
+    border-radius: var(--radius);
+    padding: 24px 28px;
+    margin: 32px 0;
+  }
+  .callout .callout-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent-ink);
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+  .callout p { color: var(--ink-2); margin: 0; font-size: 16px; }
+
+  /* CTA */
+  .article-cta {
+    background: var(--ink);
+    border-radius: 20px;
+    padding: 56px 64px;
+    margin: 64px auto;
+    max-width: 760px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+  }
+  .article-cta h3 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(24px, 2.5vw, 36px);
+    letter-spacing: -0.015em;
+    color: var(--paper);
+    margin: 0 0 8px;
+  }
+  .article-cta p { color: color-mix(in srgb, var(--paper) 65%, transparent); margin: 0; font-size: 15px; }
+  .article-cta .btn-primary { background: var(--paper); color: var(--ink); flex-shrink: 0; }
+  .article-cta .btn-primary:hover { background: #fff; }
+
+  /* Back link */
+  .back-link {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: var(--mono); font-size: 12px;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    color: var(--muted); text-decoration: none;
+    margin: 40px 0 0;
+    transition: color .2s;
+  }
+  .back-link:hover { color: var(--accent); }
+
+  /* Footer */
+  footer {
+    padding: 64px 0 40px;
+    border-top: 1px solid var(--line);
+    background: var(--paper);
+  }
+  .foot-bar {
+    display: flex; justify-content: space-between;
+    font-family: var(--mono); font-size: 11.5px;
+    color: var(--muted); letter-spacing: 0.04em;
+  }
+
+  @media (max-width: 960px) {
+    .nav-links { display: none; }
+    .article-header, .article-body { padding-left: 0; padding-right: 0; }
+    .article-cta { flex-direction: column; padding: 40px 32px; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="brand" aria-label="Sola AI Consulting">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-name">Sola AI<span class="sub">Consulting</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="/#services">Services</a>
+      <a href="/#how">How it works</a>
+      <a href="/#case">Case study</a>
+      <a href="/blog/" class="active">Blog</a>
+      <a href="/#contact">Contact</a>
+    </div>
+    <a href="/#contact" class="btn btn-primary">Book a call <span class="btn-arrow">→</span></a>
+  </div>
+</nav>
+
+<div class="container">
+  <a href="/blog/" class="back-link">← All posts</a>
+</div>
+
+<div class="container">
+  <header class="article-header">
+    <div class="article-eyebrow">
+      <a href="/blog/">Blog</a>
+      <span>·</span>
+      <span>Guide</span>
+      <span>·</span>
+      <span>5 min read</span>
+    </div>
+    <h1 class="article-title">EVV Compliance Automation for Small Agencies: Stop the Manual Chaos</h1>
+    <div class="article-meta">
+      <span>JUL 15, 2026</span>
+      <span>·</span>
+      <span>Sola AI Consulting</span>
+    </div>
+  </header>
+
+  <article class="article-body">
+    <h2>The EVV Burden Is Real — and It's Falling on the Wrong People</h2>
+
+<p>If you run a small home health agency, you already know what Electronic Visit Verification was supposed to do. It was supposed to create accountability. What it actually created, for most small operators, was a second job for whoever handles billing.</p>
+
+<p>Aides are forgetting to clock out. Coordinators are manually cross-referencing visit logs against Medicaid submissions. Someone is building a spreadsheet every Friday to catch the gaps before the Monday cutoff. And somewhere in that process, errors are slipping through — errors that trigger audits, payment delays, or worse.</p>
+
+<p>This is the real state of EVV compliance at small agencies. Not a technology problem. An operations problem that technology keeps making more complicated.</p>
+
+<p>EVV compliance automation for small agencies isn't about buying new software. It's about connecting the systems you already have — or replacing manual steps with logic that runs quietly in the background while your team does actual care coordination.</p>
+
+<blockquote>
+  "The agency wasn't failing EVV because they lacked data. They had too much of it, in too many places, with no one responsible for reconciling it until something broke."
+</blockquote>
+
+<h2>Where Small Agencies Actually Lose Time (and Money)</h2>
+
+<p>Before you can automate anything, you have to be honest about where the friction lives. In my experience working with small home health and personal care agencies, it almost always shows up in the same three places.</p>
+
+<h3>1. Visit Exceptions That Never Get Caught in Time</h3>
+
+<p>Every EVV system flags exceptions — missed clock-ins, location mismatches, early departures. The problem is that most small agency staff check those exception reports once a day, maybe. By the time a coordinator sees a flag from Monday, it's Thursday. The aide has moved on. The client's family doesn't remember. And now you're submitting a claim with a known gap in documentation.</p>
+
+<p>Automated exception alerts change this. When an EVV event falls outside acceptable parameters, the right person gets notified immediately — not through a report they have to remember to pull, but through a message that lands in front of them within minutes.</p>
+
+<h3>2. Manual Reconciliation Between EVV and Billing</h3>
+
+<p>Most small agencies use one platform for EVV and a different one for billing. Those two systems rarely talk to each other cleanly. So someone — usually an already-stretched office manager — is manually comparing visit records to billing entries before every submission cycle.</p>
+
+<p>This is exactly the kind of repetitive, rule-based work that automation handles well. A properly configured workflow can pull verified visit data, check it against scheduled hours, flag discrepancies, and prepare a reconciliation summary without any manual input. What used to take three hours on a Friday can take three minutes.</p>
+
+<h3>3. Coordinator Bottlenecks During State Audits</h3>
+
+<p>When a state auditor requests documentation, small agencies scramble. Pulling visit logs, caregiver credentials, and authorization records from multiple places under deadline pressure is stressful and error-prone. Agencies that have invested in EVV compliance automation — even light automation — can respond to audit requests in hours instead of days, because their records are organized, reconciled, and retrievable.</p>
+
+<div class="callout">
+  <div class="callout-label">Key takeaway</div>
+  <p>You don't need a new EVV platform. You need the data from your current one to automatically flow into a single audit-ready record. Start there before spending money on new software.</p>
+</div>
+
+<h2>What EVV Compliance Automation Actually Looks Like in Practice</h2>
+
+<p>Let's get specific. When we implement EVV compliance automation for a small agency, it typically involves three connected components.</p>
+
+<h3>Real-Time Exception Alerting</h3>
+
+<p>We set up automated triggers that monitor EVV data as it comes in. If a caregiver doesn't clock in within a defined window of a scheduled visit start, a coordinator gets a text or a Teams message — not an email buried under thirty others, but a direct alert. The coordinator can act immediately: call the aide, verify the visit, correct the record before the business day ends.</p>
+
+<h3>Automated Reconciliation Summaries</h3>
+
+<p>Using tools like Power Automate or custom API connections between the EVV system and the billing platform, we build workflows that run on a schedule — daily, or before each billing cycle. These workflows compare scheduled visits to verified visits, calculate discrepancies, and produce a clean summary that a billing coordinator can review and approve. No more building that Friday spreadsheet from scratch.</p>
+
+<h3>Centralized Documentation Repositories</h3>
+
+<p>We build SharePoint-based portals where visit records, caregiver credentials, and client authorizations live in one organized place — with permissions set appropriately so the right staff can access what they need. When an audit request comes in, the documentation is already organized. There's no hunting across email chains and desktop folders.</p>
+
+<p>These aren't enterprise solutions. They're built for agencies with five to fifty employees, on budgets that actually make sense for that scale. The goal is always the same: take the manual work off people's plates and put logic in its place.</p>
+
+<h2>Why Small Agencies Wait Too Long to Automate</h2>
+
+<p>The most common thing I hear from agency owners is some version of: "We're too small to justify that investment." I understand the instinct. But the math usually runs the other way.</p>
+
+<p>A billing error that triggers a Medicaid recoupment can cost more than an entire year of automation tooling. A coordinator who spends eight hours a week on manual reconciliation is costing the agency real money — money that doesn't show up on a line item but absolutely shows up on the bottom line.</p>
+
+<p>The agencies that wait to automate until they're large enough to "need" it are the ones that stay stuck at a size where growth feels impossible. When your admin team is buried in compliance busywork, they can't take on more clients. When coordinators are reactive instead of proactive, caregiver retention suffers. The operational drag is real even when it's invisible.</p>
+
+<p>Small doesn't mean manual. Small means you have less margin for error, which is exactly why automation matters more — not less.</p>
+
+<p>At <a href="https://solasupport.com">Sola AI Consulting</a>, we specialize in building EVV compliance automation systems that fit the reality of small home health and personal care agencies — the budget, the staff size, the existing tools. If your team is spending hours every week on work that logic could handle, it's worth a conversation about what's actually possible.</p>
+
+<p>If you're ready to stop patching the process and start fixing it, here's where to begin.</p>
+  </article>
+</div>
+
+<div class="article-cta">
+  <div>
+    <h3>Ready to put this into practice?</h3>
+    <p>We build portals, intranets, and automations for small teams — usually in 4–8 weeks.</p>
+  </div>
+  <a href="https://solasupport.com/#contact" class="btn btn-primary">Book a discovery call <span class="btn-arrow">→</span></a>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="foot-bar">
+      <span>© 2026 SOLA AI CONSULTING, LLC · BALTIMORE, MD</span>
+      <a href="/" style="color: var(--muted); text-decoration: none; letter-spacing: 0.04em; font-size: 11.5px;">← Back to solasupport.com</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
