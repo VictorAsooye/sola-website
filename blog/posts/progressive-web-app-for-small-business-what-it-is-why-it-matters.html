@@ -1,0 +1,412 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Progressive Web App for Small Business: What It Is & Why It Matters — Sola AI Consulting</title>
+<meta name="description" content="Discover how a progressive web app for small business can replace clunky tools, cut costs, and give your team a faster, app-like experience without the app store." />
+<meta property="og:title" content="Progressive Web App for Small Business: What It Is & Why It Matters" />
+<meta property="og:description" content="Discover how a progressive web app for small business can replace clunky tools, cut costs, and give your team a faster, app-like experience without the app store." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://solasupport.com/blog/posts/progressive-web-app-for-small-business-what-it-is-why-it-matters.html" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="canonical" href="https://solasupport.com/blog/posts/progressive-web-app-for-small-business-what-it-is-why-it-matters.html" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap">
+<style>
+  :root {
+    --accent: #4A5A7A;
+    --accent-ink: #2E3A52;
+    --accent-wash: #EEF0F5;
+    --paper: #FAF8F4;
+    --paper-2: #F3EFE7;
+    --line: #E4DFD5;
+    --line-2: #D4CEC0;
+    --muted: #8C8576;
+    --ink-3: #6B6557;
+    --ink-2: #3A362E;
+    --ink: #1C1A16;
+    --radius: 14px;
+    --container: 1200px;
+    --serif: "Instrument Serif", "Cormorant Garamond", Georgia, serif;
+    --sans: "Geist", ui-sans-serif, system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+    --mono: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--sans);
+    color: var(--ink);
+    background: var(--paper);
+    -webkit-font-smoothing: antialiased;
+    font-size: 17px;
+    line-height: 1.55;
+    letter-spacing: -0.003em;
+  }
+
+  .container { max-width: var(--container); margin: 0 auto; padding: 0 32px; }
+
+  /* Nav */
+  .nav {
+    position: sticky; top: 0; z-index: 50;
+    backdrop-filter: saturate(160%) blur(14px);
+    -webkit-backdrop-filter: saturate(160%) blur(14px);
+    background: color-mix(in srgb, var(--paper) 72%, transparent);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner {
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 18px 32px;
+    display: flex; align-items: center; gap: 48px;
+  }
+  .brand {
+    display: inline-flex; align-items: center; gap: 10px;
+    text-decoration: none; color: var(--ink); font-weight: 500;
+  }
+  .brand-mark {
+    width: 30px; height: 30px;
+    background-image: url('/sola-logo-mark.png');
+    background-size: contain; background-repeat: no-repeat; background-position: center;
+  }
+  .brand-name {
+    font-size: 14px; font-weight: 600; letter-spacing: 0.02em;
+    text-transform: uppercase; font-family: var(--sans);
+  }
+  .brand-name .sub {
+    display: block; font-size: 9.5px; letter-spacing: 0.22em;
+    color: var(--muted); font-weight: 500; margin-top: 1px;
+  }
+  .nav-links { display: flex; gap: 28px; margin-left: auto; font-size: 14.5px; }
+  .nav-links a { color: var(--ink-2); text-decoration: none; transition: color .2s; }
+  .nav-links a:hover, .nav-links a.active { color: var(--accent); }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 11px 18px; border-radius: 999px; font-size: 14.5px;
+    font-weight: 500; border: 1px solid transparent; text-decoration: none;
+    transition: all .2s ease; white-space: nowrap; cursor: pointer;
+  }
+  .btn-primary { background: var(--ink); color: var(--paper); }
+  .btn-primary:hover { background: var(--accent-ink); transform: translateY(-1px); }
+  .btn-arrow { transition: transform .2s; }
+  .btn:hover .btn-arrow { transform: translateX(3px); }
+
+  /* Article */
+  .article-header {
+    padding: 72px 0 56px;
+    border-bottom: 1px solid var(--line);
+    max-width: 760px;
+    margin: 0 auto;
+  }
+  .article-eyebrow {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    display: flex; align-items: center; gap: 16px;
+    margin-bottom: 24px;
+  }
+  .article-eyebrow a { color: var(--accent); text-decoration: none; }
+  .article-eyebrow a:hover { text-decoration: underline; }
+  .article-eyebrow span { color: var(--line-2); }
+  .article-title {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(36px, 5vw, 64px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin: 0 0 24px;
+  }
+  .article-title em { font-style: italic; color: var(--accent); }
+  .article-meta {
+    font-family: var(--mono);
+    font-size: 11.5px;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+    display: flex; gap: 20px;
+  }
+
+  .article-body {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 56px 0;
+  }
+  .article-body h2 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(28px, 3vw, 40px);
+    line-height: 1.1;
+    letter-spacing: -0.018em;
+    margin: 56px 0 20px;
+    color: var(--ink);
+  }
+  .article-body h2:first-child { margin-top: 0; }
+  .article-body h3 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(22px, 2vw, 28px);
+    letter-spacing: -0.012em;
+    margin: 40px 0 16px;
+    color: var(--ink);
+  }
+  .article-body p {
+    color: var(--ink-2);
+    font-size: 17px;
+    line-height: 1.7;
+    margin: 0 0 24px;
+  }
+  .article-body ul, .article-body ol {
+    color: var(--ink-2);
+    font-size: 17px;
+    line-height: 1.7;
+    margin: 0 0 24px;
+    padding-left: 0;
+    list-style: none;
+  }
+  .article-body ul li, .article-body ol li {
+    padding: 6px 0 6px 24px;
+    position: relative;
+    border-bottom: 1px solid var(--line);
+  }
+  .article-body ul li:last-child, .article-body ol li:last-child { border-bottom: 0; }
+  .article-body ul li::before {
+    content: "→";
+    position: absolute; left: 0;
+    color: var(--accent);
+    font-family: var(--mono);
+  }
+  .article-body ol { counter-reset: ol; }
+  .article-body ol li::before {
+    content: counter(ol);
+    counter-increment: ol;
+    position: absolute; left: 0;
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--muted);
+    font-weight: 500;
+    top: 8px;
+  }
+  .article-body blockquote {
+    border-left: 3px solid var(--accent);
+    margin: 32px 0;
+    padding: 16px 24px;
+    background: var(--paper-2);
+    border-radius: 0 8px 8px 0;
+    font-family: var(--serif);
+    font-size: 22px;
+    line-height: 1.4;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+  }
+  .article-body strong { color: var(--ink); font-weight: 600; }
+  .article-body a { color: var(--accent-ink); text-decoration: underline; text-underline-offset: 3px; }
+  .article-body a:hover { color: var(--accent); }
+  .callout {
+    background: var(--accent-wash);
+    border: 1px solid color-mix(in srgb, var(--accent) 20%, transparent);
+    border-radius: var(--radius);
+    padding: 24px 28px;
+    margin: 32px 0;
+  }
+  .callout .callout-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent-ink);
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+  .callout p { color: var(--ink-2); margin: 0; font-size: 16px; }
+
+  /* CTA */
+  .article-cta {
+    background: var(--ink);
+    border-radius: 20px;
+    padding: 56px 64px;
+    margin: 64px auto;
+    max-width: 760px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+  }
+  .article-cta h3 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(24px, 2.5vw, 36px);
+    letter-spacing: -0.015em;
+    color: var(--paper);
+    margin: 0 0 8px;
+  }
+  .article-cta p { color: color-mix(in srgb, var(--paper) 65%, transparent); margin: 0; font-size: 15px; }
+  .article-cta .btn-primary { background: var(--paper); color: var(--ink); flex-shrink: 0; }
+  .article-cta .btn-primary:hover { background: #fff; }
+
+  /* Back link */
+  .back-link {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: var(--mono); font-size: 12px;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    color: var(--muted); text-decoration: none;
+    margin: 40px 0 0;
+    transition: color .2s;
+  }
+  .back-link:hover { color: var(--accent); }
+
+  /* Footer */
+  footer {
+    padding: 64px 0 40px;
+    border-top: 1px solid var(--line);
+    background: var(--paper);
+  }
+  .foot-bar {
+    display: flex; justify-content: space-between;
+    font-family: var(--mono); font-size: 11.5px;
+    color: var(--muted); letter-spacing: 0.04em;
+  }
+
+  @media (max-width: 960px) {
+    .nav-links { display: none; }
+    .article-header, .article-body { padding-left: 0; padding-right: 0; }
+    .article-cta { flex-direction: column; padding: 40px 32px; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="brand" aria-label="Sola AI Consulting">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-name">Sola AI<span class="sub">Consulting</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="/#services">Services</a>
+      <a href="/#how">How it works</a>
+      <a href="/#case">Case study</a>
+      <a href="/blog/" class="active">Blog</a>
+      <a href="/#contact">Contact</a>
+    </div>
+    <a href="/#contact" class="btn btn-primary">Book a call <span class="btn-arrow">→</span></a>
+  </div>
+</nav>
+
+<div class="container">
+  <a href="/blog/" class="back-link">← All posts</a>
+</div>
+
+<div class="container">
+  <header class="article-header">
+    <div class="article-eyebrow">
+      <a href="/blog/">Blog</a>
+      <span>·</span>
+      <span>Guide</span>
+      <span>·</span>
+      <span>5 min read</span>
+    </div>
+    <h1 class="article-title">Progressive Web App for Small Business: What It Is & Why It Matters</h1>
+    <div class="article-meta">
+      <span>AUG 10, 2026</span>
+      <span>·</span>
+      <span>Sola AI Consulting</span>
+    </div>
+  </header>
+
+  <article class="article-body">
+    <h2>Your Customers Are on Their Phones. Your Tools Probably Aren't Ready.</h2>
+
+<p>Most small businesses are running on a patchwork of tools — a website that barely loads on mobile, a spreadsheet someone emails around, maybe a Facebook page that doubles as a customer portal. It works until it doesn't. And when it stops working, you lose time, clients, and credibility.</p>
+
+<p>A progressive web app for small business is one of the most practical fixes I've seen for this exact problem. Not because it's trendy, but because it solves real friction points without requiring a six-figure software budget or a full development team.</p>
+
+<p>Let me explain what it actually is, and more importantly, what it can do for a business running on tight margins and tighter time.</p>
+
+<h2>What Is a Progressive Web App, Really?</h2>
+
+<p>A progressive web app — or PWA — is a website that behaves like a native mobile app. It loads fast, works offline, can send push notifications, and can be "installed" on a phone's home screen without going through the App Store or Google Play.</p>
+
+<p>Under the hood, it's still built with standard web technology. But it uses a set of browser capabilities to feel and function like the apps your customers already know how to use.</p>
+
+<h3>How It Differs From a Regular Website</h3>
+
+<p>A regular website requires an active internet connection, reloads from scratch on every visit, and sits behind a browser tab. A PWA caches key content locally, opens instantly, and lives on the home screen like any other app. That difference in experience is enormous when your customer is standing at a job site or checking in between appointments.</p>
+
+<h3>How It Differs From a Native App</h3>
+
+<p>Native apps built for iOS or Android are expensive to develop and maintain — often $25,000 to $100,000 or more for a quality build. They require separate codebases for each platform and go through an approval process just to update. A PWA is one codebase, deployed like a website, updated instantly, and accessible on any modern device. For most small businesses, that tradeoff is obvious.</p>
+
+<blockquote>
+  <p>"We built a PWA for a home health agency that replaced three separate tools their staff was toggling between on shift. Same data, one screen, works without Wi-Fi. Their coordinator told me it was the first tech change in five years that nobody complained about."</p>
+</blockquote>
+
+<h2>Where a Progressive Web App Actually Helps Small Businesses</h2>
+
+<p>This is where most articles go vague. Let me be specific about the situations where a PWA is the right call.</p>
+
+<h3>Field Teams Who Need Offline Access</h3>
+
+<p>Home health aides, contractors, delivery drivers, cleaning crews — they work in environments where cell signal is unreliable. A PWA can store forms, checklists, and client data locally and sync when connectivity returns. That means no more "I couldn't submit the form" excuses and no more lost visit notes.</p>
+
+<h3>Customer-Facing Booking and Portals</h3>
+
+<p>If you're asking customers to schedule, pay, or check status — and that experience is a mobile browser nightmare — you're losing conversions quietly. A PWA can deliver a fast, app-quality booking experience without asking your customers to download anything. Friction gone.</p>
+
+<h3>Internal Staff Portals</h3>
+
+<p>We've built internal PWAs at <a href="https://solasupport.com">Sola AI Consulting</a> that give small teams a single place to check schedules, submit requests, and access HR documents. No more digging through email threads. No more "where's the latest version of that form?" The PWA installs on their phone in thirty seconds, and it updates silently whenever we push changes.</p>
+
+<h3>Replacing Expensive SaaS Subscriptions</h3>
+
+<p>A lot of small businesses are paying for software that does 80% more than they need. If your team uses one or two core features of a $400/month platform, a custom PWA built around your actual workflow can eliminate that cost within a year and give you something that fits your business instead of forcing your business to fit the software.</p>
+
+<div class="callout">
+  <div class="callout-label">Key takeaway</div>
+  <p>Before you scope a PWA, write down the three things your team does on their phones most often — and the three things that frustrate them most. That list is your feature spec. A focused PWA that nails six things beats a bloated app that does thirty things poorly.</p>
+</div>
+
+<h2>What It Costs and What to Expect</h2>
+
+<p>Cost depends entirely on complexity. A simple PWA — a staff portal with a few screens, basic authentication, and offline form submission — can be built and deployed for $3,000 to $8,000. A more complex build with integrations, role-based access, and real-time data sync might run $10,000 to $25,000. Either way, it's a fraction of native app development.</p>
+
+<h3>Timeline</h3>
+
+<p>A focused PWA project typically takes four to ten weeks from kickoff to launch. That includes design, development, testing on real devices, and deployment. The key is keeping the scope tight at the start. The best PWA projects I've worked on had clear constraints — we built exactly what was needed, launched it, and added features based on actual usage.</p>
+
+<h3>Maintenance</h3>
+
+<p>Because a PWA is deployed like a website, updates don't require app store submissions. You push a change and every user gets it on their next load. Maintenance costs are typically low — a few hours a month for minor updates, more if you're adding features. You're not paying for separate iOS and Android development cycles.</p>
+
+<h3>What You Need on Your End</h3>
+
+<p>You don't need a technical team. You need someone who can clearly describe your workflow, make decisions quickly, and gather feedback from the people who'll actually use the app. The businesses that get the best results from PWA projects are the ones where the owner or operations lead stays involved. Not because the tech is complicated, but because the business logic always is.</p>
+
+<p>A progressive web app for small business isn't a silver bullet — but for the right use case, it's one of the highest-leverage investments you can make in your operations. Fast to build, cheap to maintain, works on every device, no app store required.</p>
+
+<p>If you're carrying inefficiency that a better tool could fix, it's worth a conversation about whether a PWA is the right fit for your business — and what one would actually look like for your team.</p>
+  </article>
+</div>
+
+<div class="article-cta">
+  <div>
+    <h3>Ready to put this into practice?</h3>
+    <p>We build portals, intranets, and automations for small teams — usually in 4–8 weeks.</p>
+  </div>
+  <a href="https://solasupport.com/#contact" class="btn btn-primary">Book a discovery call <span class="btn-arrow">→</span></a>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="foot-bar">
+      <span>© 2026 SOLA AI CONSULTING, LLC · BALTIMORE, MD</span>
+      <a href="/" style="color: var(--muted); text-decoration: none; letter-spacing: 0.04em; font-size: 11.5px;">← Back to solasupport.com</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
