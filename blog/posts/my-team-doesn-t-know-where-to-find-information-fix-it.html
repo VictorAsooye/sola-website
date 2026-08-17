@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>My Team Doesn't Know Where to Find Information — Fix It — Sola AI Consulting</title>
+<meta name="description" content="If your team can't find what they need, work stalls. Here's how to build a system that puts the right info in the right hands, fast." />
+<meta property="og:title" content="My Team Doesn't Know Where to Find Information — Fix It" />
+<meta property="og:description" content="If your team can't find what they need, work stalls. Here's how to build a system that puts the right info in the right hands, fast." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://solasupport.com/blog/posts/my-team-doesn-t-know-where-to-find-information-fix-it.html" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="canonical" href="https://solasupport.com/blog/posts/my-team-doesn-t-know-where-to-find-information-fix-it.html" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap">
+<style>
+  :root {
+    --accent: #4A5A7A;
+    --accent-ink: #2E3A52;
+    --accent-wash: #EEF0F5;
+    --paper: #FAF8F4;
+    --paper-2: #F3EFE7;
+    --line: #E4DFD5;
+    --line-2: #D4CEC0;
+    --muted: #8C8576;
+    --ink-3: #6B6557;
+    --ink-2: #3A362E;
+    --ink: #1C1A16;
+    --radius: 14px;
+    --container: 1200px;
+    --serif: "Instrument Serif", "Cormorant Garamond", Georgia, serif;
+    --sans: "Geist", ui-sans-serif, system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+    --mono: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--sans);
+    color: var(--ink);
+    background: var(--paper);
+    -webkit-font-smoothing: antialiased;
+    font-size: 17px;
+    line-height: 1.55;
+    letter-spacing: -0.003em;
+  }
+
+  .container { max-width: var(--container); margin: 0 auto; padding: 0 32px; }
+
+  /* Nav */
+  .nav {
+    position: sticky; top: 0; z-index: 50;
+    backdrop-filter: saturate(160%) blur(14px);
+    -webkit-backdrop-filter: saturate(160%) blur(14px);
+    background: color-mix(in srgb, var(--paper) 72%, transparent);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner {
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 18px 32px;
+    display: flex; align-items: center; gap: 48px;
+  }
+  .brand {
+    display: inline-flex; align-items: center; gap: 10px;
+    text-decoration: none; color: var(--ink); font-weight: 500;
+  }
+  .brand-mark {
+    width: 30px; height: 30px;
+    background-image: url('/sola-logo-mark.png');
+    background-size: contain; background-repeat: no-repeat; background-position: center;
+  }
+  .brand-name {
+    font-size: 14px; font-weight: 600; letter-spacing: 0.02em;
+    text-transform: uppercase; font-family: var(--sans);
+  }
+  .brand-name .sub {
+    display: block; font-size: 9.5px; letter-spacing: 0.22em;
+    color: var(--muted); font-weight: 500; margin-top: 1px;
+  }
+  .nav-links { display: flex; gap: 28px; margin-left: auto; font-size: 14.5px; }
+  .nav-links a { color: var(--ink-2); text-decoration: none; transition: color .2s; }
+  .nav-links a:hover, .nav-links a.active { color: var(--accent); }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 11px 18px; border-radius: 999px; font-size: 14.5px;
+    font-weight: 500; border: 1px solid transparent; text-decoration: none;
+    transition: all .2s ease; white-space: nowrap; cursor: pointer;
+  }
+  .btn-primary { background: var(--ink); color: var(--paper); }
+  .btn-primary:hover { background: var(--accent-ink); transform: translateY(-1px); }
+  .btn-arrow { transition: transform .2s; }
+  .btn:hover .btn-arrow { transform: translateX(3px); }
+
+  /* Article */
+  .article-header {
+    padding: 72px 0 56px;
+    border-bottom: 1px solid var(--line);
+    max-width: 760px;
+    margin: 0 auto;
+  }
+  .article-eyebrow {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    display: flex; align-items: center; gap: 16px;
+    margin-bottom: 24px;
+  }
+  .article-eyebrow a { color: var(--accent); text-decoration: none; }
+  .article-eyebrow a:hover { text-decoration: underline; }
+  .article-eyebrow span { color: var(--line-2); }
+  .article-title {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(36px, 5vw, 64px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin: 0 0 24px;
+  }
+  .article-title em { font-style: italic; color: var(--accent); }
+  .article-meta {
+    font-family: var(--mono);
+    font-size: 11.5px;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+    display: flex; gap: 20px;
+  }
+
+  .article-body {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 56px 0;
+  }
+  .article-body h2 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(28px, 3vw, 40px);
+    line-height: 1.1;
+    letter-spacing: -0.018em;
+    margin: 56px 0 20px;
+    color: var(--ink);
+  }
+  .article-body h2:first-child { margin-top: 0; }
+  .article-body h3 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(22px, 2vw, 28px);
+    letter-spacing: -0.012em;
+    margin: 40px 0 16px;
+    color: var(--ink);
+  }
+  .article-body p {
+    color: var(--ink-2);
+    font-size: 17px;
+    line-height: 1.7;
+    margin: 0 0 24px;
+  }
+  .article-body ul, .article-body ol {
+    color: var(--ink-2);
+    font-size: 17px;
+    line-height: 1.7;
+    margin: 0 0 24px;
+    padding-left: 0;
+    list-style: none;
+  }
+  .article-body ul li, .article-body ol li {
+    padding: 6px 0 6px 24px;
+    position: relative;
+    border-bottom: 1px solid var(--line);
+  }
+  .article-body ul li:last-child, .article-body ol li:last-child { border-bottom: 0; }
+  .article-body ul li::before {
+    content: "→";
+    position: absolute; left: 0;
+    color: var(--accent);
+    font-family: var(--mono);
+  }
+  .article-body ol { counter-reset: ol; }
+  .article-body ol li::before {
+    content: counter(ol);
+    counter-increment: ol;
+    position: absolute; left: 0;
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--muted);
+    font-weight: 500;
+    top: 8px;
+  }
+  .article-body blockquote {
+    border-left: 3px solid var(--accent);
+    margin: 32px 0;
+    padding: 16px 24px;
+    background: var(--paper-2);
+    border-radius: 0 8px 8px 0;
+    font-family: var(--serif);
+    font-size: 22px;
+    line-height: 1.4;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+  }
+  .article-body strong { color: var(--ink); font-weight: 600; }
+  .article-body a { color: var(--accent-ink); text-decoration: underline; text-underline-offset: 3px; }
+  .article-body a:hover { color: var(--accent); }
+  .callout {
+    background: var(--accent-wash);
+    border: 1px solid color-mix(in srgb, var(--accent) 20%, transparent);
+    border-radius: var(--radius);
+    padding: 24px 28px;
+    margin: 32px 0;
+  }
+  .callout .callout-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent-ink);
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+  .callout p { color: var(--ink-2); margin: 0; font-size: 16px; }
+
+  /* CTA */
+  .article-cta {
+    background: var(--ink);
+    border-radius: 20px;
+    padding: 56px 64px;
+    margin: 64px auto;
+    max-width: 760px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+  }
+  .article-cta h3 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(24px, 2.5vw, 36px);
+    letter-spacing: -0.015em;
+    color: var(--paper);
+    margin: 0 0 8px;
+  }
+  .article-cta p { color: color-mix(in srgb, var(--paper) 65%, transparent); margin: 0; font-size: 15px; }
+  .article-cta .btn-primary { background: var(--paper); color: var(--ink); flex-shrink: 0; }
+  .article-cta .btn-primary:hover { background: #fff; }
+
+  /* Back link */
+  .back-link {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: var(--mono); font-size: 12px;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    color: var(--muted); text-decoration: none;
+    margin: 40px 0 0;
+    transition: color .2s;
+  }
+  .back-link:hover { color: var(--accent); }
+
+  /* Footer */
+  footer {
+    padding: 64px 0 40px;
+    border-top: 1px solid var(--line);
+    background: var(--paper);
+  }
+  .foot-bar {
+    display: flex; justify-content: space-between;
+    font-family: var(--mono); font-size: 11.5px;
+    color: var(--muted); letter-spacing: 0.04em;
+  }
+
+  @media (max-width: 960px) {
+    .nav-links { display: none; }
+    .article-header, .article-body { padding-left: 0; padding-right: 0; }
+    .article-cta { flex-direction: column; padding: 40px 32px; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="brand" aria-label="Sola AI Consulting">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-name">Sola AI<span class="sub">Consulting</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="/#services">Services</a>
+      <a href="/#how">How it works</a>
+      <a href="/#case">Case study</a>
+      <a href="/blog/" class="active">Blog</a>
+      <a href="/#contact">Contact</a>
+    </div>
+    <a href="/#contact" class="btn btn-primary">Book a call <span class="btn-arrow">→</span></a>
+  </div>
+</nav>
+
+<div class="container">
+  <a href="/blog/" class="back-link">← All posts</a>
+</div>
+
+<div class="container">
+  <header class="article-header">
+    <div class="article-eyebrow">
+      <a href="/blog/">Blog</a>
+      <span>·</span>
+      <span>Guide</span>
+      <span>·</span>
+      <span>6 min read</span>
+    </div>
+    <h1 class="article-title">My Team Doesn't Know Where to Find Information — Fix It</h1>
+    <div class="article-meta">
+      <span>AUG 17, 2026</span>
+      <span>·</span>
+      <span>Sola AI Consulting</span>
+    </div>
+  </header>
+
+  <article class="article-body">
+    <h2>The Real Cost of "I Didn't Know Where to Look"</h2>
+
+<p>Every week, someone on your team wastes 20 minutes hunting for a form, a policy, a phone number — something that exists somewhere but might as well not. They ping a coworker. The coworker doesn't know either. Eventually someone digs it out of an old email chain or asks you directly. You answer. Again.</p>
+
+<p>That's not a people problem. That's a systems problem. And it's costing you more than you think.</p>
+
+<p>When business owners tell me "my team doesn't know where to find information," they usually say it with a mix of frustration and resignation — like it's just the nature of running a small operation. It's not. It's fixable. But the fix has to be intentional. You can't solve it by sending another "please check the shared drive" email.</p>
+
+<blockquote>
+  <p>"The single biggest source of friction in a small business isn't staffing or cash flow — it's information that lives in people's heads instead of a system everyone can reach."</p>
+</blockquote>
+
+<p>I've walked into home health agencies where intake staff kept critical client notes in personal notebooks. I've worked with contractors whose onboarding docs lived in five different inboxes. The chaos looked different each time, but the root cause was always the same: no single place, no clear ownership, no habit built around it.</p>
+
+<h2>Why Shared Drives and Group Chats Always Fail</h2>
+
+<p>Most teams try to solve this with a shared Google Drive or a Teams channel. That works for about three weeks. Then someone creates a subfolder with a vague name. Another person saves something to the wrong location. New hires don't know the structure exists. The drive becomes a digital junk drawer, and people stop trusting it.</p>
+
+<p>Group chats are worse. A critical policy gets posted in Slack or Teams, gets buried under 200 messages, and disappears forever. Searching for it works — until someone uses a slightly different word than what was in the original message.</p>
+
+<h3>The Problem Is Findability, Not Storage</h3>
+
+<p>Here's the distinction that matters: most businesses don't have a storage problem. They have a findability problem. The information exists. People just can't reliably get to it when they need it, in the role they're in, in the moment they're working.</p>
+
+<p>Good information architecture means building around how people actually look for things — not how an administrator organized a folder tree in 2021.</p>
+
+<h3>What "Findable" Actually Means in Practice</h3>
+
+<ul>
+  <li>A new hire can locate the answer to a common question without asking a manager</li>
+  <li>A caregiver in the field can pull up a client protocol from their phone in under 60 seconds</li>
+  <li>A billing coordinator doesn't need to remember which version of a form is current — the system surfaces it automatically</li>
+  <li>When a process changes, the update lives in one place, not scattered across attachments in old emails</li>
+</ul>
+
+<p>None of that requires expensive software. It does require a deliberate structure built for your specific team and workflows.</p>
+
+<h2>What Actually Works: One Home Base, Clearly Organized</h2>
+
+<p>The teams I've seen get this right all share one thing: a single, designated home base for information. Not a backup. Not an "official" version of something that also lives three other places. One place. Everyone knows it. Everyone uses it.</p>
+
+<p>For most small businesses and home health agencies, that home base is either a SharePoint intranet or a lightweight internal portal — something with role-based navigation so a scheduler sees what a scheduler needs, and a clinical supervisor sees what they need, without wading through irrelevant content.</p>
+
+<h3>Structure Before Content</h3>
+
+<p>The mistake most owners make is dumping content into a new system before thinking about structure. They migrate the chaos. Then they wonder why it's still chaotic.</p>
+
+<p>Before you add a single document, answer these questions:</p>
+
+<ol>
+  <li>What are the five most common things your team looks for each week?</li>
+  <li>Who needs access to what — and who shouldn't see certain things?</li>
+  <li>What's the one question you personally answer more than once a week that you shouldn't have to?</li>
+</ol>
+
+<p>Build the structure around those answers. Everything else follows.</p>
+
+<h3>AI Can Do the Heavy Lifting</h3>
+
+<p>One of the biggest shifts we've made for clients at <a href="https://solasupport.com">Sola AI Consulting</a> is adding an AI-powered search layer on top of their internal content. Instead of clicking through folders, a team member types a plain-language question — "what's our policy on missed visits?" — and gets the answer pulled directly from internal documents, instantly.</p>
+
+<p>That's not science fiction. It's running right now in SharePoint environments with tools like Microsoft Copilot and custom-built integrations. The result: fewer interruptions, faster onboarding, and staff who actually trust the system they're working in.</p>
+
+<div class="callout">
+  <div class="callout-label">Key takeaway</div>
+  <p>Before building or migrating to any information system, audit the five questions your team asks most often. Design your navigation and search around those questions — not around how you think about your business internally. The system has to match how your people think, not how you do.</p>
+</div>
+
+<h2>Building the Habit That Makes the System Stick</h2>
+
+<p>A portal no one uses is just expensive decoration. The system only works if people actually go there first — before they text a coworker, before they dig through email, before they ask you.</p>
+
+<p>That habit doesn't build itself. Here's what works:</p>
+
+<ul>
+  <li><strong>Make it the only place.</strong> If a policy exists in the portal and also in an email attachment and also in a binder, you've created three competing sources of truth. Pick one. Remove the others.</li>
+  <li><strong>Train around real tasks.</strong> Don't just show people the system. Walk them through the actual task they do every day, using the system. "Here's how you find the updated intake form when a new client calls."</li>
+  <li><strong>Reward using it publicly.</strong> When someone finds the answer themselves instead of asking, acknowledge it. It sounds small. It's not.</li>
+  <li><strong>Assign ownership.</strong> Someone — one person — is responsible for keeping each section current. Without ownership, content goes stale and trust collapses fast.</li>
+</ul>
+
+<p>I've worked with agencies where full adoption took less than two weeks once the structure was right and leadership modeled using it themselves. Culture follows leadership. If you're still answering questions that live in the portal, your team learns that the portal isn't the real answer.</p>
+
+<p>The businesses that solve this problem for good stop treating information access as an afterthought and start treating it as infrastructure — as essential as their scheduling software or billing system. Once your team knows exactly where to go, and that answer is always there when they arrive, the noise drops. People get faster. You get your time back. If you're ready to build that kind of system inside your business, we can help you figure out exactly what it should look like for your team.
+</p>
+  </article>
+</div>
+
+<div class="article-cta">
+  <div>
+    <h3>Ready to put this into practice?</h3>
+    <p>We build portals, intranets, and automations for small teams — usually in 4–8 weeks.</p>
+  </div>
+  <a href="https://solasupport.com/#contact" class="btn btn-primary">Book a discovery call <span class="btn-arrow">→</span></a>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="foot-bar">
+      <span>© 2026 SOLA AI CONSULTING, LLC · BALTIMORE, MD</span>
+      <a href="/" style="color: var(--muted); text-decoration: none; letter-spacing: 0.04em; font-size: 11.5px;">← Back to solasupport.com</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
