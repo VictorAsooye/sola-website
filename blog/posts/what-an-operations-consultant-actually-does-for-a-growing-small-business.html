@@ -1,0 +1,419 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>What an Operations Consultant Actually Does for a Growing Small Business — Sola AI Consulting</title>
+<meta name="description" content="Wondering if an operations consultant is worth it? Learn how the right ops partner helps growing small businesses run cleaner, faster, and smarter." />
+<meta property="og:title" content="What an Operations Consultant Actually Does for a Growing Small Business" />
+<meta property="og:description" content="Wondering if an operations consultant is worth it? Learn how the right ops partner helps growing small businesses run cleaner, faster, and smarter." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://solasupport.com/blog/posts/what-an-operations-consultant-actually-does-for-a-growing-small-business.html" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="canonical" href="https://solasupport.com/blog/posts/what-an-operations-consultant-actually-does-for-a-growing-small-business.html" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap">
+<style>
+  :root {
+    --accent: #4A5A7A;
+    --accent-ink: #2E3A52;
+    --accent-wash: #EEF0F5;
+    --paper: #FAF8F4;
+    --paper-2: #F3EFE7;
+    --line: #E4DFD5;
+    --line-2: #D4CEC0;
+    --muted: #8C8576;
+    --ink-3: #6B6557;
+    --ink-2: #3A362E;
+    --ink: #1C1A16;
+    --radius: 14px;
+    --container: 1200px;
+    --serif: "Instrument Serif", "Cormorant Garamond", Georgia, serif;
+    --sans: "Geist", ui-sans-serif, system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+    --mono: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--sans);
+    color: var(--ink);
+    background: var(--paper);
+    -webkit-font-smoothing: antialiased;
+    font-size: 17px;
+    line-height: 1.55;
+    letter-spacing: -0.003em;
+  }
+
+  .container { max-width: var(--container); margin: 0 auto; padding: 0 32px; }
+
+  /* Nav */
+  .nav {
+    position: sticky; top: 0; z-index: 50;
+    backdrop-filter: saturate(160%) blur(14px);
+    -webkit-backdrop-filter: saturate(160%) blur(14px);
+    background: color-mix(in srgb, var(--paper) 72%, transparent);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner {
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 18px 32px;
+    display: flex; align-items: center; gap: 48px;
+  }
+  .brand {
+    display: inline-flex; align-items: center; gap: 10px;
+    text-decoration: none; color: var(--ink); font-weight: 500;
+  }
+  .brand-mark {
+    width: 30px; height: 30px;
+    background-image: url('/sola-logo-mark.png');
+    background-size: contain; background-repeat: no-repeat; background-position: center;
+  }
+  .brand-name {
+    font-size: 14px; font-weight: 600; letter-spacing: 0.02em;
+    text-transform: uppercase; font-family: var(--sans);
+  }
+  .brand-name .sub {
+    display: block; font-size: 9.5px; letter-spacing: 0.22em;
+    color: var(--muted); font-weight: 500; margin-top: 1px;
+  }
+  .nav-links { display: flex; gap: 28px; margin-left: auto; font-size: 14.5px; }
+  .nav-links a { color: var(--ink-2); text-decoration: none; transition: color .2s; }
+  .nav-links a:hover, .nav-links a.active { color: var(--accent); }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 11px 18px; border-radius: 999px; font-size: 14.5px;
+    font-weight: 500; border: 1px solid transparent; text-decoration: none;
+    transition: all .2s ease; white-space: nowrap; cursor: pointer;
+  }
+  .btn-primary { background: var(--ink); color: var(--paper); }
+  .btn-primary:hover { background: var(--accent-ink); transform: translateY(-1px); }
+  .btn-arrow { transition: transform .2s; }
+  .btn:hover .btn-arrow { transform: translateX(3px); }
+
+  /* Article */
+  .article-header {
+    padding: 72px 0 56px;
+    border-bottom: 1px solid var(--line);
+    max-width: 760px;
+    margin: 0 auto;
+  }
+  .article-eyebrow {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    display: flex; align-items: center; gap: 16px;
+    margin-bottom: 24px;
+  }
+  .article-eyebrow a { color: var(--accent); text-decoration: none; }
+  .article-eyebrow a:hover { text-decoration: underline; }
+  .article-eyebrow span { color: var(--line-2); }
+  .article-title {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(36px, 5vw, 64px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin: 0 0 24px;
+  }
+  .article-title em { font-style: italic; color: var(--accent); }
+  .article-meta {
+    font-family: var(--mono);
+    font-size: 11.5px;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+    display: flex; gap: 20px;
+  }
+
+  .article-body {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 56px 0;
+  }
+  .article-body h2 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(28px, 3vw, 40px);
+    line-height: 1.1;
+    letter-spacing: -0.018em;
+    margin: 56px 0 20px;
+    color: var(--ink);
+  }
+  .article-body h2:first-child { margin-top: 0; }
+  .article-body h3 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(22px, 2vw, 28px);
+    letter-spacing: -0.012em;
+    margin: 40px 0 16px;
+    color: var(--ink);
+  }
+  .article-body p {
+    color: var(--ink-2);
+    font-size: 17px;
+    line-height: 1.7;
+    margin: 0 0 24px;
+  }
+  .article-body ul, .article-body ol {
+    color: var(--ink-2);
+    font-size: 17px;
+    line-height: 1.7;
+    margin: 0 0 24px;
+    padding-left: 0;
+    list-style: none;
+  }
+  .article-body ul li, .article-body ol li {
+    padding: 6px 0 6px 24px;
+    position: relative;
+    border-bottom: 1px solid var(--line);
+  }
+  .article-body ul li:last-child, .article-body ol li:last-child { border-bottom: 0; }
+  .article-body ul li::before {
+    content: "→";
+    position: absolute; left: 0;
+    color: var(--accent);
+    font-family: var(--mono);
+  }
+  .article-body ol { counter-reset: ol; }
+  .article-body ol li::before {
+    content: counter(ol);
+    counter-increment: ol;
+    position: absolute; left: 0;
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--muted);
+    font-weight: 500;
+    top: 8px;
+  }
+  .article-body blockquote {
+    border-left: 3px solid var(--accent);
+    margin: 32px 0;
+    padding: 16px 24px;
+    background: var(--paper-2);
+    border-radius: 0 8px 8px 0;
+    font-family: var(--serif);
+    font-size: 22px;
+    line-height: 1.4;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+  }
+  .article-body strong { color: var(--ink); font-weight: 600; }
+  .article-body a { color: var(--accent-ink); text-decoration: underline; text-underline-offset: 3px; }
+  .article-body a:hover { color: var(--accent); }
+  .callout {
+    background: var(--accent-wash);
+    border: 1px solid color-mix(in srgb, var(--accent) 20%, transparent);
+    border-radius: var(--radius);
+    padding: 24px 28px;
+    margin: 32px 0;
+  }
+  .callout .callout-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent-ink);
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+  .callout p { color: var(--ink-2); margin: 0; font-size: 16px; }
+
+  /* CTA */
+  .article-cta {
+    background: var(--ink);
+    border-radius: 20px;
+    padding: 56px 64px;
+    margin: 64px auto;
+    max-width: 760px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+  }
+  .article-cta h3 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(24px, 2.5vw, 36px);
+    letter-spacing: -0.015em;
+    color: var(--paper);
+    margin: 0 0 8px;
+  }
+  .article-cta p { color: color-mix(in srgb, var(--paper) 65%, transparent); margin: 0; font-size: 15px; }
+  .article-cta .btn-primary { background: var(--paper); color: var(--ink); flex-shrink: 0; }
+  .article-cta .btn-primary:hover { background: #fff; }
+
+  /* Back link */
+  .back-link {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: var(--mono); font-size: 12px;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    color: var(--muted); text-decoration: none;
+    margin: 40px 0 0;
+    transition: color .2s;
+  }
+  .back-link:hover { color: var(--accent); }
+
+  /* Footer */
+  footer {
+    padding: 64px 0 40px;
+    border-top: 1px solid var(--line);
+    background: var(--paper);
+  }
+  .foot-bar {
+    display: flex; justify-content: space-between;
+    font-family: var(--mono); font-size: 11.5px;
+    color: var(--muted); letter-spacing: 0.04em;
+  }
+
+  @media (max-width: 960px) {
+    .nav-links { display: none; }
+    .article-header, .article-body { padding-left: 0; padding-right: 0; }
+    .article-cta { flex-direction: column; padding: 40px 32px; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="brand" aria-label="Sola AI Consulting">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-name">Sola AI<span class="sub">Consulting</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="/#services">Services</a>
+      <a href="/#how">How it works</a>
+      <a href="/#case">Case study</a>
+      <a href="/blog/" class="active">Blog</a>
+      <a href="/#contact">Contact</a>
+    </div>
+    <a href="/#contact" class="btn btn-primary">Book a call <span class="btn-arrow">→</span></a>
+  </div>
+</nav>
+
+<div class="container">
+  <a href="/blog/" class="back-link">← All posts</a>
+</div>
+
+<div class="container">
+  <header class="article-header">
+    <div class="article-eyebrow">
+      <a href="/blog/">Blog</a>
+      <span>·</span>
+      <span>Guide</span>
+      <span>·</span>
+      <span>5 min read</span>
+    </div>
+    <h1 class="article-title">What an Operations Consultant Actually Does for a Growing Small Business</h1>
+    <div class="article-meta">
+      <span>AUG 24, 2026</span>
+      <span>·</span>
+      <span>Sola AI Consulting</span>
+    </div>
+  </header>
+
+  <article class="article-body">
+    <h2>When Growth Starts Breaking Things</h2>
+
+<p>There's a specific kind of chaos that hits a small business around the 10-to-30-employee mark. You've got more clients than you can track in a spreadsheet, your team is copying and pasting the same information into three different places, and somehow you're still the one answering questions that should have a documented answer by now.</p>
+
+<p>This isn't a people problem. It's an operations problem. And it's exactly the point where hiring an operations consultant for your growing small business stops being a luxury and starts being the only smart move.</p>
+
+<p>What most owners don't realize is that an ops consultant isn't there to hand you a binder of recommendations and disappear. The right consultant finds the friction in your day-to-day, builds systems that remove it, and trains your team to actually use them. That's it. No complicated frameworks. No 60-day discovery phases before anything gets built.</p>
+
+<blockquote>
+  <p>"Most small businesses don't have an efficiency problem — they have a systems problem. The work is getting done, but it's getting done differently every time by every person. That inconsistency is what quietly kills your capacity to grow."</p>
+</blockquote>
+
+<h2>What an Operations Consultant Actually Does Day-to-Day</h2>
+
+<p>The title sounds generic, but the work is very specific. When we come into a business — whether it's a home health agency managing 40 caregivers or a professional services firm with three partners and a growing client list — the first thing we do is watch how work actually moves.</p>
+
+<p>Not how you think it moves. How it actually moves.</p>
+
+<p>That means sitting with your office coordinator for a morning, auditing your email threads, looking at what lives in someone's head that should live in a system. The findings are almost always the same: information is siloed, approvals are verbal, onboarding is improvised, and client communication depends on whoever happens to be available.</p>
+
+<h3>Process Documentation and Standardization</h3>
+
+<p>The first deliverable is usually documentation — not in the dry, corporate sense, but practical SOPs that your team will actually reference. A good operations consultant writes these from observation, not assumption. They're written the way your team talks, not the way a consultant writes.</p>
+
+<p>For one of our home health clients in Baltimore, we documented their intake-to-scheduling workflow and cut the time to onboard a new patient by nearly 40%. Not because we did anything radical — because we stopped letting the process live entirely in the coordinator's memory.</p>
+
+<h3>Internal Portals and Centralized Information</h3>
+
+<p>One of the most underrated ops investments for a small business is a well-built internal portal. Think of it as your company's brain — a single place where your team finds HR forms, client protocols, vendor contacts, and compliance documents without texting a manager.</p>
+
+<p>At <a href="https://solasupport.com">Sola AI Consulting</a>, we build these on SharePoint for most clients because it connects directly to tools they're already paying for through Microsoft 365. The result is fewer interruptions, faster onboarding, and a business that doesn't break down every time a key employee is out sick.</p>
+
+<div class="callout">
+  <div class="callout-label">Key takeaway</div>
+  <p>If your team's institutional knowledge lives in someone's inbox or memory, you don't have a team — you have a dependency. An operations consultant helps you move that knowledge into systems your whole business can access and trust.</p>
+</div>
+
+<h3>Automation That Fits Your Size</h3>
+
+<p>A lot of small business owners hear "automation" and assume it's only for companies with a dedicated IT department. That's not true anymore. The tools available today — Power Automate, Zapier, AI-assisted workflows — are accessible at the small business level and can eliminate hours of manual work each week.</p>
+
+<p>We've set up automations for growing businesses that handle shift reminders, new client intake confirmations, invoice follow-ups, and internal approvals — without adding a single person to the team. The key is that a good ops consultant knows which problems are worth automating and which ones need a different fix entirely.</p>
+
+<h2>Signs You Actually Need an Operations Consultant Right Now</h2>
+
+<p>You don't need to be in crisis to benefit from ops support. But there are clear signals that the time is now.</p>
+
+<ul>
+  <li>You're turning down work because you don't have the bandwidth — but you do have the staff.</li>
+  <li>Your onboarding process for new hires or new clients is different every time.</li>
+  <li>You're spending more than an hour a day answering internal questions that should have a documented answer.</li>
+  <li>Something almost went wrong recently because of a communication breakdown — and it wasn't the first time.</li>
+  <li>You've tried to delegate but nothing sticks because there's no system to hand off.</li>
+</ul>
+
+<p>Any one of these is a signal. All five together means your growth is actively being throttled by the way your operations are structured right now.</p>
+
+<h2>Choosing the Right Ops Partner for Your Stage of Growth</h2>
+
+<p>Not every operations consultant is the right fit for a small business. Many are built for enterprise work — they bring methodologies designed for 500-person companies, and the deliverables end up being too heavy, too slow, and too expensive to actually implement.</p>
+
+<p>What a growing small business needs is an ops partner who can move fast, build practical systems, and work within the reality of a lean team. That means someone who can prioritize ruthlessly, implement rather than just recommend, and build things that your team will actually use on day two.</p>
+
+<h3>What to Ask Before You Hire</h3>
+
+<ol>
+  <li>Can you show me something you've actually built for a business my size?</li>
+  <li>What does your implementation look like — are you building it, or telling me what to build?</li>
+  <li>How do you handle training and adoption with non-technical teams?</li>
+  <li>What does success look like at 90 days?</li>
+</ol>
+
+<p>These questions separate consultants who work with small businesses from consultants who tolerate them. There's a big difference, and you'll know it quickly from the answers.</p>
+
+<p>The right operations consultant for a growing small business isn't just a problem-solver — they're a builder. They leave behind systems, not slide decks. And when the engagement ends, your team should be able to run everything that was built without needing to call anyone.</p>
+
+<p>If you're at the point where you know something needs to change but you're not sure where to start, that's exactly the conversation worth having.</p>
+  </article>
+</div>
+
+<div class="article-cta">
+  <div>
+    <h3>Ready to put this into practice?</h3>
+    <p>We build portals, intranets, and automations for small teams — usually in 4–8 weeks.</p>
+  </div>
+  <a href="https://solasupport.com/#contact" class="btn btn-primary">Book a discovery call <span class="btn-arrow">→</span></a>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="foot-bar">
+      <span>© 2026 SOLA AI CONSULTING, LLC · BALTIMORE, MD</span>
+      <a href="/" style="color: var(--muted); text-decoration: none; letter-spacing: 0.04em; font-size: 11.5px;">← Back to solasupport.com</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
