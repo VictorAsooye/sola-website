@@ -1,0 +1,443 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Affordable Intranet for a 10-Person Company: What Actually Works — Sola AI Consulting</title>
+<meta name="description" content="Looking for an affordable intranet for a 10-person company? Here's what works, what to skip, and how to set it up without wasting money." />
+<meta property="og:title" content="Affordable Intranet for a 10-Person Company: What Actually Works" />
+<meta property="og:description" content="Looking for an affordable intranet for a 10-person company? Here's what works, what to skip, and how to set it up without wasting money." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://solasupport.com/blog/posts/affordable-intranet-for-a-10-person-company-what-actually-works.html" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="canonical" href="https://solasupport.com/blog/posts/affordable-intranet-for-a-10-person-company-what-actually-works.html" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap">
+<style>
+  :root {
+    --accent: #4A5A7A;
+    --accent-ink: #2E3A52;
+    --accent-wash: #EEF0F5;
+    --paper: #FAF8F4;
+    --paper-2: #F3EFE7;
+    --line: #E4DFD5;
+    --line-2: #D4CEC0;
+    --muted: #8C8576;
+    --ink-3: #6B6557;
+    --ink-2: #3A362E;
+    --ink: #1C1A16;
+    --radius: 14px;
+    --container: 1200px;
+    --serif: "Instrument Serif", "Cormorant Garamond", Georgia, serif;
+    --sans: "Geist", ui-sans-serif, system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+    --mono: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--sans);
+    color: var(--ink);
+    background: var(--paper);
+    -webkit-font-smoothing: antialiased;
+    font-size: 17px;
+    line-height: 1.55;
+    letter-spacing: -0.003em;
+  }
+
+  .container { max-width: var(--container); margin: 0 auto; padding: 0 32px; }
+
+  /* Nav */
+  .nav {
+    position: sticky; top: 0; z-index: 50;
+    backdrop-filter: saturate(160%) blur(14px);
+    -webkit-backdrop-filter: saturate(160%) blur(14px);
+    background: color-mix(in srgb, var(--paper) 72%, transparent);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner {
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 18px 32px;
+    display: flex; align-items: center; gap: 48px;
+  }
+  .brand {
+    display: inline-flex; align-items: center; gap: 10px;
+    text-decoration: none; color: var(--ink); font-weight: 500;
+  }
+  .brand-mark {
+    width: 30px; height: 30px;
+    background-image: url('/sola-logo-mark.png');
+    background-size: contain; background-repeat: no-repeat; background-position: center;
+  }
+  .brand-name {
+    font-size: 14px; font-weight: 600; letter-spacing: 0.02em;
+    text-transform: uppercase; font-family: var(--sans);
+  }
+  .brand-name .sub {
+    display: block; font-size: 9.5px; letter-spacing: 0.22em;
+    color: var(--muted); font-weight: 500; margin-top: 1px;
+  }
+  .nav-links { display: flex; gap: 28px; margin-left: auto; font-size: 14.5px; }
+  .nav-links a { color: var(--ink-2); text-decoration: none; transition: color .2s; }
+  .nav-links a:hover, .nav-links a.active { color: var(--accent); }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 11px 18px; border-radius: 999px; font-size: 14.5px;
+    font-weight: 500; border: 1px solid transparent; text-decoration: none;
+    transition: all .2s ease; white-space: nowrap; cursor: pointer;
+  }
+  .btn-primary { background: var(--ink); color: var(--paper); }
+  .btn-primary:hover { background: var(--accent-ink); transform: translateY(-1px); }
+  .btn-arrow { transition: transform .2s; }
+  .btn:hover .btn-arrow { transform: translateX(3px); }
+
+  /* Article */
+  .article-header {
+    padding: 72px 0 56px;
+    border-bottom: 1px solid var(--line);
+    max-width: 760px;
+    margin: 0 auto;
+  }
+  .article-eyebrow {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    display: flex; align-items: center; gap: 16px;
+    margin-bottom: 24px;
+  }
+  .article-eyebrow a { color: var(--accent); text-decoration: none; }
+  .article-eyebrow a:hover { text-decoration: underline; }
+  .article-eyebrow span { color: var(--line-2); }
+  .article-title {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(36px, 5vw, 64px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin: 0 0 24px;
+  }
+  .article-title em { font-style: italic; color: var(--accent); }
+  .article-meta {
+    font-family: var(--mono);
+    font-size: 11.5px;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+    display: flex; gap: 20px;
+  }
+
+  .article-body {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 56px 0;
+  }
+  .article-body h2 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(28px, 3vw, 40px);
+    line-height: 1.1;
+    letter-spacing: -0.018em;
+    margin: 56px 0 20px;
+    color: var(--ink);
+  }
+  .article-body h2:first-child { margin-top: 0; }
+  .article-body h3 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(22px, 2vw, 28px);
+    letter-spacing: -0.012em;
+    margin: 40px 0 16px;
+    color: var(--ink);
+  }
+  .article-body p {
+    color: var(--ink-2);
+    font-size: 17px;
+    line-height: 1.7;
+    margin: 0 0 24px;
+  }
+  .article-body ul, .article-body ol {
+    color: var(--ink-2);
+    font-size: 17px;
+    line-height: 1.7;
+    margin: 0 0 24px;
+    padding-left: 0;
+    list-style: none;
+  }
+  .article-body ul li, .article-body ol li {
+    padding: 6px 0 6px 24px;
+    position: relative;
+    border-bottom: 1px solid var(--line);
+  }
+  .article-body ul li:last-child, .article-body ol li:last-child { border-bottom: 0; }
+  .article-body ul li::before {
+    content: "→";
+    position: absolute; left: 0;
+    color: var(--accent);
+    font-family: var(--mono);
+  }
+  .article-body ol { counter-reset: ol; }
+  .article-body ol li::before {
+    content: counter(ol);
+    counter-increment: ol;
+    position: absolute; left: 0;
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--muted);
+    font-weight: 500;
+    top: 8px;
+  }
+  .article-body blockquote {
+    border-left: 3px solid var(--accent);
+    margin: 32px 0;
+    padding: 16px 24px;
+    background: var(--paper-2);
+    border-radius: 0 8px 8px 0;
+    font-family: var(--serif);
+    font-size: 22px;
+    line-height: 1.4;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+  }
+  .article-body strong { color: var(--ink); font-weight: 600; }
+  .article-body a { color: var(--accent-ink); text-decoration: underline; text-underline-offset: 3px; }
+  .article-body a:hover { color: var(--accent); }
+  .callout {
+    background: var(--accent-wash);
+    border: 1px solid color-mix(in srgb, var(--accent) 20%, transparent);
+    border-radius: var(--radius);
+    padding: 24px 28px;
+    margin: 32px 0;
+  }
+  .callout .callout-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent-ink);
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+  .callout p { color: var(--ink-2); margin: 0; font-size: 16px; }
+
+  /* CTA */
+  .article-cta {
+    background: var(--ink);
+    border-radius: 20px;
+    padding: 56px 64px;
+    margin: 64px auto;
+    max-width: 760px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+  }
+  .article-cta h3 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(24px, 2.5vw, 36px);
+    letter-spacing: -0.015em;
+    color: var(--paper);
+    margin: 0 0 8px;
+  }
+  .article-cta p { color: color-mix(in srgb, var(--paper) 65%, transparent); margin: 0; font-size: 15px; }
+  .article-cta .btn-primary { background: var(--paper); color: var(--ink); flex-shrink: 0; }
+  .article-cta .btn-primary:hover { background: #fff; }
+
+  /* Back link */
+  .back-link {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: var(--mono); font-size: 12px;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    color: var(--muted); text-decoration: none;
+    margin: 40px 0 0;
+    transition: color .2s;
+  }
+  .back-link:hover { color: var(--accent); }
+
+  /* Footer */
+  footer {
+    padding: 64px 0 40px;
+    border-top: 1px solid var(--line);
+    background: var(--paper);
+  }
+  .foot-bar {
+    display: flex; justify-content: space-between;
+    font-family: var(--mono); font-size: 11.5px;
+    color: var(--muted); letter-spacing: 0.04em;
+  }
+
+  @media (max-width: 960px) {
+    .nav-links { display: none; }
+    .article-header, .article-body { padding-left: 0; padding-right: 0; }
+    .article-cta { flex-direction: column; padding: 40px 32px; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="brand" aria-label="Sola AI Consulting">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-name">Sola AI<span class="sub">Consulting</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="/#services">Services</a>
+      <a href="/#how">How it works</a>
+      <a href="/#case">Case study</a>
+      <a href="/blog/" class="active">Blog</a>
+      <a href="/#contact">Contact</a>
+    </div>
+    <a href="/#contact" class="btn btn-primary">Book a call <span class="btn-arrow">→</span></a>
+  </div>
+</nav>
+
+<div class="container">
+  <a href="/blog/" class="back-link">← All posts</a>
+</div>
+
+<div class="container">
+  <header class="article-header">
+    <div class="article-eyebrow">
+      <a href="/blog/">Blog</a>
+      <span>·</span>
+      <span>Guide</span>
+      <span>·</span>
+      <span>6 min read</span>
+    </div>
+    <h1 class="article-title">Affordable Intranet for a 10-Person Company: What Actually Works</h1>
+    <div class="article-meta">
+      <span>SEP 21, 2026</span>
+      <span>·</span>
+      <span>Sola AI Consulting</span>
+    </div>
+  </header>
+
+  <article class="article-body">
+    <h2>Small Team, Real Needs — Why Most Intranet Advice Doesn't Apply to You</h2>
+
+<p>Most intranet content is written for IT departments at 500-person companies. They have budgets, dedicated admins, and months to roll things out. You have none of that. You have ten people, a shared drive that's gotten out of control, and staff who need answers fast.</p>
+
+<p>An affordable intranet for a 10-person company isn't a stripped-down version of an enterprise system. It's something built differently from the start — lean, purposeful, and easy enough that your least technical employee can use it on day one.</p>
+
+<p>I've built these for home health agencies, small nonprofits, and service businesses. The pattern is consistent. Teams don't need every feature. They need the right three or four things done well.</p>
+
+<h3>What "Intranet" Actually Means for a Small Team</h3>
+
+<p>At the small business level, an intranet is really just a private internal hub. It's where your team finds HR forms, policy documents, contact lists, training materials, and company announcements — without texting the owner or digging through email threads.</p>
+
+<p>For a 10-person company, that hub doesn't need to be complex. It needs to be:</p>
+
+<ul>
+  <li>Easy to update without a developer</li>
+  <li>Accessible on mobile and desktop</li>
+  <li>Organized around how your team actually works</li>
+  <li>Affordable — ideally under $50/month, often less</li>
+</ul>
+
+<p>That last point matters more than people admit. A $300/month platform is not affordable for a small business, regardless of how many features it includes.</p>
+
+<h2>The Most Practical Options for a 10-Person Team</h2>
+
+<p>You don't need to evaluate 40 tools. In practice, most small teams land on one of three approaches. Each has real tradeoffs.</p>
+
+<h3>Microsoft SharePoint (via Microsoft 365)</h3>
+
+<p>If your team already uses Microsoft 365 — Outlook, Teams, Word — SharePoint is already included in your subscription. That makes it effectively free as an add-on. A basic SharePoint intranet can be up in a few days if you know what you're doing.</p>
+
+<p>The catch: SharePoint has a learning curve. Out of the box, it doesn't look like much. Without some intentional design work, it ends up as a cluttered document library that nobody visits. That's the version most small teams end up with, and it kills adoption fast.</p>
+
+<p>Done right, though, a SharePoint intranet for a small business is hard to beat on price-to-value. You get file storage, permissions control, a news feed, and integration with Teams — all under one login your team already knows.</p>
+
+<h3>Notion or Google Sites</h3>
+
+<p>Notion is genuinely excellent for small teams that want flexibility. You can build a clean internal wiki in a weekend. It's free for small teams and intuitive enough that non-technical staff can add and edit content without help.</p>
+
+<p>Google Sites is similar — simple, free with Google Workspace, and easy to maintain. It's not flashy, but it works. For a team of ten that just needs a place to store policies and contacts, Google Sites gets the job done without overhead.</p>
+
+<p>The limitation with both tools is permissions granularity and professional appearance. If you need role-based access, approval workflows, or integrations with HR or scheduling systems, these tools will eventually hit a ceiling.</p>
+
+<h3>Custom-Built on SharePoint or a Web Portal</h3>
+
+<p>This is the option that small businesses often overlook because they assume it's expensive. It doesn't have to be. A focused internal portal — built specifically for your team's workflows — can be delivered for a one-time cost and maintained with minimal effort afterward.</p>
+
+<p>At <a href="https://solasupport.com">Sola AI Consulting</a>, we build these for small businesses and home health agencies that need more than a generic template but don't want enterprise pricing. The goal is always the same: a hub your staff will actually use, built around your specific operations.</p>
+
+<blockquote>
+  <p>"The most expensive intranet isn't the one with the highest monthly fee. It's the one your team ignores — because it costs you in missed communication, repeated questions, and wasted time every single day."</p>
+</blockquote>
+
+<h2>What to Include (and What to Skip)</h2>
+
+<p>When I scope an intranet for a small team, I ask one question first: what do your employees ask their manager most often? The answers become the navigation.</p>
+
+<p>For most 10-person companies, the highest-value sections are:</p>
+
+<ul>
+  <li><strong>Company documents:</strong> Employee handbook, HR forms, compliance checklists</li>
+  <li><strong>Team directory:</strong> Names, roles, phone numbers, maybe a photo</li>
+  <li><strong>Announcements:</strong> A simple news feed so information doesn't get buried in email</li>
+  <li><strong>Training materials:</strong> Onboarding guides, process walkthroughs, short videos</li>
+  <li><strong>Quick links:</strong> The five external tools your team accesses every day</li>
+</ul>
+
+<p>What you can skip, at least at first: discussion forums, social features, complex approval workflows, and anything that requires ongoing admin work to maintain. Add those later if there's genuine demand.</p>
+
+<h3>Mobile Access Matters More Than You Think</h3>
+
+<p>For field-based teams — caregivers, contractors, sales staff — the intranet has to work on a phone. Not technically work. Actually work. If it loads slowly or requires five taps to find a form, staff won't use it.</p>
+
+<p>This is one reason I lean toward SharePoint-based builds for home health clients. The SharePoint mobile app is solid, and staff can bookmark the intranet home page like any website. No separate app to install, no new login to remember.</p>
+
+<div class="callout">
+  <div class="callout-label">Key takeaway</div>
+  <p>Before you evaluate any platform, list the five things your team needs to find most often. Build your intranet around those five things. A focused, simple hub used daily beats a feature-rich one that sits empty.</p>
+</div>
+
+<h2>What Affordable Actually Costs</h2>
+
+<p>Let's be direct about numbers. For a 10-person company, a functional intranet typically falls into one of these ranges:</p>
+
+<ol>
+  <li><strong>DIY on existing tools (Notion, Google Sites, SharePoint):</strong> $0–$10/month ongoing, but requires internal time to build and maintain</li>
+  <li><strong>Template-based setup with light customization:</strong> $500–$1,500 one-time, low ongoing cost</li>
+  <li><strong>Custom-built internal portal:</strong> $1,500–$4,000 one-time, minimal maintenance after handoff</li>
+</ol>
+
+<p>Monthly SaaS intranet platforms marketed to small businesses often run $5–$15 per user per month. For ten people, that's $600–$1,800 per year — every year — for a tool you don't own. A one-time build often pays for itself within the first year.</p>
+
+<p>The right answer depends on your timeline, internal capacity, and how specific your workflows are. A general services company might be fine with Notion. A home health agency with compliance requirements and shift workers needs something more deliberate.</p>
+
+<h3>Adoption Is the Real Implementation Problem</h3>
+
+<p>Technology rollouts at small businesses fail for one reason almost every time: the tool gets built, announced once, and then forgotten. Staff don't know where to find it, managers don't reinforce it, and the old habits win.</p>
+
+<p>Adoption is a process, not an event. It means a short walkthrough on launch day, a pinned link in your team chat, and managers actually using the intranet to share announcements for the first 30 days. After that, the habit forms on its own — but you have to prime it.</p>
+
+<p>If you're considering building an affordable intranet for your small team and want to skip the trial-and-error phase, working with someone who has done this before is often the fastest path to something your staff will actually use.</p>
+  </article>
+</div>
+
+<div class="article-cta">
+  <div>
+    <h3>Ready to put this into practice?</h3>
+    <p>We build portals, intranets, and automations for small teams — usually in 4–8 weeks.</p>
+  </div>
+  <a href="https://solasupport.com/#contact" class="btn btn-primary">Book a discovery call <span class="btn-arrow">→</span></a>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="foot-bar">
+      <span>© 2026 SOLA AI CONSULTING, LLC · BALTIMORE, MD</span>
+      <a href="/" style="color: var(--muted); text-decoration: none; letter-spacing: 0.04em; font-size: 11.5px;">← Back to solasupport.com</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
