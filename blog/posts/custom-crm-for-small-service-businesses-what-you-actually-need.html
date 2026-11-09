@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Custom CRM for Small Service Businesses: What You Actually Need — Sola AI Consulting</title>
+<meta name="description" content="Discover how a custom CRM for small service businesses can replace spreadsheet chaos, automate follow-ups, and help your team serve clients better." />
+<meta property="og:title" content="Custom CRM for Small Service Businesses: What You Actually Need" />
+<meta property="og:description" content="Discover how a custom CRM for small service businesses can replace spreadsheet chaos, automate follow-ups, and help your team serve clients better." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://solasupport.com/blog/posts/custom-crm-for-small-service-businesses-what-you-actually-need.html" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="canonical" href="https://solasupport.com/blog/posts/custom-crm-for-small-service-businesses-what-you-actually-need.html" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap">
+<style>
+  :root {
+    --accent: #4A5A7A;
+    --accent-ink: #2E3A52;
+    --accent-wash: #EEF0F5;
+    --paper: #FAF8F4;
+    --paper-2: #F3EFE7;
+    --line: #E4DFD5;
+    --line-2: #D4CEC0;
+    --muted: #8C8576;
+    --ink-3: #6B6557;
+    --ink-2: #3A362E;
+    --ink: #1C1A16;
+    --radius: 14px;
+    --container: 1200px;
+    --serif: "Instrument Serif", "Cormorant Garamond", Georgia, serif;
+    --sans: "Geist", ui-sans-serif, system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+    --mono: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--sans);
+    color: var(--ink);
+    background: var(--paper);
+    -webkit-font-smoothing: antialiased;
+    font-size: 17px;
+    line-height: 1.55;
+    letter-spacing: -0.003em;
+  }
+
+  .container { max-width: var(--container); margin: 0 auto; padding: 0 32px; }
+
+  /* Nav */
+  .nav {
+    position: sticky; top: 0; z-index: 50;
+    backdrop-filter: saturate(160%) blur(14px);
+    -webkit-backdrop-filter: saturate(160%) blur(14px);
+    background: color-mix(in srgb, var(--paper) 72%, transparent);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner {
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 18px 32px;
+    display: flex; align-items: center; gap: 48px;
+  }
+  .brand {
+    display: inline-flex; align-items: center; gap: 10px;
+    text-decoration: none; color: var(--ink); font-weight: 500;
+  }
+  .brand-mark {
+    width: 30px; height: 30px;
+    background-image: url('/sola-logo-mark.png');
+    background-size: contain; background-repeat: no-repeat; background-position: center;
+  }
+  .brand-name {
+    font-size: 14px; font-weight: 600; letter-spacing: 0.02em;
+    text-transform: uppercase; font-family: var(--sans);
+  }
+  .brand-name .sub {
+    display: block; font-size: 9.5px; letter-spacing: 0.22em;
+    color: var(--muted); font-weight: 500; margin-top: 1px;
+  }
+  .nav-links { display: flex; gap: 28px; margin-left: auto; font-size: 14.5px; }
+  .nav-links a { color: var(--ink-2); text-decoration: none; transition: color .2s; }
+  .nav-links a:hover, .nav-links a.active { color: var(--accent); }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 11px 18px; border-radius: 999px; font-size: 14.5px;
+    font-weight: 500; border: 1px solid transparent; text-decoration: none;
+    transition: all .2s ease; white-space: nowrap; cursor: pointer;
+  }
+  .btn-primary { background: var(--ink); color: var(--paper); }
+  .btn-primary:hover { background: var(--accent-ink); transform: translateY(-1px); }
+  .btn-arrow { transition: transform .2s; }
+  .btn:hover .btn-arrow { transform: translateX(3px); }
+
+  /* Article */
+  .article-header {
+    padding: 72px 0 56px;
+    border-bottom: 1px solid var(--line);
+    max-width: 760px;
+    margin: 0 auto;
+  }
+  .article-eyebrow {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    display: flex; align-items: center; gap: 16px;
+    margin-bottom: 24px;
+  }
+  .article-eyebrow a { color: var(--accent); text-decoration: none; }
+  .article-eyebrow a:hover { text-decoration: underline; }
+  .article-eyebrow span { color: var(--line-2); }
+  .article-title {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(36px, 5vw, 64px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin: 0 0 24px;
+  }
+  .article-title em { font-style: italic; color: var(--accent); }
+  .article-meta {
+    font-family: var(--mono);
+    font-size: 11.5px;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+    display: flex; gap: 20px;
+  }
+
+  .article-body {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 56px 0;
+  }
+  .article-body h2 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(28px, 3vw, 40px);
+    line-height: 1.1;
+    letter-spacing: -0.018em;
+    margin: 56px 0 20px;
+    color: var(--ink);
+  }
+  .article-body h2:first-child { margin-top: 0; }
+  .article-body h3 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(22px, 2vw, 28px);
+    letter-spacing: -0.012em;
+    margin: 40px 0 16px;
+    color: var(--ink);
+  }
+  .article-body p {
+    color: var(--ink-2);
+    font-size: 17px;
+    line-height: 1.7;
+    margin: 0 0 24px;
+  }
+  .article-body ul, .article-body ol {
+    color: var(--ink-2);
+    font-size: 17px;
+    line-height: 1.7;
+    margin: 0 0 24px;
+    padding-left: 0;
+    list-style: none;
+  }
+  .article-body ul li, .article-body ol li {
+    padding: 6px 0 6px 24px;
+    position: relative;
+    border-bottom: 1px solid var(--line);
+  }
+  .article-body ul li:last-child, .article-body ol li:last-child { border-bottom: 0; }
+  .article-body ul li::before {
+    content: "→";
+    position: absolute; left: 0;
+    color: var(--accent);
+    font-family: var(--mono);
+  }
+  .article-body ol { counter-reset: ol; }
+  .article-body ol li::before {
+    content: counter(ol);
+    counter-increment: ol;
+    position: absolute; left: 0;
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--muted);
+    font-weight: 500;
+    top: 8px;
+  }
+  .article-body blockquote {
+    border-left: 3px solid var(--accent);
+    margin: 32px 0;
+    padding: 16px 24px;
+    background: var(--paper-2);
+    border-radius: 0 8px 8px 0;
+    font-family: var(--serif);
+    font-size: 22px;
+    line-height: 1.4;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+  }
+  .article-body strong { color: var(--ink); font-weight: 600; }
+  .article-body a { color: var(--accent-ink); text-decoration: underline; text-underline-offset: 3px; }
+  .article-body a:hover { color: var(--accent); }
+  .callout {
+    background: var(--accent-wash);
+    border: 1px solid color-mix(in srgb, var(--accent) 20%, transparent);
+    border-radius: var(--radius);
+    padding: 24px 28px;
+    margin: 32px 0;
+  }
+  .callout .callout-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent-ink);
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+  .callout p { color: var(--ink-2); margin: 0; font-size: 16px; }
+
+  /* CTA */
+  .article-cta {
+    background: var(--ink);
+    border-radius: 20px;
+    padding: 56px 64px;
+    margin: 64px auto;
+    max-width: 760px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+  }
+  .article-cta h3 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(24px, 2.5vw, 36px);
+    letter-spacing: -0.015em;
+    color: var(--paper);
+    margin: 0 0 8px;
+  }
+  .article-cta p { color: color-mix(in srgb, var(--paper) 65%, transparent); margin: 0; font-size: 15px; }
+  .article-cta .btn-primary { background: var(--paper); color: var(--ink); flex-shrink: 0; }
+  .article-cta .btn-primary:hover { background: #fff; }
+
+  /* Back link */
+  .back-link {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: var(--mono); font-size: 12px;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    color: var(--muted); text-decoration: none;
+    margin: 40px 0 0;
+    transition: color .2s;
+  }
+  .back-link:hover { color: var(--accent); }
+
+  /* Footer */
+  footer {
+    padding: 64px 0 40px;
+    border-top: 1px solid var(--line);
+    background: var(--paper);
+  }
+  .foot-bar {
+    display: flex; justify-content: space-between;
+    font-family: var(--mono); font-size: 11.5px;
+    color: var(--muted); letter-spacing: 0.04em;
+  }
+
+  @media (max-width: 960px) {
+    .nav-links { display: none; }
+    .article-header, .article-body { padding-left: 0; padding-right: 0; }
+    .article-cta { flex-direction: column; padding: 40px 32px; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="brand" aria-label="Sola AI Consulting">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-name">Sola AI<span class="sub">Consulting</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="/#services">Services</a>
+      <a href="/#how">How it works</a>
+      <a href="/#case">Case study</a>
+      <a href="/blog/" class="active">Blog</a>
+      <a href="/#contact">Contact</a>
+    </div>
+    <a href="/#contact" class="btn btn-primary">Book a call <span class="btn-arrow">→</span></a>
+  </div>
+</nav>
+
+<div class="container">
+  <a href="/blog/" class="back-link">← All posts</a>
+</div>
+
+<div class="container">
+  <header class="article-header">
+    <div class="article-eyebrow">
+      <a href="/blog/">Blog</a>
+      <span>·</span>
+      <span>Guide</span>
+      <span>·</span>
+      <span>6 min read</span>
+    </div>
+    <h1 class="article-title">Custom CRM for Small Service Businesses: What You Actually Need</h1>
+    <div class="article-meta">
+      <span>NOV 09, 2026</span>
+      <span>·</span>
+      <span>Sola AI Consulting</span>
+    </div>
+  </header>
+
+  <article class="article-body">
+    <h2>Why Off-the-Shelf CRMs Keep Letting Small Service Businesses Down</h2>
+
+<p>Most small service businesses try at least two or three CRM tools before giving up. They sign up for the free trial, import their contacts, poke around for a week, and then quietly go back to the spreadsheet. Sound familiar?</p>
+
+<p>The problem isn't the team. It's that tools like Salesforce, HubSpot, or even Zoho are built for a generalized idea of a business — not for a home health agency tracking care visits, or a cleaning company managing recurring routes, or a landscaping crew juggling seasonal contracts. The fields don't match. The workflows feel backwards. And the reporting tells you nothing useful.</p>
+
+<p>A custom CRM for a small service business isn't about building something from scratch with a team of developers. It's about configuring a system around how your business actually runs — your client stages, your service types, your follow-up rhythm, your team's reality.</p>
+
+<blockquote>
+  <p>"The best CRM is the one your team actually uses. And teams only use tools that feel like they were built for them — not retrofitted."</p>
+</blockquote>
+
+<p>At <a href="https://solasupport.com">Sola AI Consulting</a>, we've built internal portals and CRM systems for home health agencies, service contractors, and small professional firms. In almost every case, the client had already paid for a CRM they weren't using. What they needed wasn't more software — they needed the right configuration.</p>
+
+<h2>What a Custom CRM for a Small Service Business Actually Looks Like</h2>
+
+<p>When we talk about "custom," we don't mean expensive or complicated. We mean designed around your workflow instead of a generic sales pipeline.</p>
+
+<h3>Client Records That Reflect Your Service Model</h3>
+
+<p>A plumbing company needs to track property type, service history, and equipment notes. A home health agency needs care plans, authorized hours, and emergency contacts. A generic CRM gives you "Company Name," "Deal Stage," and "Close Date." None of that maps to how service businesses think about their clients.</p>
+
+<p>A well-built custom CRM gives you fields that actually mean something to your team. That might include:</p>
+
+<ul>
+  <li>Service type or care category</li>
+  <li>Last contact date and outcome</li>
+  <li>Scheduled visit or job status</li>
+  <li>Notes visible to field staff, not just the office</li>
+  <li>Billing status tied to service delivery</li>
+</ul>
+
+<p>These aren't exotic features. They're just the right fields for the right business. Most platforms support this — the problem is that someone has to do the thinking to set it up correctly.</p>
+
+<h3>Automated Follow-Ups That Run While You're Working</h3>
+
+<p>Service businesses lose clients in the gap between jobs. Someone gets a quote and doesn't hear back for ten days. A recurring client misses a check-in call. A referral source sends someone your way and nobody follows up.</p>
+
+<p>A custom CRM closes those gaps with automation. Not complicated automation — simple triggers. When a quote is sent, a follow-up task gets created for three days later. When a job is marked complete, the client gets a satisfaction check. When a contact goes 60 days without activity, someone on your team gets a nudge.</p>
+
+<p>We've set this up for home health agencies using tools like SharePoint lists combined with Power Automate. The staff didn't need to learn anything new. The reminders just appeared in their existing workflow. That's the goal.</p>
+
+<div class="callout">
+  <div class="callout-label">Key takeaway</div>
+  <p>Before you build anything, map your current client journey on paper — from first contact to repeat business. Every gap you identify is an automation opportunity. Most small service businesses have three to five of them hiding in plain sight.</p>
+</div>
+
+<h3>Reporting That Answers Real Questions</h3>
+
+<p>Generic CRM dashboards show you pipeline value and win rates. Useful for a sales team. Not useful for a service business owner asking: Which clients haven't been contacted this month? Which services are generating the most callbacks? Where are jobs stalling out before completion?</p>
+
+<p>A custom CRM for a small service business surfaces answers to those questions without requiring you to export data to Excel and build your own pivot tables every week. The dashboard is built around your actual decisions, not a template someone else's business needed.</p>
+
+<h2>Build vs. Configure: What's the Right Approach?</h2>
+
+<p>This is the question most small business owners get wrong. They assume "custom" means "build from scratch," which sounds expensive and slow. In reality, most custom CRM implementations for small service businesses use existing platforms — Microsoft 365, SharePoint, Notion, Airtable, or low-code tools like Power Apps — and configure them specifically for the business.</p>
+
+<p>Building from scratch only makes sense when your workflow is genuinely unique and your volume justifies the investment. For most service businesses with under 50 employees, configuration wins every time. It's faster, cheaper, and easier to maintain.</p>
+
+<p>What matters more than the platform is the design process. Someone needs to sit down with the people who actually do the work — the scheduler, the field lead, the billing coordinator — and understand what information they need, when they need it, and what happens when something goes wrong. That conversation is where the real CRM gets built.</p>
+
+<h3>When You Know You're Ready for a Custom CRM</h3>
+
+<p>Not every small service business needs a custom CRM today. But you're probably ready if:</p>
+
+<ol>
+  <li>You're managing more than 30–40 active clients and tracking them in spreadsheets</li>
+  <li>Follow-ups are falling through the cracks regularly</li>
+  <li>Your team has tried and abandoned at least one off-the-shelf tool</li>
+  <li>You can't quickly answer "which clients are at risk of churning?"</li>
+  <li>Onboarding a new employee means teaching them your spreadsheet system</li>
+</ol>
+
+<p>If two or more of those are true, the cost of not having a proper system is already showing up in your business — you're just paying for it in time and lost revenue instead of a software invoice.</p>
+
+<h2>Making It Stick: The Human Side of CRM Implementation</h2>
+
+<p>The best-designed CRM still fails if the team doesn't trust it. We've seen it happen. The system gets built, the owner loves it, and two months later everyone's back to texting each other job updates.</p>
+
+<p>Adoption comes from involving the right people early. The scheduler who's been using a whiteboard for six years has opinions — and those opinions are correct. Build around them, not around what a software demo made look easy.</p>
+
+<p>Training matters too, but not the kind where you send a Loom video and hope for the best. Walk through real scenarios with real data. Show someone how to find a client record when a call comes in. Show them what happens when they mark a job complete. Make the system feel familiar before you go live.</p>
+
+<p>When a custom CRM for a small service business is built right and introduced right, it becomes the thing people defend. They start saying "just check the CRM" instead of "let me text the owner." That shift is worth more than any feature list.</p>
+
+<p>If you're tired of patching together spreadsheets and tools that weren't built for your kind of business, there's a better way to approach this — and it starts with understanding what you actually need before touching any software.</p>
+  </article>
+</div>
+
+<div class="article-cta">
+  <div>
+    <h3>Ready to put this into practice?</h3>
+    <p>We build portals, intranets, and automations for small teams — usually in 4–8 weeks.</p>
+  </div>
+  <a href="https://solasupport.com/#contact" class="btn btn-primary">Book a discovery call <span class="btn-arrow">→</span></a>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="foot-bar">
+      <span>© 2026 SOLA AI CONSULTING, LLC · BALTIMORE, MD</span>
+      <a href="/" style="color: var(--muted); text-decoration: none; letter-spacing: 0.04em; font-size: 11.5px;">← Back to solasupport.com</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
